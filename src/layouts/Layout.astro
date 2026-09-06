@@ -1,0 +1,58 @@
+---
+import {copy,site,languages,languageNames,langTags,link,asset} from '../lib/temple.js';
+import Icon from '../components/Icon.astro';
+import '../styles/site.css';
+const {lang='zh-hant',page='',title,description} = Astro.props;
+const t=copy[lang];
+const navPages=['','about','services','offerings','visit'];
+const navKey = (p) => p || 'home';
+const isCurrent = (p) => page===p || (p==='services' && (page.startsWith('services/')||page.startsWith('calendar')));
+const pageTitle=title ? `${title} · ${t.siteName}` : `${t.siteName} · ${t.city}`;
+const canonical=Astro.site ? new URL(link(lang,page),Astro.site).href : undefined;
+---
+<!doctype html>
+<html lang={langTags[lang]}>
+  <head>
+    <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#f6f4ee"/>
+    <title>{pageTitle}</title><meta name="description" content={description || t.home.intro}/>
+    {canonical && <link rel="canonical" href={canonical}/>}
+    {Astro.site && languages.map(l => <link rel="alternate" hreflang={langTags[l]} href={new URL(link(l,page),Astro.site).href}/>)}
+    <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml"/>
+    <link rel="stylesheet" href={asset('fonts/fonts.css')}/>
+  </head>
+  <body data-language={lang}>
+    <a class="skip-link" href="#main">{t.common.skip}</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href={link(lang)} aria-label={t.siteName}>
+          <span class="brand-seal" aria-hidden="true">佛</span>
+          <span class="brand-name"><strong>佛壽寺</strong><span>FO SHOU TEMPLE</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label={t.common.menu}>{navPages.map(p=><a href={link(lang,p)} aria-current={isCurrent(p)?'page':undefined}>{t.nav[navKey(p)]}</a>)}</nav>
+        <div class="header-actions">
+          <details class="language-picker"><summary aria-label={lang==='en'?'Choose language':lang==='zh-hans'?'选择语言':'選擇語言'}><Icon name="globe" size={18}/><span>{languageNames[lang]}</span><Icon name="chevron" size={14}/></summary><div class="language-options">{languages.map(l=><a href={link(l,page)} lang={langTags[l]} hreflang={langTags[l]} data-language-link={l} aria-current={l===lang?'true':undefined}>{languageNames[l]}</a>)}</div></details>
+          <button class="mobile-menu-button" aria-label={t.common.menu} aria-expanded="false" aria-controls="mobile-nav"><Icon name="menu"/></button>
+        </div>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" aria-label={t.common.menu} hidden>{navPages.map(p=><a href={link(lang,p)} aria-current={isCurrent(p)?'page':undefined}>{t.nav[navKey(p)]}</a>)}<a href={link(lang,'calendar')}>{t.nav.calendar}</a></nav>
+    </header>
+    <main id="main"><slot/></main>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div><a class="footer-brand" href={link(lang)}>佛壽寺<span>Fo Shou Temple</span></a><p>{t.footer.invitation}</p></div>
+        <div class="footer-contact"><p>{site.address}<br/>{site.cityLine}</p><a href={`mailto:${site.email}`}>{site.email}</a><p>{t.common.openDaily}</p></div>
+        <div class="footer-links"><a href={link(lang,'calendar')}>{t.nav.calendar}<Icon size={16}/></a><a href={link(lang,'visit')}>{t.nav.visit}<Icon size={16}/></a><div class="social-links"><a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook<Icon name="external" size={14}/></a><a href={site.youtube} target="_blank" rel="noopener noreferrer">YouTube<Icon name="external" size={14}/></a></div></div>
+      </div>
+      <div class="container footer-bottom"><span>© {new Date().getFullYear()} Fo Shou Temple. {t.footer.copyright}</span><div>{languages.map(l=><a href={link(l,page)} lang={langTags[l]} data-language-link={l}>{languageNames[l]}</a>)}</div></div>
+    </footer>
+    <script>
+      const button=document.querySelector('.mobile-menu-button');
+      const nav=document.querySelector('#mobile-nav');
+      button?.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));nav.hidden=open;});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('details[open]').forEach(d=>d.removeAttribute('open'));if(button?.getAttribute('aria-expanded')==='true'){button.setAttribute('aria-expanded','false');nav.hidden=true;button.focus();}}});
+      document.querySelectorAll('[data-language-link]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('foshou-language',a.dataset.languageLink)}catch{}; const keep=new URLSearchParams(location.search);if(keep.size)a.href+=`?${keep}`;if(location.hash)a.href+=location.hash;}));
+      document.addEventListener('click',event=>{document.querySelectorAll('.language-picker[open]').forEach(picker=>{if(!picker.contains(event.target))picker.removeAttribute('open')})});
+    </script>
+  </body>
+</html>

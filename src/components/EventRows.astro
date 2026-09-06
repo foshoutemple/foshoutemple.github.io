@@ -1,0 +1,52 @@
+---
+import { copy, monthText, dayText, dateText, link } from '../lib/temple.js';
+import Icon from './Icon.astro';
+const {lang, events, compact = false} = Astro.props;
+const t = copy[lang];
+---
+<div class:list={['event-rows', {compact}]} data-upcoming-events data-lang={lang}>
+  {events.map(event => <a class="event-row" href={link(lang, `calendar/${event.id}`)} data-event-date={event.date}>
+    <time datetime={event.date} class="date-tile"><span>{monthText(event.date, lang)}</span><strong>{dayText(event.date)}</strong></time>
+    <div class="event-row-text"><span class="event-type">{t.calendar.typeLabels[event.type]}</span><h3>{event.title[lang]}</h3><p>{event.lunar[lang]}<span class="date-dot">·</span>{dateText(event.date, lang, {weekday:'long'})}</p></div>
+    <span class="row-arrow"><Icon/></span>
+  </a>)}
+  <template data-event-template>
+    <a class="event-row">
+      <time class="date-tile"><span></span><strong></strong></time>
+      <div class="event-row-text"><span class="event-type"></span><h3></h3><p><span data-lunar></span><span class="date-dot">·</span><span data-weekday></span></p></div>
+      <span class="row-arrow"><Icon/></span>
+    </a>
+  </template>
+</div>
+<script>
+  import { calendar, copy, monthText, dayText, dateText, link } from '../lib/temple.js';
+  import { onPhillyDateChange } from '../lib/live-dates.js';
+
+  document.querySelectorAll('[data-upcoming-events]').forEach(root => {
+    const lang = root.dataset.lang;
+    const template = root.querySelector('[data-event-template]');
+    onPhillyDateChange(today => {
+      const events = calendar.events.filter(event => event.date >= today).slice(0, 3);
+      root.querySelectorAll('.event-row, .calendar-empty').forEach(row => row.remove());
+      events.forEach(event => {
+        const row = template.content.firstElementChild.cloneNode(true);
+        row.href = link(lang, `calendar/${event.id}`);
+        row.dataset.eventDate = event.date;
+        row.querySelector('time').dateTime = event.date;
+        row.querySelector('time span').textContent = monthText(event.date, lang);
+        row.querySelector('time strong').textContent = dayText(event.date);
+        row.querySelector('.event-type').textContent = copy[lang].calendar.typeLabels[event.type];
+        row.querySelector('h3').textContent = event.title[lang];
+        row.querySelector('[data-lunar]').textContent = event.lunar[lang];
+        row.querySelector('[data-weekday]').textContent = dateText(event.date, lang, {weekday:'long'});
+        root.insertBefore(row, template);
+      });
+      if (!events.length) {
+        const empty = document.createElement('p');
+        empty.className = 'calendar-empty';
+        empty.textContent = copy[lang].calendar.noEvents;
+        root.insertBefore(empty, template);
+      }
+    });
+  });
+</script>

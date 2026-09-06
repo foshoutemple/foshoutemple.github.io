@@ -1,0 +1,11 @@
+---
+import { copy } from '../lib/temple.js';
+const { lang } = Astro.props;
+const t = copy[lang];
+const rows = [
+ { time:'10:00–11:30',title:t.services.morningTitle, text:t.services.morningText },
+ { time:t.services.mealTime,title:t.services.mealTitle, text:t.services.mealText },
+ { time:'13:00',title:t.services.afternoonTitle,text:t.services.afternoonText },
+];
+---
+<div class="schedule-list">{rows.map((r,i) => <div class="schedule-row"><div class="schedule-time"><span class="schedule-point" aria-hidden="true"></span>{r.time}</div><div><h3>{r.title}</h3><p>{r.text}</p></div></div>)}</div>

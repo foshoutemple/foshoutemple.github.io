@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {link,site,base} from '../lib/temple.js';
+---
+<Layout lang="zh-hant" title="佛壽寺 / Fo Shou Temple">
+  <section class="container language-entry"><h1>佛壽寺</h1><p>Fo Shou Temple · Philadelphia</p><div class="button-row"><a class="button" href={link('zh-hans')}>简体中文</a><a class="button" href={link('zh-hant')}>繁體中文</a><a class="button" href={link('en')}>English</a></div></section>
+  <script define:vars={{base,fallback:site.defaultLanguage}}>
+    let chosen;
+    try {const saved=localStorage.getItem('foshou-language');if(['zh-hans','zh-hant','en'].includes(saved))chosen=saved;}catch{}
+    if(!chosen)for(const language of navigator.languages || [navigator.language]){const l=language.toLowerCase();if(l.startsWith('zh')){chosen=/hant|tw|hk|mo/.test(l)?'zh-hant':'zh-hans';break}if(l.startsWith('en')){chosen='en';break}}
+    location.replace(`${base}/${chosen || fallback}/${location.search}${location.hash}`);
+  </script>
+</Layout>

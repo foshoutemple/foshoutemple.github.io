@@ -1,0 +1,1 @@
+Fonts: Noto Serif SC, Noto Serif TC, EB Garamond. Source: Google Fonts. Licensed under the SIL Open Font License. Chinese files contain a subset of the current website text. Run scripts/fetch-fonts.mjs after substantial new Chinese headings.

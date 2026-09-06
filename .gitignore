@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.astro/
+screenshots/
+assets/source/
+*.log
+.env
+.env.*
+!.env.example
+.pnpm-store/
+.codex/
+.agents/
+
+# Internal planning and review notes are kept outside the public repository.
+/COPY_DRAFTS.md
+/DESIGN.md
+/OPEN_QUESTIONS.md
+/PREVIEW.md
+/PRODUCT.md
+/WEBSITE_PLAN.md

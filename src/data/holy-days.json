@@ -1,0 +1,718 @@
+{
+  "years": [
+    2026,
+    2027
+  ],
+  "sources": [
+    {
+      "title": "香港佛教聯合會：佛、菩薩誕期表（農曆）",
+      "url": "https://www.hkbuddhist.org/zh/top_page.php?cid=12&p=fqa"
+    },
+    {
+      "title": "香港佛教聯合會《香港佛教》第663期：盂蘭盆節",
+      "url": "https://www.hkbuddhist.org/magazine/663.pdf"
+    },
+    {
+      "title": "Hong Kong Observatory: Gregorian–Lunar Calendar Conversion Table 2026",
+      "url": "https://data.weather.gov.hk/weatherAPI/hko_data/calendar/nongli_calendar_2026.csv"
+    },
+    {
+      "title": "Hong Kong Observatory: Gregorian–Lunar Calendar Conversion Table 2027",
+      "url": "https://data.weather.gov.hk/weatherAPI/hko_data/calendar/nongli_calendar_2027.csv"
+    },
+    {
+      "title": "Hong Kong Observatory: Gregorian–Lunar Calendar Conversion Table 2028",
+      "url": "https://data.weather.gov.hk/weatherAPI/hko_data/calendar/nongli_calendar_2028.csv"
+    }
+  ],
+  "events": [
+    {
+      "id": "2025-amitabha-birthday",
+      "date": "2026-01-05",
+      "lunar": {
+        "zh-hans": "农历十一月十七",
+        "zh-hant": "農曆十一月十七",
+        "en": "Lunar month 11, day 17"
+      },
+      "title": {
+        "zh-hans": "阿弥陀佛圣诞",
+        "zh-hant": "阿彌陀佛聖誕",
+        "en": "Amitabha Buddha's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2025-shakyamuni-awakening",
+      "date": "2026-01-26",
+      "lunar": {
+        "zh-hans": "农历十二月初八",
+        "zh-hant": "農曆十二月初八",
+        "en": "Lunar month 12, day 8"
+      },
+      "title": {
+        "zh-hans": "释迦牟尼佛成道日・腊八",
+        "zh-hant": "釋迦牟尼佛成道日・臘八",
+        "en": "Shakyamuni Buddha's Enlightenment · Laba"
+      },
+      "type": "awakening",
+      "serviceTime": null
+    },
+    {
+      "id": "2025-huayan-birthday",
+      "date": "2026-02-16",
+      "lunar": {
+        "zh-hans": "农历十二月廿九",
+        "zh-hant": "農曆十二月廿九",
+        "en": "Lunar month 12, day 29"
+      },
+      "title": {
+        "zh-hans": "华严菩萨圣诞",
+        "zh-hant": "華嚴菩薩聖誕",
+        "en": "Huayan Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-maitreya-birthday",
+      "date": "2026-02-17",
+      "lunar": {
+        "zh-hans": "农历正月初一",
+        "zh-hant": "農曆正月初一",
+        "en": "Lunar month 1, day 1"
+      },
+      "title": {
+        "zh-hans": "弥勒菩萨圣诞",
+        "zh-hant": "彌勒菩薩聖誕",
+        "en": "Maitreya Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-shakyamuni-renunciation",
+      "date": "2026-03-26",
+      "lunar": {
+        "zh-hans": "农历二月初八",
+        "zh-hant": "農曆二月初八",
+        "en": "Lunar month 2, day 8"
+      },
+      "title": {
+        "zh-hans": "释迦牟尼佛出家日",
+        "zh-hant": "釋迦牟尼佛出家日",
+        "en": "Shakyamuni Buddha's Renunciation"
+      },
+      "type": "renunciation",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-shakyamuni-nirvana",
+      "date": "2026-04-02",
+      "lunar": {
+        "zh-hans": "农历二月十五",
+        "zh-hant": "農曆二月十五",
+        "en": "Lunar month 2, day 15"
+      },
+      "title": {
+        "zh-hans": "释迦牟尼佛涅槃日",
+        "zh-hant": "釋迦牟尼佛涅槃日",
+        "en": "Shakyamuni Buddha's Nirvana Day"
+      },
+      "type": "nirvana",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-guanyin-birthday",
+      "date": "2026-04-06",
+      "lunar": {
+        "zh-hans": "农历二月十九",
+        "zh-hant": "農曆二月十九",
+        "en": "Lunar month 2, day 19"
+      },
+      "title": {
+        "zh-hans": "观世音菩萨圣诞",
+        "zh-hant": "觀世音菩薩聖誕",
+        "en": "Guanyin Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-samantabhadra-birthday",
+      "date": "2026-04-08",
+      "lunar": {
+        "zh-hans": "农历二月廿一",
+        "zh-hant": "農曆二月廿一",
+        "en": "Lunar month 2, day 21"
+      },
+      "title": {
+        "zh-hans": "普贤菩萨圣诞",
+        "zh-hant": "普賢菩薩聖誕",
+        "en": "Samantabhadra Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-cundi-birthday",
+      "date": "2026-05-02",
+      "lunar": {
+        "zh-hans": "农历三月十六",
+        "zh-hant": "農曆三月十六",
+        "en": "Lunar month 3, day 16"
+      },
+      "title": {
+        "zh-hans": "准提菩萨圣诞",
+        "zh-hant": "準提菩薩聖誕",
+        "en": "Cundi Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-manjushri-birthday",
+      "date": "2026-05-20",
+      "lunar": {
+        "zh-hans": "农历四月初四",
+        "zh-hant": "農曆四月初四",
+        "en": "Lunar month 4, day 4"
+      },
+      "title": {
+        "zh-hans": "文殊菩萨圣诞",
+        "zh-hant": "文殊菩薩聖誕",
+        "en": "Manjushri Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-shakyamuni-birthday",
+      "date": "2026-05-24",
+      "lunar": {
+        "zh-hans": "农历四月初八",
+        "zh-hant": "農曆四月初八",
+        "en": "Lunar month 4, day 8"
+      },
+      "title": {
+        "zh-hans": "释迦牟尼佛圣诞",
+        "zh-hant": "釋迦牟尼佛聖誕",
+        "en": "Shakyamuni Buddha's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-medicine-king-birthday",
+      "date": "2026-06-13",
+      "lunar": {
+        "zh-hans": "农历四月廿八",
+        "zh-hant": "農曆四月廿八",
+        "en": "Lunar month 4, day 28"
+      },
+      "title": {
+        "zh-hans": "药王菩萨圣诞",
+        "zh-hant": "藥王菩薩聖誕",
+        "en": "Medicine King Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-sangharama-birthday",
+      "date": "2026-06-27",
+      "lunar": {
+        "zh-hans": "农历五月十三",
+        "zh-hant": "農曆五月十三",
+        "en": "Lunar month 5, day 13"
+      },
+      "title": {
+        "zh-hans": "伽蓝菩萨圣诞",
+        "zh-hant": "伽藍菩薩聖誕",
+        "en": "Sangharama Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-skanda-birthday",
+      "date": "2026-07-16",
+      "lunar": {
+        "zh-hans": "农历六月初三",
+        "zh-hant": "農曆六月初三",
+        "en": "Lunar month 6, day 3"
+      },
+      "title": {
+        "zh-hans": "韦驮菩萨圣诞",
+        "zh-hant": "韋馱菩薩聖誕",
+        "en": "Skanda Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-guanyin-awakening",
+      "date": "2026-08-01",
+      "lunar": {
+        "zh-hans": "农历六月十九",
+        "zh-hant": "農曆六月十九",
+        "en": "Lunar month 6, day 19"
+      },
+      "title": {
+        "zh-hans": "观世音菩萨成道日",
+        "zh-hant": "觀世音菩薩成道日",
+        "en": "Guanyin Bodhisattva's Enlightenment"
+      },
+      "type": "awakening",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-mahasthamaprapta-birthday",
+      "date": "2026-08-25",
+      "lunar": {
+        "zh-hans": "农历七月十三",
+        "zh-hant": "農曆七月十三",
+        "en": "Lunar month 7, day 13"
+      },
+      "title": {
+        "zh-hans": "大势至菩萨圣诞",
+        "zh-hant": "大勢至菩薩聖誕",
+        "en": "Mahasthamaprapta Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-ullambana",
+      "date": "2026-08-27",
+      "lunar": {
+        "zh-hans": "农历七月十五",
+        "zh-hant": "農曆七月十五",
+        "en": "Lunar month 7, day 15"
+      },
+      "title": {
+        "zh-hans": "盂兰盆节・佛欢喜日",
+        "zh-hant": "盂蘭盆節・佛歡喜日",
+        "en": "Ullambana · Buddha's Joyful Day"
+      },
+      "type": "observance",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-ksitigarbha-birthday",
+      "date": "2026-09-10",
+      "lunar": {
+        "zh-hans": "农历七月廿九",
+        "zh-hant": "農曆七月廿九",
+        "en": "Lunar month 7, day 29"
+      },
+      "title": {
+        "zh-hans": "地藏王菩萨圣诞",
+        "zh-hant": "地藏王菩薩聖誕",
+        "en": "Ksitigarbha Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-guanyin-renunciation",
+      "date": "2026-10-28",
+      "lunar": {
+        "zh-hans": "农历九月十九",
+        "zh-hant": "農曆九月十九",
+        "en": "Lunar month 9, day 19"
+      },
+      "title": {
+        "zh-hans": "观世音菩萨出家日",
+        "zh-hant": "觀世音菩薩出家日",
+        "en": "Guanyin Bodhisattva's Renunciation"
+      },
+      "type": "renunciation",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-medicine-buddha-birthday",
+      "date": "2026-11-08",
+      "lunar": {
+        "zh-hans": "农历九月三十",
+        "zh-hant": "農曆九月三十",
+        "en": "Lunar month 9, day 30"
+      },
+      "title": {
+        "zh-hans": "药师佛圣诞",
+        "zh-hant": "藥師佛聖誕",
+        "en": "Medicine Buddha's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-amitabha-birthday",
+      "date": "2026-12-25",
+      "lunar": {
+        "zh-hans": "农历十一月十七",
+        "zh-hant": "農曆十一月十七",
+        "en": "Lunar month 11, day 17"
+      },
+      "title": {
+        "zh-hans": "阿弥陀佛圣诞",
+        "zh-hant": "阿彌陀佛聖誕",
+        "en": "Amitabha Buddha's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-shakyamuni-awakening",
+      "date": "2027-01-15",
+      "lunar": {
+        "zh-hans": "农历十二月初八",
+        "zh-hant": "農曆十二月初八",
+        "en": "Lunar month 12, day 8"
+      },
+      "title": {
+        "zh-hans": "释迦牟尼佛成道日・腊八",
+        "zh-hant": "釋迦牟尼佛成道日・臘八",
+        "en": "Shakyamuni Buddha's Enlightenment · Laba"
+      },
+      "type": "awakening",
+      "serviceTime": null
+    },
+    {
+      "id": "2026-huayan-birthday",
+      "date": "2027-02-05",
+      "lunar": {
+        "zh-hans": "农历十二月廿九",
+        "zh-hant": "農曆十二月廿九",
+        "en": "Lunar month 12, day 29"
+      },
+      "title": {
+        "zh-hans": "华严菩萨圣诞",
+        "zh-hant": "華嚴菩薩聖誕",
+        "en": "Huayan Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-maitreya-birthday",
+      "date": "2027-02-06",
+      "lunar": {
+        "zh-hans": "农历正月初一",
+        "zh-hant": "農曆正月初一",
+        "en": "Lunar month 1, day 1"
+      },
+      "title": {
+        "zh-hans": "弥勒菩萨圣诞",
+        "zh-hant": "彌勒菩薩聖誕",
+        "en": "Maitreya Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-shakyamuni-renunciation",
+      "date": "2027-03-15",
+      "lunar": {
+        "zh-hans": "农历二月初八",
+        "zh-hant": "農曆二月初八",
+        "en": "Lunar month 2, day 8"
+      },
+      "title": {
+        "zh-hans": "释迦牟尼佛出家日",
+        "zh-hant": "釋迦牟尼佛出家日",
+        "en": "Shakyamuni Buddha's Renunciation"
+      },
+      "type": "renunciation",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-shakyamuni-nirvana",
+      "date": "2027-03-22",
+      "lunar": {
+        "zh-hans": "农历二月十五",
+        "zh-hant": "農曆二月十五",
+        "en": "Lunar month 2, day 15"
+      },
+      "title": {
+        "zh-hans": "释迦牟尼佛涅槃日",
+        "zh-hant": "釋迦牟尼佛涅槃日",
+        "en": "Shakyamuni Buddha's Nirvana Day"
+      },
+      "type": "nirvana",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-guanyin-birthday",
+      "date": "2027-03-26",
+      "lunar": {
+        "zh-hans": "农历二月十九",
+        "zh-hant": "農曆二月十九",
+        "en": "Lunar month 2, day 19"
+      },
+      "title": {
+        "zh-hans": "观世音菩萨圣诞",
+        "zh-hant": "觀世音菩薩聖誕",
+        "en": "Guanyin Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-samantabhadra-birthday",
+      "date": "2027-03-28",
+      "lunar": {
+        "zh-hans": "农历二月廿一",
+        "zh-hant": "農曆二月廿一",
+        "en": "Lunar month 2, day 21"
+      },
+      "title": {
+        "zh-hans": "普贤菩萨圣诞",
+        "zh-hant": "普賢菩薩聖誕",
+        "en": "Samantabhadra Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-cundi-birthday",
+      "date": "2027-04-22",
+      "lunar": {
+        "zh-hans": "农历三月十六",
+        "zh-hant": "農曆三月十六",
+        "en": "Lunar month 3, day 16"
+      },
+      "title": {
+        "zh-hans": "准提菩萨圣诞",
+        "zh-hant": "準提菩薩聖誕",
+        "en": "Cundi Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-manjushri-birthday",
+      "date": "2027-05-09",
+      "lunar": {
+        "zh-hans": "农历四月初四",
+        "zh-hant": "農曆四月初四",
+        "en": "Lunar month 4, day 4"
+      },
+      "title": {
+        "zh-hans": "文殊菩萨圣诞",
+        "zh-hant": "文殊菩薩聖誕",
+        "en": "Manjushri Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-shakyamuni-birthday",
+      "date": "2027-05-13",
+      "lunar": {
+        "zh-hans": "农历四月初八",
+        "zh-hant": "農曆四月初八",
+        "en": "Lunar month 4, day 8"
+      },
+      "title": {
+        "zh-hans": "释迦牟尼佛圣诞",
+        "zh-hant": "釋迦牟尼佛聖誕",
+        "en": "Shakyamuni Buddha's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-medicine-king-birthday",
+      "date": "2027-06-02",
+      "lunar": {
+        "zh-hans": "农历四月廿八",
+        "zh-hant": "農曆四月廿八",
+        "en": "Lunar month 4, day 28"
+      },
+      "title": {
+        "zh-hans": "药王菩萨圣诞",
+        "zh-hant": "藥王菩薩聖誕",
+        "en": "Medicine King Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-sangharama-birthday",
+      "date": "2027-06-17",
+      "lunar": {
+        "zh-hans": "农历五月十三",
+        "zh-hant": "農曆五月十三",
+        "en": "Lunar month 5, day 13"
+      },
+      "title": {
+        "zh-hans": "伽蓝菩萨圣诞",
+        "zh-hant": "伽藍菩薩聖誕",
+        "en": "Sangharama Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-skanda-birthday",
+      "date": "2027-07-06",
+      "lunar": {
+        "zh-hans": "农历六月初三",
+        "zh-hant": "農曆六月初三",
+        "en": "Lunar month 6, day 3"
+      },
+      "title": {
+        "zh-hans": "韦驮菩萨圣诞",
+        "zh-hant": "韋馱菩薩聖誕",
+        "en": "Skanda Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-guanyin-awakening",
+      "date": "2027-07-22",
+      "lunar": {
+        "zh-hans": "农历六月十九",
+        "zh-hant": "農曆六月十九",
+        "en": "Lunar month 6, day 19"
+      },
+      "title": {
+        "zh-hans": "观世音菩萨成道日",
+        "zh-hant": "觀世音菩薩成道日",
+        "en": "Guanyin Bodhisattva's Enlightenment"
+      },
+      "type": "awakening",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-mahasthamaprapta-birthday",
+      "date": "2027-08-14",
+      "lunar": {
+        "zh-hans": "农历七月十三",
+        "zh-hant": "農曆七月十三",
+        "en": "Lunar month 7, day 13"
+      },
+      "title": {
+        "zh-hans": "大势至菩萨圣诞",
+        "zh-hant": "大勢至菩薩聖誕",
+        "en": "Mahasthamaprapta Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-ullambana",
+      "date": "2027-08-16",
+      "lunar": {
+        "zh-hans": "农历七月十五",
+        "zh-hant": "農曆七月十五",
+        "en": "Lunar month 7, day 15"
+      },
+      "title": {
+        "zh-hans": "盂兰盆节・佛欢喜日",
+        "zh-hant": "盂蘭盆節・佛歡喜日",
+        "en": "Ullambana · Buddha's Joyful Day"
+      },
+      "type": "observance",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-ksitigarbha-birthday",
+      "date": "2027-08-31",
+      "lunar": {
+        "zh-hans": "农历七月三十",
+        "zh-hant": "農曆七月三十",
+        "en": "Lunar month 7, day 30"
+      },
+      "title": {
+        "zh-hans": "地藏王菩萨圣诞",
+        "zh-hant": "地藏王菩薩聖誕",
+        "en": "Ksitigarbha Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-guanyin-renunciation",
+      "date": "2027-10-18",
+      "lunar": {
+        "zh-hans": "农历九月十九",
+        "zh-hant": "農曆九月十九",
+        "en": "Lunar month 9, day 19"
+      },
+      "title": {
+        "zh-hans": "观世音菩萨出家日",
+        "zh-hant": "觀世音菩薩出家日",
+        "en": "Guanyin Bodhisattva's Renunciation"
+      },
+      "type": "renunciation",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-medicine-buddha-birthday",
+      "date": "2027-10-28",
+      "lunar": {
+        "zh-hans": "农历九月廿九",
+        "zh-hant": "農曆九月廿九",
+        "en": "Lunar month 9, day 29"
+      },
+      "title": {
+        "zh-hans": "药师佛圣诞",
+        "zh-hant": "藥師佛聖誕",
+        "en": "Medicine Buddha's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-amitabha-birthday",
+      "date": "2027-12-14",
+      "lunar": {
+        "zh-hans": "农历十一月十七",
+        "zh-hant": "農曆十一月十七",
+        "en": "Lunar month 11, day 17"
+      },
+      "title": {
+        "zh-hans": "阿弥陀佛圣诞",
+        "zh-hant": "阿彌陀佛聖誕",
+        "en": "Amitabha Buddha's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-shakyamuni-awakening",
+      "date": "2028-01-04",
+      "lunar": {
+        "zh-hans": "农历十二月初八",
+        "zh-hant": "農曆十二月初八",
+        "en": "Lunar month 12, day 8"
+      },
+      "title": {
+        "zh-hans": "释迦牟尼佛成道日・腊八",
+        "zh-hant": "釋迦牟尼佛成道日・臘八",
+        "en": "Shakyamuni Buddha's Enlightenment · Laba"
+      },
+      "type": "awakening",
+      "serviceTime": null
+    },
+    {
+      "id": "2027-huayan-birthday",
+      "date": "2028-01-25",
+      "lunar": {
+        "zh-hans": "农历十二月廿九",
+        "zh-hant": "農曆十二月廿九",
+        "en": "Lunar month 12, day 29"
+      },
+      "title": {
+        "zh-hans": "华严菩萨圣诞",
+        "zh-hant": "華嚴菩薩聖誕",
+        "en": "Huayan Bodhisattva's Birthday"
+      },
+      "type": "birth",
+      "serviceTime": null
+    }
+  ]
+}

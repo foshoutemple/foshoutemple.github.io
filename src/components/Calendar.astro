@@ -1,0 +1,84 @@
+---
+import {copy,calendar,locales,todayInPhilly,link,dateText,monthText,dayText} from '../lib/temple.js';
+import Icon from './Icon.astro';
+const {lang} = Astro.props;
+const t=copy[lang];
+const currentYear=Number(todayInPhilly().slice(0,4));
+const selectedYear=calendar.years.includes(currentYear)?currentYear:calendar.years[0];
+const months=Array.from({length:12},(_,i)=>new Intl.DateTimeFormat(locales[lang],{month:'long',timeZone:'UTC'}).format(new Date(Date.UTC(2026,i,1))));
+---
+<section class="calendar-section" id="holy-days" data-calendar data-lang={lang}>
+ <div class="calendar-controls">
+   <div class="calendar-selects"><label>{t.calendar.yearLabel}<select name="year" id="calendar-year">{calendar.years.map(y=><option value={y} selected={y===selectedYear}>{y}</option>)}</select></label><label>{t.calendar.monthLabel}<select name="month" id="calendar-month"><option value="0">{t.calendar.allMonths}</option>{months.map((name,i)=><option value={i+1}>{name}</option>)}</select></label></div>
+   <div class="view-controls" role="group" aria-label={lang==='en'?'Calendar view':lang==='zh-hans'?'日历视图':'日曆檢視'}><button data-view="list" aria-pressed="true">{t.calendar.list}</button><button data-view="month" aria-pressed="false">{t.calendar.month}</button></div>
+ </div>
+ <div class="calendar-heading"><h2 id="calendar-heading">{selectedYear}</h2><div class="calendar-paging" hidden><button class="icon-button" data-previous aria-label={t.calendar.previous}><Icon name="left"/></button><button class="text-button" data-today>{t.calendar.today}</button><button class="icon-button" data-next aria-label={t.calendar.next}><Icon name="right"/></button></div></div>
+ <div id="calendar-results" aria-live="polite" aria-atomic="false" class="calendar-results">
+   {calendar.events.filter(e=>e.date.startsWith(`${selectedYear}-`)).map(e=><a class="calendar-list-row" href={link(lang,`calendar/${e.id}`)}><time datetime={e.date}><span>{monthText(e.date,lang)}</span><strong>{dayText(e.date)}</strong></time><div><h3>{e.title[lang]}</h3><p>{e.lunar[lang]} · {dateText(e.date,lang,{weekday:'long'})}</p></div><span class="event-category">{t.calendar.typeLabels[e.type]}</span><Icon/></a>)}
+ </div>
+ <div class="calendar-mobile-agenda" id="calendar-mobile-agenda" hidden></div>
+ <div class="calendar-footnote"><Icon name="calendar"/><p>{t.calendar.serviceNote}</p></div>
+</section>
+<script>
+import {calendar,copy,locales,dateText,dayText,monthText,link,todayInPhilly} from '../lib/temple.js';
+const root=document.querySelector('[data-calendar]');
+if(root){
+ const lang=root.dataset.lang,t=copy[lang],yearSelect=root.querySelector('#calendar-year'),monthSelect=root.querySelector('#calendar-month'),results=root.querySelector('#calendar-results'),heading=root.querySelector('#calendar-heading'),paging=root.querySelector('.calendar-paging');
+ const today=todayInPhilly();let view='list';
+ const params=new URLSearchParams(location.search);
+ if(calendar.years.includes(Number(params.get('year'))))yearSelect.value=params.get('year');
+ if(params.has('month')&&Number(params.get('month'))>=0&&Number(params.get('month'))<=12)monthSelect.value=params.get('month');
+ if(params.get('view')==='month')view='month';
+ const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node;};
+ function render(){
+   let year=Number(yearSelect.value),month=Number(monthSelect.value);
+   if(view==='month'&&!month){month=year===Number(today.slice(0,4))?Number(today.slice(5,7)):1;monthSelect.value=String(month);}
+   const entries=calendar.events.filter(e=>e.date.startsWith(`${year}-`)&&(!month||Number(e.date.slice(5,7))===month));
+   const agenda=root.querySelector('#calendar-mobile-agenda');
+   agenda.replaceChildren();agenda.hidden=view!=='month';
+   if(view==='month'){
+     agenda.append(el('h3','agenda-title',lang==='en'?'This month’s observances':lang==='zh-hans'?'本月纪念日':'本月紀念日'));
+     if(!entries.length)agenda.append(el('p','calendar-empty',t.calendar.noEvents));
+     entries.forEach(e=>{
+       const a=el('a','calendar-list-row');a.href=link(lang,`calendar/${e.id}`);
+       const date=el('time');date.dateTime=e.date;date.append(el('span','',monthText(e.date,lang)),el('strong','',dayText(e.date)));
+       const detail=el('div');detail.append(el('h3','',e.title[lang]),el('p','',e.lunar[lang]));
+       a.append(date,detail,el('span','calendar-row-arrow','→'));agenda.append(a);
+     });
+   }
+   heading.textContent=month?dateText(`${year}-${String(month).padStart(2,'0')}-01`,lang,{year:'numeric',month:'long'}):String(year);
+   results.replaceChildren();results.className=`calendar-results ${view==='month'?'calendar-grid':'calendar-list'}`;paging.hidden=view!=='month';
+   root.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===view)));
+   if(view==='list'){
+     if(!entries.length)results.append(el('p','calendar-empty',t.calendar.noEvents));
+     entries.forEach(e=>{
+       const a=el('a',`calendar-list-row ${e.date<today?'past-event':''}`);a.href=link(lang,`calendar/${e.id}`);
+       const date=el('time');date.dateTime=e.date;date.append(el('span','',monthText(e.date,lang)),el('strong','',dayText(e.date)));
+       const detail=el('div');detail.append(el('h3','',e.title[lang]),el('p','',`${e.lunar[lang]} · ${dateText(e.date,lang,{weekday:'long'})}`));
+       const category=el('span','event-category',t.calendar.typeLabels[e.type]);
+       a.append(date,detail,category,el('span','calendar-row-arrow','→'));results.append(a);
+     });
+   }else{
+     t.calendar.weekdays.forEach(w=>results.append(el('div','weekday',w)));
+     const start=new Date(Date.UTC(year,month-1,1)).getUTCDay(),count=new Date(Date.UTC(year,month,0)).getUTCDate();
+     for(let i=0;i<Math.ceil((start+count)/7)*7;i++){
+       const day=i-start+1,cell=el('div','calendar-cell');
+       if(day<1||day>count){cell.classList.add('outside-month');cell.setAttribute('aria-hidden','true');results.append(cell);continue;}
+       const date=`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+       const time=el('time','cell-day',String(day));time.dateTime=date;cell.append(time);
+       if(date===today){cell.classList.add('is-today');time.setAttribute('aria-label',`${t.calendar.today}, ${dateText(date,lang)}`);}
+       entries.filter(e=>e.date===date).forEach(e=>{const a=el('a','cell-event',e.title[lang]);a.href=link(lang,`calendar/${e.id}`);a.title=`${e.title[lang]} · ${e.lunar[lang]}`;a.append(el('span','cell-lunar',e.lunar[lang]));cell.append(a)});
+       results.append(cell);
+     }
+   }
+   root.querySelector('[data-previous]').disabled=year===Math.min(...calendar.years)&&month===1;
+   root.querySelector('[data-next]').disabled=year===Math.max(...calendar.years)&&month===12;
+   const url=new URL(location.href);url.searchParams.set('year',year);url.searchParams.set('month',month);url.searchParams.set('view',view);history.replaceState(null,'',url);
+ }
+ [yearSelect,monthSelect].forEach(s=>s.addEventListener('change',render));
+ root.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;render()}));
+ root.querySelector('[data-today]').addEventListener('click',()=>{const y=Number(today.slice(0,4));yearSelect.value=String(calendar.years.includes(y)?y:calendar.years[0]);monthSelect.value=today.slice(5,7).replace(/^0/,'');render()});
+ const step=(offset)=>{let y=Number(yearSelect.value),m=Number(monthSelect.value)+offset;if(m>12){m=1;y++}if(m<1){m=12;y--}if(calendar.years.includes(y)){yearSelect.value=String(y);monthSelect.value=String(m);render()}};
+ root.querySelector('[data-previous]').addEventListener('click',()=>step(-1));root.querySelector('[data-next]').addEventListener('click',()=>step(1));render();
+}
+</script>

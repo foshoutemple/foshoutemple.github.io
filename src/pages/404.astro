@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {copy,languages,langTags,link} from '../lib/temple.js';
+---
+<Layout lang="zh-hant" title="404">
+  <section class="container language-entry">
+    {languages.map(lang=><div data-notfound-language={lang} lang={langTags[lang]} hidden={lang!=='zh-hant'}><h1>{copy[lang].notFound.title}</h1><p>{copy[lang].notFound.text}</p><a class="button primary" href={link(lang)}>{copy[lang].common.backHome}</a></div>)}
+  </section>
+  <script>
+    const lang=location.pathname.split('/').find(p=>['zh-hans','zh-hant','en'].includes(p))||(/^(zh.*(HK|TW|MO|Hant))/i.test(navigator.language)?'zh-hant':navigator.language.startsWith('zh')?'zh-hans':'en');
+    document.querySelectorAll('[data-notfound-language]').forEach(node=>node.hidden=node.dataset.notfoundLanguage!==lang);document.documentElement.lang=lang;
+  </script>
+</Layout>
