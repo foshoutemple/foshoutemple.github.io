@@ -6,7 +6,7 @@ const {lang='zh-hant',page='',title,description} = Astro.props;
 const t=copy[lang];
 const navPages=['','about','services','offerings','visit'];
 const navKey = (p) => p || 'home';
-const isCurrent = (p) => page===p || (p==='services' && (page.startsWith('services/')||page.startsWith('calendar')||page.startsWith('news/')));
+const isCurrent = (p) => page===p || (p==='' && (page==='news'||page.startsWith('news/'))) || (p==='services' && (page.startsWith('services/')||page.startsWith('calendar')));
 const pageTitle=title ? `${title} · ${t.siteName}` : `${t.siteName} · ${t.city}`;
 const canonical=Astro.site ? new URL(link(lang,page),Astro.site).href : undefined;
 ---

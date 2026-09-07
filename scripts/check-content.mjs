@@ -17,10 +17,18 @@ for(const event of days.events){assert.match(event.date,/^\d{4}-\d{2}-\d{2}$/);a
 const out=path.join(root,'dist');
 async function files(dir){return(await Promise.all((await fs.readdir(dir,{withFileTypes:true})).map(e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]))).flat();}
 const pages=(await files(out)).filter(f=>f.endsWith('.html'));let checked=0;
-for (const lang of languages) for (const route of ['', 'services/']) {
+for (const lang of languages) for (const route of ['', 'news/', 'services/']) {
  const html = await fs.readFile(path.join(out, lang, route, 'index.html'), 'utf8');
- assert.equal([...html.matchAll(/id="latest-news"/g)].length, 1, 'Home and assemblies pages must each have one combined news section.');
- assert(!html.includes('id="recent-services"'), 'The separate recent assemblies section must remain removed.');
+ const assembliesOnly = route === 'services/';
+ const sectionId = assembliesOnly ? 'latest-assemblies' : 'latest-news';
+ const otherId = assembliesOnly ? 'latest-news' : 'latest-assemblies';
+ assert.equal(html.split(`id="${sectionId}"`).length - 1, 1, `Expected one ${sectionId} section on ${lang}/${route}`);
+ assert(!html.includes(`id="${otherId}"`), `Unexpected extra announcements section on ${lang}/${route}`);
+ if (assembliesOnly) {
+  const section = html.match(/<section\b[^>]*id="latest-assemblies"[\s\S]*?<\/section>/)?.[0];
+  assert(section?.includes(copy[lang].updates.assembliesTitle), 'Assemblies page must show the translated latest Dharma Assemblies title.');
+  assert(!section.includes(`href="/${lang}/news/`), 'General news must not appear in the assemblies feed.');
+ }
 }
 for(const file of pages){const html=await fs.readFile(file,'utf8');assert(!html.includes('undefined'),'undefined rendered');for(const m of html.matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)){const raw=m[1];if(/^(https?:|mailto:|data:|tel:)/.test(raw))continue;const relative=decodeURIComponent(raw.split('?')[0]);let target=relative.startsWith('/')?path.join(out,relative):path.resolve(path.dirname(file),relative);try{if((await fs.stat(target)).isDirectory())target=path.join(target,'index.html');await fs.access(target);checked++;}catch{throw new Error(`Broken internal URL ${raw} in ${path.relative(out,file)}`)}}}
 const entry=await fs.readFile(path.join(out,'index.html'),'utf8');

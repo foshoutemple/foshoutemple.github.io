@@ -3,14 +3,17 @@ import {asset, copy, dateText, link} from '../lib/temple.js';
 import {latestUpdates} from '../lib/event-content.js';
 import Icon from './Icon.astro';
 
-const {lang, news, events, preview = false} = Astro.props;
+const {lang, news = [], events = [], preview = false, assembliesOnly = false, pageHeading = false} = Astro.props;
 const t = copy[lang].updates;
-const entries = latestUpdates(news, events);
+const entries = latestUpdates(assembliesOnly ? [] : news, events);
+const sectionId = assembliesOnly ? 'latest-assemblies' : 'latest-news';
+const sectionTitle = assembliesOnly ? t.assembliesTitle : t.newsTitle;
+const Heading = pageHeading ? 'h1' : 'h2';
 ---
-<section class:list={['container', 'temple-updates', {'home-updates': preview}]} id="latest-news" aria-labelledby="latest-news-heading">
-    <div class="updates-heading">
-      <h2 id="latest-news-heading">{t.newsTitle}</h2>
-      {preview && entries.length > 3 && <a class="updates-more" href={`${link(lang, 'services')}#latest-news`} aria-label={`${t.viewAll} · ${t.newsTitle}`}>{t.viewAll}<Icon size={16}/></a>}
+<section class:list={['container', 'temple-updates', {'home-updates': preview}]} id={sectionId} aria-labelledby={`${sectionId}-heading`}>
+    <div class:list={['updates-heading', {'page-heading': pageHeading}]}>
+      <Heading id={`${sectionId}-heading`}>{sectionTitle}</Heading>
+      {preview && entries.length > 3 && <a class="updates-more" href={link(lang, 'news')} aria-label={`${t.viewAll} · ${t.newsTitle}`}>{t.viewAll}<Icon size={16}/></a>}
     </div>
     {entries.length ? <ul class="updates-list">
       {(preview ? entries.slice(0, 3) : entries).map(entry => <li>
@@ -24,13 +27,14 @@ const entries = latestUpdates(news, events);
           <Icon size={18}/>
         </a>
       </li>)}
-    </ul> : <p class="updates-empty">{t.newsEmpty}</p>}
+    </ul> : <p class="updates-empty">{assembliesOnly ? t.assembliesEmpty : t.newsEmpty}</p>}
 </section>
 
 <style>
   .temple-updates {padding-bottom:72px;}
   .home-updates {padding-top:64px;padding-bottom:0;}
   .updates-heading {display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:1px solid var(--ink);padding-bottom:17px;}
+  .updates-heading h1 {margin:0;}
   .updates-heading h2 {font-size:30px;margin:0;}
   :global(html[lang='en']) .updates-heading h2 {font-size:36px;}
   .updates-more {display:inline-flex;align-items:center;gap:8px;font-size:15px;white-space:nowrap;color:var(--red);}

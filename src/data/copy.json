@@ -10,6 +10,7 @@
     },
     "updates": {
       "newsTitle": "最新消息", "newsEmpty": "暂无新消息，敬请留意。",
+      "assembliesTitle": "最新法会", "assembliesEmpty": "法会安排将于此公布。", "backToAssemblies": "返回最新法会",
       "viewAll": "查看全部", "backToNews": "返回最新消息",
       "assemblyDate": "法会日期", "publishedDate": "发布日期", "viewImage": "查看完整图片"
     },
@@ -108,6 +109,7 @@
     },
     "updates": {
       "newsTitle": "最新消息", "newsEmpty": "暫無新消息，敬請留意。",
+      "assembliesTitle": "最新法會", "assembliesEmpty": "法會安排將於此公布。", "backToAssemblies": "返回最新法會",
       "viewAll": "查看全部", "backToNews": "返回最新消息",
       "assemblyDate": "法會日期", "publishedDate": "發布日期", "viewImage": "查看完整圖片"
     },
@@ -206,6 +208,7 @@
     },
     "updates": {
       "newsTitle": "Latest news", "newsEmpty": "No news has been posted yet.",
+      "assembliesTitle": "Latest Dharma Assemblies", "assembliesEmpty": "Dharma Assembly announcements will appear here.", "backToAssemblies": "Back to latest Dharma Assemblies",
       "viewAll": "View all", "backToNews": "Back to latest news",
       "assemblyDate": "Dharma Assembly date", "publishedDate": "Published", "viewImage": "View full image"
     },

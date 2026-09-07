@@ -34,7 +34,7 @@ node scripts/preview.mjs
 | 周日共修时间、活动日历中的停办日期 | [src/data/weekly-practice.json](src/data/weekly-practice.json) |
 | 佛菩萨圣诞与纪念日 | [src/data/holy-days.json](src/data/holy-days.json) |
 | 一般寺院消息 | 复制 [content/news/_template.md](content/news/_template.md) |
-| 法会公告（进入最新消息及活动日历） | 复制 [content/events/_template.md](content/events/_template.md) |
+| 法会公告（进入最新消息、最新法会及活动日历） | 复制 [content/events/_template.md](content/events/_template.md) |
 | 网页照片 | `public/images/` |
 
 更改开放时间或常规日程时，同时核对配置、三种语言的说明与时间表，避免不同页面出现不同安排。
@@ -52,7 +52,7 @@ node scripts/preview.mjs
 | 供养与素斋 | `altar-offerings.jpg` | FS-PH-12 |
 | 首页寺院介绍、认识佛寿寺及来寺与联络的入口照 | `temple-entrance.jpg` | FS-PH-08 |
 
-首页和「法会与共修」页共用一个「最新消息」栏目，合并一般消息与法会公告，不再另设「最近法会」栏。首页显示最新 3 条，超过 3 条时提供「查看全部」；法会页显示全部。暂无内容时保留待更新提示。法会只写入 `content/events/` 一次，会同时进入消息列表和活动日历，无需复制到 `content/news/`。
+首页「最新消息」合并一般消息与法会公告，显示最新 3 条；超过 3 条时，「查看全部」进入 `/语言/news/` 的完整消息列表。「法会与共修」页只显示「最新法会」，收录全部已发布法会，不混入一般消息。暂无内容时保留待更新提示。法会只写入 `content/events/` 一次，会同时进入首页消息列表、最新法会和活动日历，无需复制到 `content/news/`。
 
 新增内容：按上表复制对应模板为同一文件夹下的新 `.md` 文件，例如 `content/news/temple-notice.md` 或 `content/events/dharma-assembly.md`。填入唯一的 `slug`（小写英文字母、数字和连字符）、引号包住的 `YYYY-MM-DD` 日期，以及三语标题和内容。一般消息的 `date` 是发布日期；法会的 `publishedDate` 是公告发布日期，`date` 是法会举行日期，`time` 可填 `"10:00–11:30"` 等具体时间，未确认则保留 `null`。列表按公告发布日期从新到旧排列；旧文件没有 `publishedDate` 时使用 `date` 排序。法会日期始终用于活动日历，已过日期的公告仍保留供查阅。
 
