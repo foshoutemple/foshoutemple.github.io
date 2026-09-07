@@ -45,6 +45,7 @@ node scripts/preview.mjs
 ## 已确认资料
 
 - 寺名：佛壽寺 / Fo Shou Temple；地址：1015 Cherry Street, Philadelphia, PA 19107。
+- 住持：釋賢參法師（简体：释贤参法师）；英文页面写作 Venerable Shi Xian Can，并保留中文法名。
 - 公开邮箱：<foshoutemple@gmail.com>。
 - 每天 9:00–17:00 开放，欢迎礼佛、点香，无需登记。
 - 共修以普通话为主。每次共修后，楼下提供免费素斋；周日流程为上午共修、素斋、下午晚课。欢迎现场供斋。
