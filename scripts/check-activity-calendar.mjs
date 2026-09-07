@@ -43,6 +43,7 @@ const lunarData = JSON.parse(await fs.readFile(new URL('../src/data/lunar-practi
 const copy = JSON.parse(await fs.readFile(new URL('../src/data/copy.json', import.meta.url), 'utf8'));
 const lunar = buildLunarPracticeEvents({...lunarData, time:null, excludedDates:[], timeOverrides:{}}, copy);
 assert.equal(lunar.length, lunarData.dates.length);
+assert.equal(lunar.find(e => e.date === '2026-09-25').time, '10:00', 'Missing global time falls back to the temple default.');
 assert.equal(buildLunarPracticeEvents(lunarData, copy).length, lunarData.dates.length - lunarData.excludedDates.length);
 for (const event of lunar) for (const lang of ['zh-hans', 'zh-hant', 'en']) {
   for (const key of ['title', 'description', 'lunar']) assert(event[key][lang] && !/[{}]/.test(event[key][lang]), `${event.slug}: complete localized ${key}`);

@@ -108,13 +108,13 @@ const dataFile = new URL('src/data/lunar-practice.json', root);
 const reviewFile = new URL('LUNAR_PRACTICE_DATES.md', root);
 const review = '# 农历初一、十五法会日期核对表\n\n'
   + `覆盖公历 ${years.join('、')} 全年，共 ${dates.length} 个日期。以香港天文台逐日 CSV、文本年历及中央气象署月首／大小月表交叉核对；依据与方法见 [CALENDAR_SOURCES.md](CALENDAR_SOURCES.md)。\n\n`
-  + '以下为标准中国农历对应的公历日期，不按费城时差前移。寺院已确认每月初一、十五有法会；具体开始时间尚待公布。\n\n'
+  + '以下为标准中国农历对应的公历日期，不按费城时差前移。寺院已确认每月初一、十五有法会；除非特别指定，法会默认上午 10:00 开始。\n\n'
   + '| 公历日期 | 星期 | 农历年 | 农历日期 |\n|---|---|---|---|\n'
   + dates.map(record => `| ${record.date} | 星期${'日一二三四五六'[civilDate(record.date).getUTCDay()]} | ${record.lunarYear} | ${record.leapMonth ? '闰' : ''}${monthNames[record.lunarMonth - 1]}${dayNames[record.lunarDay - 1]} |`).join('\n') + '\n';
 if (process.argv.includes('--write')) {
   let existing = {};
   try { existing = JSON.parse(await readFile(dataFile, 'utf8')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
-  const data = {time:null, excludedDates:[], timeOverrides:{}, ...existing, years, dates};
+  const data = {time:'10:00', excludedDates:[], timeOverrides:{}, ...existing, years, dates};
   await writeFile(dataFile, `${JSON.stringify(data, null, 2)}\n`);
   await writeFile(reviewFile, review);
 }
@@ -124,6 +124,7 @@ assert.deepEqual(stored.years, years);
 assert.deepEqual(stored.dates, dates, 'Published lunar dates must exactly match the verified source-derived dates.');
 const validTime = time => time === null || (typeof time === 'string' && /^(?:[01]\d|2[0-3]):[0-5]\d$/.test(time));
 assert(validTime(stored.time), 'Use a confirmed HH:MM start time or null.');
+assert.equal(stored.time, '10:00', 'The default lunar first/fifteenth-day assembly time is 10:00.');
 assert(Array.isArray(stored.excludedDates));
 assert.equal(new Set(stored.excludedDates).size, stored.excludedDates.length);
 for (const date of stored.excludedDates) assert(dates.some(record => record.date === date), `Unknown excluded lunar date: ${date}`);

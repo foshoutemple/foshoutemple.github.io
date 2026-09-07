@@ -9,7 +9,7 @@ Verified on 2026-09-06. Output: `website-holy-days.json`.
 - Total: 43 event records. By Gregorian year: 21 in 2026, 20 in 2027, and 2 in January 2028 (the end of lunar year 2027).
 - Event IDs begin with the **lunar year**, while `date` is the Gregorian date. A UI year selector should filter `date`, not the ID.
 - `years: [2026, 2027]` identifies the fully covered Gregorian years. January 2028 is a continuation only, not a full 2028 calendar.
-- Traditional observances do not on their own confirm a service time. The user confirmed the September 10, 2026 Ksitigarbha assembly at **10:00 Philadelphia time**; its `serviceTime` is set accordingly. Other unconfirmed times remain `null`.
+- Traditional observances do not on their own change the date conversion. The user confirmed that Dharma Assemblies default to **10:00 Philadelphia time** unless a special time is specified. The Ksitigarbha assembly on September 10, 2026 is explicitly 10:00; calendar detail pages use 10:00 when a traditional observance has no separate time override.
 
 ## Conversion method
 
@@ -42,7 +42,7 @@ The association's own 2026 calendar also lists Ksitigarbha on 7/29 and Medicine 
 
 ## Lunar first- and fifteenth-day Dharma assemblies
 
-Verified on **2026-09-07**. The user confirmed that the temple holds assemblies on every lunar month's first and fifteenth days. This is separate from the traditional observance reference above. Start times have not been supplied, so `src/data/lunar-practice.json` uses `time: null`.
+Verified on **2026-09-07**. The user confirmed that the temple holds assemblies on every lunar month's first and fifteenth days. This is separate from the traditional observance reference above. The default start time is now **10:00 Philadelphia time** in `src/data/lunar-practice.json`; a date-specific override may provide another time or explicitly leave a time pending.
 
 - Scope: every matching civil date in **Gregorian 2026 and 2027**, including dates belonging to the preceding lunar year. **50 dates: 25 in each year.** This is not a complete Gregorian 2028 schedule.
 - Reviewable output: [all 50 Gregorian / lunar dates](LUNAR_PRACTICE_DATES.md).
@@ -59,4 +59,4 @@ The checker reports the installed ICU's differences as a diagnostic; it never us
 
 ### Website and maintenance behavior
 
-The same verified data feeds the services activity calendar, the full Buddhist calendar and all three language versions of each assembly's detail page. Recurring entries do not fill the latest-news / latest-assemblies announcement feeds. A Sunday, a separately announced assembly and a lunar assembly may share a date; none is silently removed. Cancellations and confirmed times are maintained separately from conversion data, as described in [README.md](README.md).
+The same verified data feeds the services activity calendar, the full Buddhist calendar and all three language versions of each assembly's detail page. Recurring entries do not fill the latest-news / latest-assemblies announcement feeds. A Sunday, a separately announced assembly and a lunar assembly may share a date; none is silently removed. Dharma Assemblies use 10:00 by default; a separate announcement or date override can specify another time. Cancellations and time overrides are maintained separately from conversion data, as described in [README.md](README.md).

@@ -1,10 +1,11 @@
 // Consume verified civil dates. Do not recalculate lunar dates in the browser.
 export function buildLunarPracticeEvents(data, copy) {
+  const defaultTime = data.time ?? '10:00';
   const localized = get => Object.fromEntries(['zh-hans', 'zh-hant', 'en'].map(lang => [lang, get(copy[lang].lunarPractice, lang)]));
   return data.dates.filter(record => !data.excludedDates.includes(record.date)).map(record => ({
     ...record,
     slug: `lunar-${record.date}`,
-    time: Object.hasOwn(data.timeOverrides, record.date) ? data.timeOverrides[record.date] : data.time,
+    time: Object.hasOwn(data.timeOverrides, record.date) ? data.timeOverrides[record.date] : defaultTime,
     title: localized(t => record.lunarDay === 1 ? t.firstTitle : t.fifteenthTitle),
     description: localized(t => t.description),
     lunar: localized((t, lang) => t.dateLabel

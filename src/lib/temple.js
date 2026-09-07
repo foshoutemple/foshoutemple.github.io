@@ -5,6 +5,7 @@ import lunarPractice from '../data/lunar-practice.json';
 import {buildLunarPracticeEvents} from './lunar-practice.js';
 
 export { copy, calendar, site, lunarPractice };
+export const defaultDharmaTime = '10:00';
 export const lunarEvents = buildLunarPracticeEvents(lunarPractice, copy);
 export const calendarEntries = [
   ...calendar.events.map(event => ({...event, route:`calendar/${event.id}`})),

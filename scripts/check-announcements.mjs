@@ -23,6 +23,8 @@ assert.deepEqual(merged.map(entry => `${entry.route}/${entry.slug}`), [
   'news/announcement', 'services/announcement', 'news/text-only', 'services/later-assembly',
 ], 'News and assemblies must merge by publication date, with distinct detail routes.');
 assert.equal(merged[1].date, '2026-09-10', 'The feed must preserve the actual assembly date for the calendar.');
+assert.equal(events[0].time, '10:00', 'An unspecified Dharma Assembly time uses the temple default.');
+assert.equal(events[1].time, '10:00', 'An omitted Dharma Assembly time uses the temple default.');
 assert.equal(JSON.stringify({news, events}), before, 'Merging must not mutate the original calendar or news data.');
 assert.deepEqual(latestUpdates([], []), [], 'A combined feed can be empty.');
 

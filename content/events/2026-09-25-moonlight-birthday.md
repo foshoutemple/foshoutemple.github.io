@@ -3,7 +3,7 @@ draft: false
 slug: 2026-09-25-moonlight-birthday
 publishedDate: "2026-09-07"
 date: "2026-09-25"
-time: null
+time: "10:00"
 image: null
 title:
   zh-hans: "月光菩萨圣诞法会"
