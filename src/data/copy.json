@@ -22,7 +22,7 @@
       "aboutTitle": "樱桃街上的共修道场",
       "aboutText": "佛寿寺位于费城，住持为释贤参法师。日常活动以礼佛、诵经、佛前大供与共修为主。欢迎初次来访的朋友，也欢迎熟悉的面孔，再来一同共修。",
       "offeringsTitle": "共修之后，一同用斋",
-      "offeringsText": "每次共修后，楼下均提供免费素斋，欢迎大众用斋。也欢迎有意供斋的朋友现场参与。",
+      "offeringsText": "每次共修后，楼下均提供免费素斋，欢迎大众用斋。也欢迎大众现场供斋。",
       "visitTitle": "欢迎来寺"
     },
     "about": {
@@ -52,12 +52,12 @@
     },
     "offerings": {
       "title": "供养与素斋",
-      "intro": "佛前大供，共修用斋。欢迎来寺参与，也欢迎现场供斋。",
+      "intro": "佛前大供，共修用斋。欢迎来寺参与，也欢迎大众现场供斋。",
       "offeringTitle": "佛前大供",
       "offeringText": "佛前大供是寺院共修活动的一部分，与诵经、礼佛一同进行。周日常规安排为上午十点至十一点半。",
       "mealTitle": "共修后的免费素斋",
       "mealText": "每次共修后，楼下均提供免费素斋，欢迎大众用斋。周日素斋安排在上午共修之后。",
-      "invitation": "欢迎现场供斋。"
+      "invitation": "欢迎大众现场供斋。"
     },
     "visit": {
       "title": "来寺与联络",
@@ -106,7 +106,7 @@
       "aboutTitle": "櫻桃街上的共修道場",
       "aboutText": "佛壽寺位於費城，住持為釋賢參法師。日常活動以禮佛、誦經、佛前大供與共修為主。歡迎初次來訪的朋友，也歡迎熟悉的面孔，再來一同共修。",
       "offeringsTitle": "共修之後，一同用齋",
-      "offeringsText": "每次共修後，樓下均提供免費素齋，歡迎大眾用齋。也歡迎有意供齋的朋友現場參與。",
+      "offeringsText": "每次共修後，樓下均提供免費素齋，歡迎大眾用齋。也歡迎大眾現場供齋。",
       "visitTitle": "歡迎來寺"
     },
     "about": {
@@ -136,12 +136,12 @@
     },
     "offerings": {
       "title": "供養與素齋",
-      "intro": "佛前大供，共修用齋。歡迎來寺參與，也歡迎現場供齋。",
+      "intro": "佛前大供，共修用齋。歡迎來寺參與，也歡迎大眾現場供齋。",
       "offeringTitle": "佛前大供",
       "offeringText": "佛前大供是寺院共修活動的一部分，與誦經、禮佛一同進行。週日常規安排為上午十點至十一點半。",
       "mealTitle": "共修後的免費素齋",
       "mealText": "每次共修後，樓下均提供免費素齋，歡迎大眾用齋。週日素齋安排在上午共修之後。",
-      "invitation": "歡迎現場供齋。"
+      "invitation": "歡迎大眾現場供齋。"
     },
     "visit": {
       "title": "來寺與聯絡",
@@ -190,7 +190,7 @@
       "aboutTitle": "A place to practice on Cherry Street",
       "aboutText": "Fo Shou Temple in Philadelphia is led by Venerable Shi Xian Can (釋賢參法師). We gather for Buddhist worship, chanting, and offerings before the Buddha, welcoming both first-time visitors and those returning to practice with us.",
       "offeringsTitle": "Share a meal after practice",
-      "offeringsText": "A free vegetarian meal is served downstairs after each communal practice gathering. All are welcome to eat, and offerings for the meals are welcome in person.",
+      "offeringsText": "A free vegetarian meal is served downstairs after each communal practice gathering. Everyone is welcome to eat and to make offerings for the meals in person.",
       "visitTitle": "You are welcome here"
     },
     "about": {
@@ -220,12 +220,12 @@
     },
     "offerings": {
       "title": "Offerings & Vegetarian Meals",
-      "intro": "Join in offerings before the Buddha and share a meal after practice. Offerings for the temple’s meals are welcome in person.",
+      "intro": "Join in offerings before the Buddha and share a meal after practice. Everyone is welcome to make offerings for the temple’s vegetarian meals in person.",
       "offeringTitle": "Offerings before the Buddha",
       "offeringText": "Offerings before the Buddha are part of our communal practice, alongside chanting and worship. The regular Sunday morning gathering runs from 10 to 11:30 a.m.",
       "mealTitle": "A free vegetarian meal after practice",
       "mealText": "A free vegetarian meal is served downstairs after each communal practice gathering. Everyone is welcome to eat. On Sundays, the meal follows morning practice.",
-      "invitation": "Offerings for the temple’s vegetarian meals are welcome in person."
+      "invitation": "Everyone is welcome to make offerings for the temple’s vegetarian meals in person."
     },
     "visit": {
       "title": "Visit & Contact",
