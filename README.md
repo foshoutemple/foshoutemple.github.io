@@ -58,7 +58,7 @@ node scripts/preview.mjs
 
 消息和法会均可配图。先将图片放进 `public/images/`（海报可放入 `public/images/posters/`），再按模板将 `image: null` 改为包含 `src`、原图 `width`／`height`、三语 `alt` 的对象。`src` 从 `/images/` 开始，支持 PNG、JPEG、WebP、AVIF；缺少文件、尺寸无效或缺少任一语言的图片说明会阻止发布。列表显示完整比例的图片预览，详情页显示大图，点击可查看原图。没有图片时保留 `image: null`，仍可发布纯文字消息。
 
-已发布示例：[2026 年 9 月 10 日地藏菩萨圣诞法会](content/events/2026-09-10-ksitigarbha-birthday.md)。地点为佛寿寺，具体时间尚待公布；不要从参考海报沿用其他寺院的时段。海报为繁体中文，日期、地点和说明另以三语网页文字提供。
+已发布示例：[2026 年 9 月 10 日地藏菩萨圣诞法会](content/events/2026-09-10-ksitigarbha-birthday.md)。用户确认上午 10:00（费城当地时间）开始，地点为佛寿寺；同日佛教纪念日条目的 `serviceTime` 已同步。海报为繁体中文，日期、时间、地点和说明另以三语网页文字提供。
 
 未确认时保留 `draft: true`；文案确认后明确改成 `draft: false`，重新构建，检查三语列表与详情页。缺少任何一种语言、日期无效或 slug 重复会阻止发布；法会 slug 不可使用已保留给周日共修页的 `sunday`。页面内容使用模板顶部的 `title` 和 `description` 字段；模板下方的 Markdown 正文不会显示。两份 `_template.md` 请一直保留为草稿，避免将示例发布到官网。
 
