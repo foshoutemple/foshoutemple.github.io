@@ -1,37 +1,34 @@
 ---
-import {copy, dateText, link} from '../lib/temple.js';
+import {asset, copy, dateText, link} from '../lib/temple.js';
+import {latestUpdates} from '../lib/event-content.js';
 import Icon from './Icon.astro';
 
 const {lang, news, events, preview = false} = Astro.props;
 const t = copy[lang].updates;
-const sections = [
-  {id: 'latest-news', title: t.newsTitle, empty: t.newsEmpty, entries: news, route: 'news'},
-  {id: 'recent-services', title: t.servicesTitle, empty: t.servicesEmpty, entries: events, route: 'services'},
-];
+const entries = latestUpdates(news, events);
 ---
-<div class:list={['container', 'temple-updates', {'home-updates': preview}]}>
-  {sections.map(section => <section id={section.id} aria-labelledby={`${section.id}-heading`}>
+<section class:list={['container', 'temple-updates', {'home-updates': preview}]} id="latest-news" aria-labelledby="latest-news-heading">
     <div class="updates-heading">
-      <h2 id={`${section.id}-heading`}>{section.title}</h2>
-      {preview && section.entries.length > 3 && <a class="updates-more" href={`${link(lang, 'services')}#${section.id}`} aria-label={`${t.viewAll} · ${section.title}`}>{t.viewAll}<Icon size={16}/></a>}
+      <h2 id="latest-news-heading">{t.newsTitle}</h2>
+      {preview && entries.length > 3 && <a class="updates-more" href={`${link(lang, 'services')}#latest-news`} aria-label={`${t.viewAll} · ${t.newsTitle}`}>{t.viewAll}<Icon size={16}/></a>}
     </div>
-    {section.entries.length ? <ul class="updates-list">
-      {(preview ? section.entries.slice(0, 3) : section.entries).map(entry => <li>
-        <a class="update-entry" href={link(lang, `${section.route}/${entry.slug}`)}>
-          <div>
-            <time datetime={entry.date}>{dateText(entry.date, lang, {year: 'numeric', month: 'long', day: 'numeric'})}</time>
+    {entries.length ? <ul class="updates-list">
+      {(preview ? entries.slice(0, 3) : entries).map(entry => <li>
+        <a class:list={['update-entry', {'has-image': entry.image}]} href={link(lang, `${entry.route}/${entry.slug}`)}>
+          {entry.image && <img class="update-thumbnail" src={asset(entry.image.src)} width={entry.image.width} height={entry.image.height} alt={entry.image.alt[lang]} loading="lazy" decoding="async"/>}
+          <div class="update-body">
+            <div class="update-meta"><span>{entry.route === 'services' ? t.assemblyDate : t.publishedDate}</span><time datetime={entry.date}>{dateText(entry.date, lang, {year: 'numeric', month: 'long', day: 'numeric'})}</time>{entry.route === 'services' && <span>{entry.time || copy[lang].activityCalendar.pendingTime}</span>}</div>
             <h3>{entry.title[lang]}</h3>
             <p>{entry.description[lang]}</p>
           </div>
           <Icon size={18}/>
         </a>
       </li>)}
-    </ul> : <p class="updates-empty">{section.empty}</p>}
-  </section>)}
-</div>
+    </ul> : <p class="updates-empty">{t.newsEmpty}</p>}
+</section>
 
 <style>
-  .temple-updates {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;padding-bottom:72px;}
+  .temple-updates {padding-bottom:72px;}
   .home-updates {padding-top:64px;padding-bottom:0;}
   .updates-heading {display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:1px solid var(--ink);padding-bottom:17px;}
   .updates-heading h2 {font-size:30px;margin:0;}
@@ -40,19 +37,24 @@ const sections = [
   .updates-empty {color:var(--muted);margin:23px 0 0;font-size:17px;}
   .updates-list {margin:0;padding:0;list-style:none;}
   .updates-list li {border-bottom:1px solid var(--line);}
-  .update-entry {display:flex;justify-content:space-between;gap:24px;padding-block:23px;}
-  .update-entry>div {min-width:0;}
-  .update-entry :global(svg) {flex-shrink:0;margin-top:32px;}
-  .update-entry time {font-size:14px;color:var(--muted);}
+  .update-entry {display:grid;grid-template-columns:minmax(0,1fr) 22px;align-items:center;gap:32px;padding-block:28px;}
+  .update-entry.has-image {grid-template-columns:220px minmax(0,1fr) 22px;}
+  .update-thumbnail {width:100%;height:auto;}
+  .update-body {min-width:0;max-width:65ch;}
+  .update-entry :global(svg) {flex-shrink:0;}
+  .update-meta {display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--muted);}
   .update-entry h3 {font-size:23px;margin-top:5px;overflow-wrap:anywhere;}
   .update-entry p {font-size:16px;line-height:1.8;color:var(--muted);margin:9px 0 0;overflow-wrap:anywhere;}
   .update-entry:hover h3 {text-decoration:underline;}
   @media(max-width:1000px) {
-    .temple-updates {gap:40px;padding-bottom:56px;}
+    .temple-updates {padding-bottom:56px;}
     .home-updates {padding-top:56px;padding-bottom:0;}
   }
   @media(max-width:700px) {
-    .temple-updates {grid-template-columns:1fr;gap:34px;}
+    .update-entry,.update-entry.has-image {grid-template-columns:minmax(0,1fr) 20px;gap:22px 16px;padding-block:24px;}
+    .update-thumbnail {grid-column:1/-1;max-width:340px;justify-self:center;}
+    .update-body {grid-column:1;}
+    .update-entry h3 {font-size:23px;}
     .home-updates {padding-top:44px;}
     .updates-heading {padding-bottom:13px;gap:14px;}
     .updates-heading h2 {font-size:27px;}

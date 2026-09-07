@@ -33,8 +33,8 @@ node scripts/preview.mjs
 | 全站三语文案、开放时间文字及周日流程说明 | [src/data/copy.json](src/data/copy.json) |
 | 周日共修时间、活动日历中的停办日期 | [src/data/weekly-practice.json](src/data/weekly-practice.json) |
 | 佛菩萨圣诞与纪念日 | [src/data/holy-days.json](src/data/holy-days.json) |
-| 最新消息 | 复制 [content/news/_template.md](content/news/_template.md) |
-| 最近法会 | 复制 [content/events/_template.md](content/events/_template.md) |
+| 一般寺院消息 | 复制 [content/news/_template.md](content/news/_template.md) |
+| 法会公告（进入最新消息及活动日历） | 复制 [content/events/_template.md](content/events/_template.md) |
 | 网页照片 | `public/images/` |
 
 更改开放时间或常规日程时，同时核对配置、三种语言的说明与时间表，避免不同页面出现不同安排。
@@ -52,9 +52,13 @@ node scripts/preview.mjs
 | 供养与素斋 | `altar-offerings.jpg` | FS-PH-12 |
 | 首页寺院介绍、认识佛寿寺及来寺与联络的入口照 | `temple-entrance.jpg` | FS-PH-08 |
 
-首页和「法会与共修」页都固定显示「最新消息」与「最近法会」。暂无内容时显示待更新提示，不会隐藏栏目。两页共用内容，无需重复维护；首页各显示最近 3 条，超过 3 条时提供「查看全部」，法会页显示全部。条目按日期从新到旧排列，已过日期的法会保留，方便查阅。
+首页和「法会与共修」页共用一个「最新消息」栏目，合并一般消息与法会公告，不再另设「最近法会」栏。首页显示最新 3 条，超过 3 条时提供「查看全部」；法会页显示全部。暂无内容时保留待更新提示。法会只写入 `content/events/` 一次，会同时进入消息列表和活动日历，无需复制到 `content/news/`。
 
-新增内容：按上表复制对应模板为同一文件夹下的新 `.md` 文件，例如 `content/news/temple-notice.md` 或 `content/events/special-service.md`。填入唯一的 `slug`（小写英文字母、数字和连字符）、引号包住的 `YYYY-MM-DD` 日期，以及三语标题和内容。消息的 `date` 是发布日期；法会的 `date` 是举行日期，`time` 可填 `"10:00–11:30"` 等具体时间，未确认则保留 `null`。
+新增内容：按上表复制对应模板为同一文件夹下的新 `.md` 文件，例如 `content/news/temple-notice.md` 或 `content/events/dharma-assembly.md`。填入唯一的 `slug`（小写英文字母、数字和连字符）、引号包住的 `YYYY-MM-DD` 日期，以及三语标题和内容。一般消息的 `date` 是发布日期；法会的 `publishedDate` 是公告发布日期，`date` 是法会举行日期，`time` 可填 `"10:00–11:30"` 等具体时间，未确认则保留 `null`。列表按公告发布日期从新到旧排列；旧文件没有 `publishedDate` 时使用 `date` 排序。法会日期始终用于活动日历，已过日期的公告仍保留供查阅。
+
+消息和法会均可配图。先将图片放进 `public/images/`（海报可放入 `public/images/posters/`），再按模板将 `image: null` 改为包含 `src`、原图 `width`／`height`、三语 `alt` 的对象。`src` 从 `/images/` 开始，支持 PNG、JPEG、WebP、AVIF；缺少文件、尺寸无效或缺少任一语言的图片说明会阻止发布。列表显示完整比例的图片预览，详情页显示大图，点击可查看原图。没有图片时保留 `image: null`，仍可发布纯文字消息。
+
+已发布示例：[2026 年 9 月 10 日地藏菩萨圣诞法会](content/events/2026-09-10-ksitigarbha-birthday.md)。地点为佛寿寺，具体时间尚待公布；不要从参考海报沿用其他寺院的时段。海报为繁体中文，日期、地点和说明另以三语网页文字提供。
 
 未确认时保留 `draft: true`；文案确认后明确改成 `draft: false`，重新构建，检查三语列表与详情页。缺少任何一种语言、日期无效或 slug 重复会阻止发布；法会 slug 不可使用已保留给周日共修页的 `sunday`。页面内容使用模板顶部的 `title` 和 `description` 字段；模板下方的 Markdown 正文不会显示。两份 `_template.md` 请一直保留为草稿，避免将示例发布到官网。
 

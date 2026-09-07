@@ -3,6 +3,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import './check-activity-calendar.mjs';
+import './check-announcements.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const read=async(p)=>JSON.parse(await fs.readFile(path.join(root,p),'utf8'));
 const copy=await read('src/data/copy.json'),days=await read('src/data/holy-days.json'),site=await read('src/data/site.json');
@@ -16,6 +17,11 @@ for(const event of days.events){assert.match(event.date,/^\d{4}-\d{2}-\d{2}$/);a
 const out=path.join(root,'dist');
 async function files(dir){return(await Promise.all((await fs.readdir(dir,{withFileTypes:true})).map(e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]))).flat();}
 const pages=(await files(out)).filter(f=>f.endsWith('.html'));let checked=0;
+for (const lang of languages) for (const route of ['', 'services/']) {
+ const html = await fs.readFile(path.join(out, lang, route, 'index.html'), 'utf8');
+ assert.equal([...html.matchAll(/id="latest-news"/g)].length, 1, 'Home and assemblies pages must each have one combined news section.');
+ assert(!html.includes('id="recent-services"'), 'The separate recent assemblies section must remain removed.');
+}
 for(const file of pages){const html=await fs.readFile(file,'utf8');assert(!html.includes('undefined'),'undefined rendered');for(const m of html.matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)){const raw=m[1];if(/^(https?:|mailto:|data:|tel:)/.test(raw))continue;const relative=decodeURIComponent(raw.split('?')[0]);let target=relative.startsWith('/')?path.join(out,relative):path.resolve(path.dirname(file),relative);try{if((await fs.stat(target)).isDirectory())target=path.join(target,'index.html');await fs.access(target);checked++;}catch{throw new Error(`Broken internal URL ${raw} in ${path.relative(out,file)}`)}}}
 const entry=await fs.readFile(path.join(out,'index.html'),'utf8');
 const languageScript=[...entry.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]).find(s=>s.includes('navigator.languages'));

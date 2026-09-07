@@ -15,6 +15,30 @@ export function normalizeEventDate(value, source) {
   return date;
 }
 
+function localizedText(value, field, source) {
+  for (const lang of ['zh-hans', 'zh-hant', 'en']) {
+    if (typeof value?.[lang] !== 'string' || !value[lang].trim()) {
+      throw new Error(`Missing ${field}.${lang} in ${source}: published entries need all three languages.`);
+    }
+  }
+}
+
+function announcementImage(image, source) {
+  if (image == null) return null;
+  if (typeof image !== 'object' || typeof image.src !== 'string' ||
+      !/^\/images\/[^?#\\%]+\.(?:png|jpe?g|webp|avif)$/i.test(image.src) ||
+      image.src.split('/').some(part => part === '.' || part === '..')) {
+    throw new Error(`Invalid image.src in ${source}: use a local image under /images/.`);
+  }
+  for (const dimension of ['width', 'height']) {
+    if (!Number.isInteger(image[dimension]) || image[dimension] <= 0) {
+      throw new Error(`Invalid image.${dimension} in ${source}: use the original image dimensions.`);
+    }
+  }
+  localizedText(image.alt, 'image.alt', source);
+  return image;
+}
+
 function publishedEntries(modules, reservedSlugs = []) {
   const slugs = new Set(reservedSlugs);
   return Object.entries(modules)
@@ -25,14 +49,10 @@ function publishedEntries(modules, reservedSlugs = []) {
         throw new Error(`Invalid or duplicate slug in ${source}: use a unique lowercase name with hyphens.`);
       }
       slugs.add(entry.slug);
-      for (const field of ['title', 'description']) {
-        for (const lang of ['zh-hans', 'zh-hant', 'en']) {
-          if (typeof entry[field]?.[lang] !== 'string' || !entry[field][lang].trim()) {
-            throw new Error(`Missing ${field}.${lang} in ${source}: published entries need all three languages.`);
-          }
-        }
-      }
-      return {...entry, date: normalizeEventDate(entry.date, source)};
+      for (const field of ['title', 'description']) localizedText(entry[field], field, source);
+      const date = normalizeEventDate(entry.date, source);
+      const publishedDate = entry.publishedDate == null ? date : normalizeEventDate(entry.publishedDate, source);
+      return {...entry, date, publishedDate, image: announcementImage(entry.image, source)};
     })
     .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
 }
@@ -43,4 +63,12 @@ export function publishedEvents(modules) {
 
 export function publishedNews(modules) {
   return publishedEntries(modules);
+}
+
+export function latestUpdates(news, events) {
+  return [
+    ...news.map(entry => ({...entry, route: 'news'})),
+    ...events.map(entry => ({...entry, route: 'services'})),
+  ].sort((a, b) => (b.publishedDate || b.date).localeCompare(a.publishedDate || a.date)
+    || b.date.localeCompare(a.date) || a.route.localeCompare(b.route) || a.slug.localeCompare(b.slug));
 }

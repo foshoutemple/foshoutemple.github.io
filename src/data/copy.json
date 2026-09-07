@@ -9,9 +9,9 @@
       "offerings": { "alt": "佛像前陈设供花，来访者身旁的供桌上摆放着点亮的供灯", "caption": "佛前供灯与供花" }
     },
     "updates": {
-      "newsTitle": "最新消息", "servicesTitle": "最近法会",
-      "newsEmpty": "暂无新消息，敬请留意。", "servicesEmpty": "法会安排将于此公布。",
-      "viewAll": "查看全部", "backToNews": "返回最新消息"
+      "newsTitle": "最新消息", "newsEmpty": "暂无新消息，敬请留意。",
+      "viewAll": "查看全部", "backToNews": "返回最新消息",
+      "assemblyDate": "法会日期", "publishedDate": "发布日期", "viewImage": "查看完整图片"
     },
     "activityCalendar": {
       "title": "活动日历", "intro": "查阅周日共修与已公布的法会。所有时间均为费城当地时间。",
@@ -107,9 +107,9 @@
       "offerings": { "alt": "佛像前陳設供花，來訪者身旁的供桌上擺放著點亮的供燈", "caption": "佛前供燈與供花" }
     },
     "updates": {
-      "newsTitle": "最新消息", "servicesTitle": "最近法會",
-      "newsEmpty": "暫無新消息，敬請留意。", "servicesEmpty": "法會安排將於此公布。",
-      "viewAll": "查看全部", "backToNews": "返回最新消息"
+      "newsTitle": "最新消息", "newsEmpty": "暫無新消息，敬請留意。",
+      "viewAll": "查看全部", "backToNews": "返回最新消息",
+      "assemblyDate": "法會日期", "publishedDate": "發布日期", "viewImage": "查看完整圖片"
     },
     "activityCalendar": {
       "title": "活動日曆", "intro": "查閱週日共修與已公布的法會。所有時間均為費城當地時間。",
@@ -205,9 +205,9 @@
       "offerings": { "alt": "Flower offerings stand before Buddha statues, with lit offering lamps on a table beside visitors", "caption": "Light and flower offerings before the Buddhas" }
     },
     "updates": {
-      "newsTitle": "Latest news", "servicesTitle": "Recent Dharma Assemblies",
-      "newsEmpty": "No news has been posted yet.", "servicesEmpty": "Dharma Assembly announcements will be posted here.",
-      "viewAll": "View all", "backToNews": "Back to latest news"
+      "newsTitle": "Latest news", "newsEmpty": "No news has been posted yet.",
+      "viewAll": "View all", "backToNews": "Back to latest news",
+      "assemblyDate": "Dharma Assembly date", "publishedDate": "Published", "viewImage": "View full image"
     },
     "activityCalendar": {
       "title": "Activity calendar", "intro": "Find Sunday practice and announced Dharma assemblies. All times are local to Philadelphia.",

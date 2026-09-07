@@ -1,0 +1,38 @@
+---
+import {asset, copy, link} from '../lib/temple.js';
+import Icon from './Icon.astro';
+const {lang, entry, isEvent = false} = Astro.props;
+const t = copy[lang];
+---
+<section class:list={['container', 'announcement-detail', {'has-image': entry.image}]}>
+  {entry.image && <figure class="announcement-image">
+    <a href={asset(entry.image.src)} target="_blank" rel="noopener noreferrer">
+      <img src={asset(entry.image.src)} width={entry.image.width} height={entry.image.height} alt={entry.image.alt[lang]} decoding="async"/>
+      <span class="image-action">{t.updates.viewImage}<Icon name="external" size={16}/></span>
+    </a>
+  </figure>}
+  <div class="prose">
+    <p class="large-copy">{entry.description[lang]}</p>
+    {isEvent && <>
+      <p>{entry.time || t.activityCalendar.pendingTime}</p>
+      <p>{t.common.mandarin} · {t.common.noRegistration}</p>
+      <p>{t.common.freeMeal}</p>
+      <a class="button primary" href={link(lang,'visit')}>{t.nav.visit}<Icon/></a>
+    </>}
+  </div>
+</section>
+<style>
+  .announcement-detail {padding-bottom:90px;}
+  .announcement-detail.has-image {display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:72px;align-items:start;}
+  .announcement-image {margin:0;max-width:560px;}
+  .announcement-image img {width:100%;height:auto;}
+  .image-action {display:flex;align-items:center;gap:10px;margin-top:14px;font-size:15px;color:var(--red);}
+  .announcement-image a:hover .image-action {text-decoration:underline;}
+  .prose {max-width:65ch;min-width:0;}
+  .prose .large-copy {margin-top:0;}
+  @media(max-width:1000px) {.announcement-detail.has-image {gap:36px;}}
+  @media(max-width:700px) {
+    .announcement-detail {padding-bottom:50px;}
+    .announcement-detail.has-image {grid-template-columns:1fr;gap:30px;}
+  }
+</style>
