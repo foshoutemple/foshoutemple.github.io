@@ -5,6 +5,7 @@ import EventRows from '../../components/EventRows.astro';
 import Schedule from '../../components/Schedule.astro';
 import Calendar from '../../components/Calendar.astro';
 import TempleUpdates from '../../components/TempleUpdates.astro';
+import ActivityCalendar from '../../components/ActivityCalendar.astro';
 import {copy,calendar,site,languages,link,asset,dateText,getUpcoming} from '../../lib/temple.js';
 import {publishedEvents,publishedNews} from '../../lib/event-content.js';
 import {nextSundayDate} from '../../lib/live-dates.js';
@@ -60,6 +61,7 @@ const sundayDate=nextSundayDate();
 {(page==='services'||page==='services/sunday') && <>
  <section class="container page-heading"><h1>{page==='services/sunday'?t.home.weeklyTitle:t.services.title}</h1><p>{t.services.intro}</p><div class="inline-facts"><span>{t.common.noRegistration}</span><span>{t.common.mandarin}</span><span>{t.common.freeMeal}</span></div></section>
  {page==='services' && <TempleUpdates lang={lang} news={news} events={customEvents}/>}
+ {page==='services' && <ActivityCalendar lang={lang} events={customEvents}/>}
  <section class="container service-main"><div class="service-photo"><img src={asset('images/shared-practice.jpg')} width="1280" height="960" alt={t.common.heroAlt}/><p>{t.common.photoCaption}</p></div><div><h2>{t.services.regularLabel}</h2><Schedule lang={lang}/><p class="small-note">{t.services.noticeText}</p></div></section>
  <section class="calendar-band"><div class="container section calendar-preview"><div class="section-intro"><h2>{t.services.specialTitle}</h2><p>{t.services.specialText}</p><a class="text-link" href={link(lang,'calendar')}>{fullCalendar}<Icon/></a></div><EventRows lang={lang} events={upcoming}/></div></section>
 </>}

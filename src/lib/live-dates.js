@@ -1,9 +1,9 @@
-import { dateObject, todayInPhilly } from './temple.js';
+import { todayInPhilly } from './temple.js';
+import { nextPracticeDate } from './activity-calendar.js';
+import regular from '../data/weekly-practice.json';
 
 export function nextSundayDate(today = todayInPhilly()) {
-  const sunday = dateObject(today);
-  sunday.setUTCDate(sunday.getUTCDate() + (7 - sunday.getUTCDay()) % 7);
-  return sunday.toISOString().slice(0, 10);
+  return nextPracticeDate(today, regular.excludedDates);
 }
 
 const observers = new Set();

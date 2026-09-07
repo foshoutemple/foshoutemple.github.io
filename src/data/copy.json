@@ -7,6 +7,14 @@
       "newsEmpty": "暂无新消息，敬请留意。", "servicesEmpty": "法会安排将于此公布。",
       "viewAll": "查看全部", "backToNews": "返回最新消息"
     },
+    "activityCalendar": {
+      "title": "活动日历", "intro": "查阅周日共修与已公布的法会。所有时间均为费城当地时间。",
+      "weeklyTitle": "周日共修", "regularLabel": "常规共修", "serviceLabel": "法会",
+      "navigation": "活动日历月份", "thisMonth": "本月", "allMonth": "查看整月",
+      "selectDay": "点选有标记的日期，查看当天活动。", "monthEvents": "本月活动",
+      "empty": "本月暂无已公布的活动。", "pendingTime": "法会时间待公布",
+      "noScript": "启用 JavaScript 可切换月份和点选日期；常规共修安排见下方。"
+    },
     "city": "美国 · 费城",
     "nav": { "home": "首页", "about": "认识佛寿寺", "services": "法会与共修", "offerings": "供养与素斋", "visit": "来寺与联络", "calendar": "佛教纪念日" },
     "common": {
@@ -91,6 +99,14 @@
       "newsEmpty": "暫無新消息，敬請留意。", "servicesEmpty": "法會安排將於此公布。",
       "viewAll": "查看全部", "backToNews": "返回最新消息"
     },
+    "activityCalendar": {
+      "title": "活動日曆", "intro": "查閱週日共修與已公布的法會。所有時間均為費城當地時間。",
+      "weeklyTitle": "週日共修", "regularLabel": "常規共修", "serviceLabel": "法會",
+      "navigation": "活動日曆月份", "thisMonth": "本月", "allMonth": "查看整月",
+      "selectDay": "點選有標記的日期，查看當天活動。", "monthEvents": "本月活動",
+      "empty": "本月暫無已公布的活動。", "pendingTime": "法會時間待公布",
+      "noScript": "啟用 JavaScript 可切換月份和點選日期；常規共修安排見下方。"
+    },
     "city": "美國 · 費城",
     "nav": { "home": "首頁", "about": "認識佛壽寺", "services": "法會與共修", "offerings": "供養與素齋", "visit": "來寺與聯絡", "calendar": "佛教紀念日" },
     "common": {
@@ -174,6 +190,14 @@
       "newsTitle": "Latest news", "servicesTitle": "Recent services",
       "newsEmpty": "No news has been posted yet.", "servicesEmpty": "Service announcements will be posted here.",
       "viewAll": "View all", "backToNews": "Back to latest news"
+    },
+    "activityCalendar": {
+      "title": "Activity calendar", "intro": "Find Sunday practice and announced temple services. All times are local to Philadelphia.",
+      "weeklyTitle": "Sunday practice", "regularLabel": "Regular practice", "serviceLabel": "Services",
+      "navigation": "Activity calendar month", "thisMonth": "This month", "allMonth": "View full month",
+      "selectDay": "Select a marked date to see its activities.", "monthEvents": "This month’s activities",
+      "empty": "No activities are listed for this month.", "pendingTime": "Service time to be announced",
+      "noScript": "Enable JavaScript to change months and select dates. The regular practice schedule is below."
     },
     "city": "Philadelphia, Pennsylvania",
     "nav": { "home": "Home", "about": "Our Temple", "services": "Services & Practice", "offerings": "Offerings & Meals", "visit": "Visit & Contact", "calendar": "Buddhist Calendar" },

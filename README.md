@@ -31,7 +31,7 @@ node scripts/preview.mjs
 |---|---|
 | 邮箱、地址、地图、社交链接、开放时间配置 | [src/data/site.json](src/data/site.json) |
 | 全站三语文案、开放时间文字及周日流程说明 | [src/data/copy.json](src/data/copy.json) |
-| 周日时间表中显示的具体时段 | [src/components/Schedule.astro](src/components/Schedule.astro) |
+| 周日共修时间、活动日历中的停办日期 | [src/data/weekly-practice.json](src/data/weekly-practice.json) |
 | 佛菩萨圣诞与纪念日 | [src/data/holy-days.json](src/data/holy-days.json) |
 | 最新消息 | 复制 [content/news/_template.md](content/news/_template.md) |
 | 最近法会 | 复制 [content/events/_template.md](content/events/_template.md) |
@@ -44,6 +44,10 @@ node scripts/preview.mjs
 新增内容：按上表复制对应模板为同一文件夹下的新 `.md` 文件，例如 `content/news/temple-notice.md` 或 `content/events/special-service.md`。填入唯一的 `slug`（小写英文字母、数字和连字符）、引号包住的 `YYYY-MM-DD` 日期，以及三语标题和内容。消息的 `date` 是发布日期；法会的 `date` 是举行日期，`time` 可填 `"10:00–11:30"` 等具体时间，未确认则保留 `null`。
 
 未确认时保留 `draft: true`；文案确认后明确改成 `draft: false`，重新构建，检查三语列表与详情页。缺少任何一种语言、日期无效或 slug 重复会阻止发布；法会 slug 不可使用已保留给周日共修页的 `sunday`。页面内容使用模板顶部的 `title` 和 `description` 字段；模板下方的 Markdown 正文不会显示。两份 `_template.md` 请一直保留为草稿，避免将示例发布到官网。
+
+「法会与共修」页另有[活动日历](https://foshoutemple.github.io/zh-hans/services/#activity-calendar)，支持翻月、返回本月及点选日期查看当天活动。默认显示费城当前月份，语言切换会保留选定的月份和日期。每周日常规共修自动列入；已发布的 `content/events/` 法会按举行日期加入日历，并连到对应详情页。`content/news/` 消息和佛教纪念日不自动转为活动安排。
+
+周日的上午起止时间与下午晚课开始时间在 `src/data/weekly-practice.json` 维护，日历与常规时间表共用。`excludedDates` 默认为空数组；若某个周日停办常规共修，或改为特别法会，可加入该周日的 `"YYYY-MM-DD"` 日期，日历会移除当日的常规共修，但保留已发布的特别法会；首页的下一次常规共修日期也会跳过该日。临时调整仍应同时发布公告说明。只修改日期或时间配置后，亦须提交并重新发布。
 
 日历由用户每年核对更新。当前有 43 条日期，完整覆盖公历 2026、2027 年，并保留农历 2027 年末延续至 2028 年 1 月的两条记录；这不代表已提供完整 2028 年日历。日期依据见 [CALENDAR_SOURCES.md](CALENDAR_SOURCES.md)。`serviceTime: null` 表示具体法会时间待公布；不要把纪念日直接当成已确认的法会时刻。
 

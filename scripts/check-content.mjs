@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
+import './check-activity-calendar.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const read=async(p)=>JSON.parse(await fs.readFile(path.join(root,p),'utf8'));
 const copy=await read('src/data/copy.json'),days=await read('src/data/holy-days.json'),site=await read('src/data/site.json');
