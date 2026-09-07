@@ -28,4 +28,34 @@ for(const [preferences,saved,expected] of [
  vm.runInNewContext(languageScript,{navigator:{languages:preferences,language:preferences[0]},localStorage:{getItem:()=>saved},location:{search:'?year=2027',hash:'#main',replace:url=>destination=url}});
  assert.equal(destination,`/${expected}/?year=2027#main`);
 }
-console.log(`PASS: ${languages.length} complete languages; ${days.events.length} dated observances; ${pages.length} pages; ${checked} internal links/assets; 9 browser-language cases.`);
+const origin=new URL(process.env.SITE_URL || 'https://foshoutemple.github.io');
+const sitemapIndex=await fs.readFile(path.join(out,'sitemap-index.xml'),'utf8');
+const sitemapFiles=[...sitemapIndex.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]));
+assert(sitemapFiles.length,'Sitemap index must reference a sitemap');
+const sitemapUrls=[];
+for(const url of sitemapFiles){
+ assert.equal(url.origin,origin.origin,'Sitemap must use the deployed domain');
+ const xml=await fs.readFile(path.join(out,url.pathname),'utf8');
+ for(const entry of xml.matchAll(/<url>([\s\S]*?)<\/url>/g)){
+  const location=entry[1].match(/<loc>([^<]+)<\/loc>/)?.[1];
+  assert(location,'Each sitemap entry must have a URL');
+  sitemapUrls.push(location);
+  for(const tag of ['zh-Hans','zh-Hant','en'])assert(entry[1].includes(`hreflang="${tag}"`),`Missing ${tag} sitemap alternate for ${location}`);
+ }
+}
+const contentPages=pages.filter(file=>/^(zh-hans|zh-hant|en)\//.test(path.relative(out,file).replaceAll('\\','/')));
+const expectedUrls=[];
+for(const file of contentPages){
+ const pathname=`/${path.relative(out,file).replaceAll('\\','/').replace(/index\.html$/,'')}`;
+ const expected=new URL(pathname,origin).href;
+ expectedUrls.push(expected);
+ const html=await fs.readFile(file,'utf8');
+ assert(html.includes(`rel="canonical" href="${expected}"`),`Incorrect canonical URL for ${pathname}`);
+ assert(!/<meta\b(?=[^>]*name="(?:robots|googlebot)")(?=[^>]*content="[^"]*(?:noindex|none))[^>]*>/i.test(html),`Indexing is blocked for ${pathname}`);
+}
+assert.deepEqual(sitemapUrls.slice().sort(),expectedUrls.slice().sort(),'Sitemap must include every content page exactly once');
+const robots=await fs.readFile(path.join(out,'robots.txt'),'utf8');
+assert.match(robots,/User-agent: \*/);
+assert(!/^Disallow:\s*\/\s*$/m.test(robots),'robots.txt must not block the website');
+assert(robots.includes(`Sitemap: ${new URL('/sitemap-index.xml',origin).href}`));
+console.log(`PASS: ${languages.length} complete languages; ${days.events.length} dated observances; ${pages.length} pages; ${checked} internal links/assets; 9 browser-language cases; ${sitemapUrls.length} sitemap URLs with language alternates and valid canonicals.`);

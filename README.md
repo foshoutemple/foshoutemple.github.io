@@ -66,3 +66,17 @@ node scripts/preview.mjs
 发布成功后，检查首页语言选择，以及 `/zh-hans/`、`/zh-hant/`、`/en/` 的相关页面、图片与日期。若需要撤回一次内容修改，可在本地对对应提交执行 `git revert`，再推送到 `main`，网站会自动重新发布。
 
 配置依据：[Astro 的 GitHub Pages 指南](https://docs.astro.build/en/guides/deploy/github/)及 [GitHub Pages 自定义工作流说明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
+
+## Google 搜索收录
+
+使用当前 GitHub Pages 网址即可被搜索引擎收录，不必先购买独立域名。网站可访问与已经被 Google 收录是两件事；新站的抓取需要时间，提交请求也不保证立即收录或排名。
+
+每次构建会自动生成 [站点地图](https://foshoutemple.github.io/sitemap-index.xml)，列出全部三语内容页面及对应语言版本；语言跳转入口和 404 页面不列入。根目录的 [robots.txt](https://foshoutemple.github.io/robots.txt) 允许抓取并标明站点地图位置。新增法会后无需手动维护站点地图。
+
+下一步使用寺院邮箱 `foshoutemple@gmail.com` 登录 [Google Search Console](https://search.google.com/search-console/about)，添加 **URL prefix / 网址前缀** 资源 `https://foshoutemple.github.io/`。完成 Google 提供的 HTML 文件或 meta 标签所有权验证后，在 **Sitemaps / 站点地图** 提交 `sitemap-index.xml`。这里不使用需要 DNS 管理权限的 Domain / 网域验证。
+
+在 **URL inspection / 网址检查** 分别检查 `/zh-hans/`、`/zh-hant/` 和 `/en/`，按需点击 **Request indexing / 请求编入索引**。不要重复提交同一网址；过几天查看抓取和收录状态即可。保留验证文件或标签，以免失去所有权验证。
+
+也可在寺院管理的 Google Maps 商家资料、Facebook 与 YouTube 简介中填写官网地址，方便信众访问及搜索引擎发现。添加站点地图本身不会自动建立 Search Console 资源，也不代表已向 Google 提交收录请求。
+
+参考：[Google 关于请求抓取的说明](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl)、[Search Console 资源类型与验证](https://support.google.com/webmasters/answer/34592)。
