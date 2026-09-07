@@ -1,6 +1,10 @@
 # 佛壽寺官方网站
 
-第一版已实现为 Astro 静态网站，提供简体中文、繁体中文和英文。GitHub Pages 部署流程已备妥；当前尚未发布，待寺方 GitHub 账号及仓库建立后执行首次部署。
+佛壽寺官方网站使用 Astro 构建，提供简体中文、繁体中文和英文。首次访问按浏览器语言选择版本，也可手动切换。
+
+- 官网：https://foshoutemple.github.io/
+- 代码仓库：https://github.com/foshoutemple/foshoutemple.github.io
+- 发布记录：[GitHub Actions](https://github.com/foshoutemple/foshoutemple.github.io/actions)
 
 ## 本地运行
 
@@ -49,14 +53,16 @@ node scripts/preview.mjs
 
 ## GitHub Pages 部署
 
-使用寺方拥有的 GitHub 账号，建立公开仓库 `USERNAME.github.io`，其中 `USERNAME` 必须替换为该账号的实际用户名。把本目录作为仓库根目录，默认分支使用 `main`。部署后首页地址为 `https://USERNAME.github.io/`。
+网站由寺方 GitHub 账号 `foshoutemple` 持有，公开仓库为 `foshoutemple/foshoutemple.github.io`。本目录是仓库根目录，发布分支是 `main`，首页地址为 https://foshoutemple.github.io/ 。
 
 首次设置：在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。将网站文件推送到 `main` 后，[部署工作流](.github/workflows/deploy.yml)会安装锁定的依赖、构建、检查内容与内部链接，再发布 `dist/`。也可从 **Actions → Deploy to GitHub Pages → Run workflow** 手动运行，选择 `main` 分支。
 
-工作流使用 Node.js 24、pnpm 11.19.0，并从仓库所有者自动取得 `SITE_URL`；`BASE_PATH` 为 `/`，适用于 `USERNAME.github.io` 这种账号主页仓库。无需额外保存访问令牌或部署密钥。若将来改为其他仓库名或独立域名，需要同步修改网址配置并重新检查链接。
+工作流使用 Node.js 24、pnpm 11.19.0，并从仓库所有者自动取得 `SITE_URL`；`BASE_PATH` 为 `/`，适用于当前账号主页仓库。无需额外保存访问令牌或部署密钥。若将来改为其他仓库名或独立域名，需要同步修改网址配置并重新检查链接。
 
 公开仓库建议只收录：`.github/`、`.gitignore`、`astro.config.mjs`、`package.json`、`pnpm-lock.yaml`、`pnpm-workspace.yaml`、`src/`、`public/`、`scripts/`、`content/`、`README.md` 和 `CALENDAR_SOURCES.md`。推送前检查暂存文件清单。`.gitignore` 已排除依赖、构建产物、日志、截图、原图副本、环境变量文件与内部规划文档。
 
-首次部署成功后，检查首页语言选择，以及 `/zh-hans/`、`/zh-hant/`、`/en/` 的各子页面、图片、字体及 404 页面。本文件中的 `USERNAME` 是占位符，不代表已经注册的账号或已发布的网址。
+日常发布：修改上述内容文件，提交并推送到 `main`。工作流会自动检查并更新官网。也可在 GitHub 仓库网页中打开文件，点击编辑，修改后提交到 `main`。新增法会时请同时填写三种语言；提交后到 Actions 查看运行结果，绿色表示发布成功。
+
+发布成功后，检查首页语言选择，以及 `/zh-hans/`、`/zh-hant/`、`/en/` 的相关页面、图片与日期。若需要撤回一次内容修改，可在本地对对应提交执行 `git revert`，再推送到 `main`，网站会自动重新发布。
 
 配置依据：[Astro 的 GitHub Pages 指南](https://docs.astro.build/en/guides/deploy/github/)及 [GitHub Pages 自定义工作流说明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
