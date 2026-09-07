@@ -5,7 +5,14 @@ publishedDate: "2026-09-07"
 date: "2026-09-25"
 time: "10:00"
 replacesLunarPractice: true
-image: null
+image:
+  src: "/images/posters/moonlight-bodhisattva-birthday-2026.png"
+  width: 1024
+  height: 1536
+  alt:
+    zh-hans: "月光菩萨圣诞法会海报"
+    zh-hant: "月光菩薩聖誕法會海報"
+    en: "Poster for Moonlight Bodhisattva Birthday Dharma Assembly"
 title:
   zh-hans: "月光菩萨圣诞法会"
   zh-hant: "月光菩薩聖誕法會"
