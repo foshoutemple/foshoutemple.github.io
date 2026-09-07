@@ -4,6 +4,7 @@ slug: 2026-09-25-moonlight-birthday
 publishedDate: "2026-09-07"
 date: "2026-09-25"
 time: "10:00"
+replacesLunarPractice: true
 image: null
 title:
   zh-hans: "月光菩萨圣诞法会"

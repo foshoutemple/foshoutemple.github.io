@@ -2,11 +2,12 @@ import copy from '../data/copy.json';
 import calendar from '../data/holy-days.json';
 import site from '../data/site.json';
 import lunarPractice from '../data/lunar-practice.json';
-import {buildLunarPracticeEvents} from './lunar-practice.js';
+import {buildLunarPracticeEvents, suppressOverlappingLunarEvents} from './lunar-practice.js';
 
 export { copy, calendar, site, lunarPractice };
 export const defaultDharmaTime = '10:00';
-export const lunarEvents = buildLunarPracticeEvents(lunarPractice, copy);
+const generatedLunarEvents = buildLunarPracticeEvents(lunarPractice, copy);
+export const lunarEvents = suppressOverlappingLunarEvents(generatedLunarEvents, calendar.events);
 export const calendarEntries = [
   ...calendar.events.map(event => ({...event, route:`calendar/${event.id}`})),
   ...lunarEvents.map(event => ({...event, id:event.slug, type:'assembly', route:`services/${event.slug}`})),

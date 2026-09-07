@@ -7,17 +7,24 @@ import Calendar from '../../components/Calendar.astro';
 import TempleUpdates from '../../components/TempleUpdates.astro';
 import ActivityCalendar from '../../components/ActivityCalendar.astro';
 import AnnouncementDetail from '../../components/AnnouncementDetail.astro';
-import {copy,calendar,site,languages,link,asset,dateText,getUpcoming,lunarEvents,defaultDharmaTime} from '../../lib/temple.js';
+import {copy,calendar,calendarEntries,site,languages,link,asset,dateText,getUpcoming,lunarEvents,defaultDharmaTime} from '../../lib/temple.js';
 import {publishedEvents,publishedNews} from '../../lib/event-content.js';
+import {suppressOverlappingLunarEvents} from '../../lib/lunar-practice.js';
 import {nextSundayDate} from '../../lib/live-dates.js';
 
 const customEvents=publishedEvents(import.meta.glob('../../../content/events/*.md',{eager:true}),lunarEvents.map(e=>e.slug));
-const assemblyEvents=[...customEvents,...lunarEvents];
+const assemblyLunarEvents=suppressOverlappingLunarEvents(lunarEvents, customEvents);
+const assemblyEvents=[...customEvents,...assemblyLunarEvents];
+const replacingDates=new Set(customEvents.filter(e=>e.replacesLunarPractice===true).map(e=>e.date));
+const replacementAnnouncements=customEvents.filter(e=>e.replacesLunarPractice===true).map(e=>({...e,id:e.slug,type:'assembly',route:`services/${e.slug}`}));
+const fullCalendarEntries=[...calendarEntries.filter(e=>!(e.type==='assembly'&&replacingDates.has(e.date))),...replacementAnnouncements]
+ .sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id));
 const news=publishedNews(import.meta.glob('../../../content/news/*.md',{eager:true}));
 export function getStaticPaths(){
  const custom=publishedEvents(import.meta.glob('../../../content/events/*.md',{eager:true}),lunarEvents.map(e=>e.slug));
+ const recurring=suppressOverlappingLunarEvents(lunarEvents, custom);
  const news=publishedNews(import.meta.glob('../../../content/news/*.md',{eager:true}));
- const pages=[undefined,'about','services','services/sunday','offerings','visit','calendar','news',...calendar.events.map(e=>`calendar/${e.id}`),...[...custom,...lunarEvents].map(e=>`services/${e.slug}`),...news.map(e=>`news/${e.slug}`)];
+ const pages=[undefined,'about','services','services/sunday','offerings','visit','calendar','news',...calendar.events.map(e=>`calendar/${e.id}`),...[...custom,...recurring].map(e=>`services/${e.slug}`),...news.map(e=>`news/${e.slug}`)];
  return languages.flatMap(lang=>pages.map(page=>({params:{lang,page}})));
 }
 const {lang,page:route}=Astro.params;const page=route || '';const t=copy[lang];
@@ -85,7 +92,7 @@ const servicePhoto=page==='services/sunday'
 
 {page==='calendar' && <>
  <section class="container page-heading calendar-page-heading"><h1>{t.calendar.title}</h1><p>{t.calendar.intro}</p></section>
- <div class="container calendar-page"><Calendar lang={lang}/><details class="calendar-sources"><summary>{t.calendar.sourceLabel}</summary><ul>{calendar.sources.map((source,i)=><li><a href={source.url} target="_blank" rel="noopener noreferrer">{lang==='en'&&i===0?'Hong Kong Buddhist Association · Buddhist holy days':lang==='en'&&i===1?'Hong Kong Buddhist Association · Ullambana':source.title}<Icon name="external" size={14}/></a></li>)}<li><a href="https://www.cwa.gov.tw/Data/service/notice/download/Publish_20241209150048.pdf#page=175" target="_blank" rel="noopener noreferrer">{t.lunarPractice.sourceTitle}<Icon name="external" size={14}/></a></li></ul></details></div>
+ <div class="container calendar-page"><Calendar lang={lang} entries={fullCalendarEntries}/><details class="calendar-sources"><summary>{t.calendar.sourceLabel}</summary><ul>{calendar.sources.map((source,i)=><li><a href={source.url} target="_blank" rel="noopener noreferrer">{lang==='en'&&i===0?'Hong Kong Buddhist Association · Buddhist holy days':lang==='en'&&i===1?'Hong Kong Buddhist Association · Ullambana':source.title}<Icon name="external" size={14}/></a></li>)}<li><a href="https://www.cwa.gov.tw/Data/service/notice/download/Publish_20241209150048.pdf#page=175" target="_blank" rel="noopener noreferrer">{t.lunarPractice.sourceTitle}<Icon name="external" size={14}/></a></li></ul></details></div>
 </>}
 
 {page==='news' && <TempleUpdates lang={lang} news={news} events={customEvents} pageHeading/>}

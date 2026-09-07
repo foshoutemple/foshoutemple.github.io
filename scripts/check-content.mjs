@@ -8,6 +8,7 @@ import './check-lunar-practice.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const read=async(p)=>JSON.parse(await fs.readFile(path.join(root,p),'utf8'));
 const copy=await read('src/data/copy.json'),days=await read('src/data/holy-days.json'),site=await read('src/data/site.json');
+const birthdayDates=new Set(days.events.filter(event=>event.type==='birth').map(event=>event.date));
 const leaves=(v,p='')=>typeof v==='string'?[p]:Object.entries(v).flatMap(([k,x])=>leaves(x,`${p}.${k}`));
 const languages=['zh-hans','zh-hant','en'];
 for(const lang of languages){assert.deepEqual(leaves(copy[lang]),leaves(copy.en));for(const field of leaves(copy[lang])){let v=copy[lang];for(const part of field.slice(1).split('.'))v=v[part];assert.ok(v.trim(),`${lang}${field} empty`);}}
@@ -44,13 +45,20 @@ for(const lang of languages){
  const calendarEvents=JSON.parse(payload.replaceAll('&#34;','"').replaceAll('&quot;','"').replaceAll('&amp;','&'));
  for(const record of lunarData.dates.filter(record=>!lunarData.excludedDates.includes(record.date))){
   const slug=`lunar-${record.date}`;
+  const replacedByBirthday=birthdayDates.has(record.date);
+  const replacedByAnnouncement=calendarEvents.some(event=>event.date===record.date&&event.replacesLunarPractice===true);
+  const expectedVisible=!replacedByBirthday&&!replacedByAnnouncement;
   const items=calendarEvents.filter(event=>event.slug===slug);
-  assert.equal(items.length,1,`${lang}: each lunar assembly must appear exactly once in activity data`);
-  assert.equal(items[0].date,record.date);
-  const html=await fs.readFile(path.join(out,lang,'services',slug,'index.html'),'utf8');
-  assert(html.includes(`datetime="${record.date}"`) && html.includes(items[0].lunar[lang]),'Details must show both civil and lunar dates.');
-  assert(html.includes(`activity-date=${record.date}`),'Details must return to their selected calendar date.');
-  if(record.date.startsWith(`${renderedYear}-`))assert(calendarHtml.includes(`/services/${slug}/`),'Full calendar must include lunar assemblies in its rendered list.');
+  assert.equal(items.length,expectedVisible?1:0,`${lang}: overlapping birthday assemblies must replace recurring lunar entries`);
+  if(expectedVisible){
+   assert.equal(items[0].date,record.date);
+   const html=await fs.readFile(path.join(out,lang,'services',slug,'index.html'),'utf8');
+   assert(html.includes(`datetime="${record.date}"`) && html.includes(items[0].lunar[lang]),'Details must show both civil and lunar dates.');
+   assert(html.includes(`activity-date=${record.date}`),'Details must return to their selected calendar date.');
+   if(record.date.startsWith(`${renderedYear}-`))assert(calendarHtml.includes(`/services/${slug}/`),'Full calendar must include lunar assemblies in its rendered list.');
+  } else if(replacedByBirthday && record.date.startsWith(`${renderedYear}-`)) {
+   assert(!calendarHtml.includes(`/services/${slug}/`),'Full calendar must omit a recurring date replaced by a birthday assembly.');
+  }
  }
 }
 for(const file of pages){const html=await fs.readFile(file,'utf8');assert(!html.includes('undefined'),'undefined rendered');for(const m of html.matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)){const raw=m[1];if(/^(https?:|mailto:|data:|tel:)/.test(raw))continue;const relative=decodeURIComponent(raw.split('?')[0]);let target=relative.startsWith('/')?path.join(out,relative):path.resolve(path.dirname(file),relative);try{if((await fs.stat(target)).isDirectory())target=path.join(target,'index.html');await fs.access(target);checked++;}catch{throw new Error(`Broken internal URL ${raw} in ${path.relative(out,file)}`)}}}
