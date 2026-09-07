@@ -205,20 +205,20 @@
       "offerings": { "alt": "Flower offerings stand before Buddha statues, with lit offering lamps on a table beside visitors", "caption": "Light and flower offerings before the Buddhas" }
     },
     "updates": {
-      "newsTitle": "Latest news", "servicesTitle": "Recent services",
-      "newsEmpty": "No news has been posted yet.", "servicesEmpty": "Service announcements will be posted here.",
+      "newsTitle": "Latest news", "servicesTitle": "Recent Dharma Assemblies",
+      "newsEmpty": "No news has been posted yet.", "servicesEmpty": "Dharma Assembly announcements will be posted here.",
       "viewAll": "View all", "backToNews": "Back to latest news"
     },
     "activityCalendar": {
-      "title": "Activity calendar", "intro": "Find Sunday practice and announced temple services. All times are local to Philadelphia.",
-      "weeklyTitle": "Sunday practice", "regularLabel": "Regular practice", "serviceLabel": "Services",
+      "title": "Activity calendar", "intro": "Find Sunday practice and announced Dharma assemblies. All times are local to Philadelphia.",
+      "weeklyTitle": "Sunday practice", "regularLabel": "Regular practice", "serviceLabel": "Dharma Assembly",
       "navigation": "Activity calendar month", "thisMonth": "This month", "allMonth": "View full month",
       "selectDay": "Select a marked date to see its activities.", "monthEvents": "This month’s activities",
-      "empty": "No activities are listed for this month.", "pendingTime": "Service time to be announced",
+      "empty": "No activities are listed for this month.", "pendingTime": "Dharma Assembly time to be announced",
       "noScript": "Enable JavaScript to change months and select dates. The regular practice schedule is below."
     },
     "city": "Philadelphia, Pennsylvania",
-    "nav": { "home": "Home", "about": "Our Temple", "services": "Services & Practice", "offerings": "Offerings & Meals", "visit": "Visit & Contact", "calendar": "Buddhist Calendar" },
+    "nav": { "home": "Home", "about": "Our Temple", "services": "Dharma Assemblies & Practice", "offerings": "Offerings & Meals", "visit": "Visit & Contact", "calendar": "Buddhist Calendar" },
     "common": {
       "learnMore": "Learn more", "viewSchedule": "Sunday schedule", "directions": "Get directions", "email": "Email the temple", "backHome": "Back to home", "skip": "Skip to main content", "menu": "Open menu", "close": "Close", "all": "All", "details": "View details", "openDaily": "Open daily, 9 a.m.–5 p.m.", "noRegistration": "No registration needed", "mandarin": "Practice primarily in Mandarin", "freeMeal": "Free vegetarian meal after communal practice", "photoCaption": "Gathering for chanting and Buddhist practice", "entranceAlt": "The entrance to Fo Shou Temple in Philadelphia", "heroAlt": "A group gathered outdoors for chanting, with palms joined and offerings arranged on a table"
     },
@@ -228,7 +228,7 @@
       "weeklyTitle": "Gather with us on Sundays",
       "weeklyIntro": "Join us for morning chanting and offerings, a shared vegetarian meal, and afternoon liturgy. Communal practice is conducted primarily in Mandarin Chinese.",
       "calendarTitle": "Honoring the Buddhas",
-      "calendarIntro": "Explore major Buddhist commemorations and the birthdays of Buddhas and Bodhisattvas. Related services are usually held on the lunar anniversary; temple announcements confirm each service.",
+      "calendarIntro": "Explore major Buddhist commemorations and the birthdays of Buddhas and Bodhisattvas. Related Dharma assemblies are usually held on the lunar anniversary; temple announcements confirm each assembly.",
       "aboutTitle": "A place to practice on Cherry Street",
       "aboutText": "Fo Shou Temple in Philadelphia is led by Venerable Shi Xian Can (釋賢參法師). We gather for Buddhist worship, chanting, and offerings before the Buddha, welcoming both first-time visitors and those returning to practice with us.",
       "offeringsTitle": "Share a meal after practice",
@@ -240,12 +240,12 @@
       "intro": "A place for Buddhist worship and communal practice on Cherry Street in Philadelphia.",
       "body": "Fo Shou Temple is led by Venerable Shi Xian Can (釋賢參法師). The temple is open daily from 9 a.m. to 5 p.m. for visitors to pay respects to the Buddha and offer incense. Temple gatherings include chanting, offerings before the Buddha, a free vegetarian meal after communal practice, and afternoon liturgy.",
       "practiceTitle": "Gathering to practice",
-      "practiceText": "Communal practice takes place every Sunday, primarily in Mandarin Chinese. Services marking the birthdays of Buddhas and Bodhisattvas are usually held on the lunar anniversary. Please see temple announcements for service dates and times.",
+      "practiceText": "Communal practice takes place every Sunday, primarily in Mandarin Chinese. Dharma assemblies marking the birthdays of Buddhas and Bodhisattvas are usually held on the lunar anniversary. Please see temple announcements for dates and times.",
       "welcomeTitle": "Join us",
       "welcomeText": "No registration is required. You are welcome to visit during daily opening hours or join a communal practice gathering. A free vegetarian meal is provided downstairs after each gathering."
     },
     "services": {
-      "title": "Services & Practice",
+      "title": "Dharma Assemblies & Practice",
       "intro": "Join us on Sundays for chanting and Buddhist worship. Practice is conducted primarily in Mandarin Chinese, and no registration is required.",
       "morningTitle": "Chanting, worship & offerings",
       "morningText": "Gather for chanting, Buddhist worship, and offerings before the Buddha.",
@@ -255,10 +255,10 @@
       "afternoonTitle": "Afternoon liturgy",
       "afternoonText": "Afternoon chanting begins at 1 p.m. and usually concludes between 2 and 3 p.m.",
       "regularLabel": "Regular Sunday schedule",
-      "specialTitle": "Buddhist observances & special services",
-      "specialText": "Our calendar includes major Buddhist observances. Services are usually held on the lunar anniversary. Please check temple announcements for specific times and arrangements.",
+      "specialTitle": "Buddhist observances & special Dharma Assemblies",
+      "specialText": "Our calendar includes major Buddhist observances. Dharma assemblies are usually held on the lunar anniversary. Please check temple announcements for specific times and arrangements.",
       "noticeTitle": "Before your visit",
-      "noticeText": "This is our regular schedule. Please check the latest temple announcements for special services or changes, or contact us by email."
+      "noticeText": "This is our regular schedule. Please check the latest temple announcements for special Dharma assemblies or changes, or contact us by email."
     },
     "offerings": {
       "title": "Offerings & Vegetarian Meals",
@@ -274,7 +274,7 @@
       "intro": "The temple is open every day. Come to pay respects to the Buddha, offer incense, or join communal practice. No registration is needed.",
       "addressLabel": "Address", "hoursLabel": "Opening hours", "hoursValue": "Daily, 9 a.m. to 5 p.m.", "emailLabel": "Email", "languageLabel": "Language of practice", "languageText": "Communal practice is conducted primarily in Mandarin Chinese.",
       "firstVisitTitle": "Your first visit",
-      "firstVisitText": "You may visit during opening hours for Buddhist worship and incense offerings. To join communal practice, see our Sunday schedule and special service announcements. A free vegetarian meal is provided downstairs after each gathering.",
+      "firstVisitText": "You may visit during opening hours for Buddhist worship and incense offerings. To join communal practice, see our Sunday schedule and announcements for special Dharma assemblies. A free vegetarian meal is provided downstairs after each gathering.",
       "faq": [
         { "q": "Do I need to register?", "a": "No registration is required. You are welcome to visit during opening hours." },
         { "q": "What language is used during practice?", "a": "Communal practice is conducted primarily in Mandarin Chinese." },
@@ -285,7 +285,7 @@
       "title": "Buddhist Calendar",
       "intro": "Major Buddhist observances and the birthdays of Buddhas and Bodhisattvas, with lunar dates and their corresponding Gregorian dates.",
       "yearLabel": "Year", "monthLabel": "Month", "list": "List", "month": "Month", "previous": "Previous month", "next": "Next month", "allMonths": "Full year", "upcoming": "Upcoming", "past": "Past dates", "today": "Today", "noEvents": "No observances are listed for this month.", "noYear": "Observances for this year have not yet been published.",
-      "serviceNote": "Birthday services are usually held on the lunar anniversary. Calendar dates are for reference; temple announcements confirm services and any schedule changes.",
+      "serviceNote": "Dharma assemblies marking Buddhist birthdays are usually held on the lunar anniversary. Calendar dates are for reference; temple announcements confirm each assembly and any schedule changes.",
       "sourceLabel": "Date reference", "typeLabels": { "birth": "Birthday", "awakening": "Enlightenment", "renunciation": "Renunciation", "nirvana": "Nirvana", "observance": "Observance" },
       "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
       "eventIntro": "Buddhist observance", "backCalendar": "Back to the calendar"

@@ -39,6 +39,8 @@ node scripts/preview.mjs
 
 更改开放时间或常规日程时，同时核对配置、三种语言的说明与时间表，避免不同页面出现不同安排。
 
+英文术语：「法会」统一使用 **Dharma Assembly**，复数为 **Dharma Assemblies**；「法会与共修」栏目为 **Dharma Assemblies & Practice**。正文按句子使用 Dharma assembly／Dharma assemblies，新增法会公告亦沿用此术语。
+
 照片按栏目分别使用，户外共修照仅用于首页。下表适用于全部三种语言；新增照片的图注及替代文字在 `src/data/copy.json` 的 `photos` 字段维护，首页与入口照片仍在 `common` 字段。更换照片时，同时更新 `src/pages/[lang]/[...page].astro` 中的文件名、原图宽高，以及对应三语说明。
 
 | 页面／位置 | `public/images/` 文件 | 素材编号 |

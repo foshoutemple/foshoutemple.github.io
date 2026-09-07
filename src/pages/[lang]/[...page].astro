@@ -25,7 +25,7 @@ const newsItem=page.startsWith('news/')?news.find(e=>`news/${e.slug}`===page):nu
 const pageKey=page.split('/')[0];
 const title=event?event.title[lang]:customEvent?customEvent.title[lang]:newsItem?newsItem.title[lang]:page?t[pageKey]?.title:undefined;
 const upcoming=getUpcoming(3);
-const pendingTime=lang==='en'?'Service time to be announced':lang==='zh-hans'?'法会时间待公布':'法會時間待公布';
+const pendingTime=t.activityCalendar.pendingTime;
 const fullCalendar=lang==='en'?'View the full calendar':lang==='zh-hans'?'查看全年日历':'查看全年日曆';
 const nextText=lang==='en'?'Next observances':lang==='zh-hans'?'近期佛教纪念日':'近期佛教紀念日';
 const sundayDate=nextSundayDate();
