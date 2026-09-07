@@ -1,0 +1,361 @@
+{
+  "time": null,
+  "excludedDates": [],
+  "timeOverrides": {},
+  "years": [
+    2026,
+    2027
+  ],
+  "dates": [
+    {
+      "date": "2026-01-03",
+      "lunarYear": 2025,
+      "lunarMonth": 11,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-01-19",
+      "lunarYear": 2025,
+      "lunarMonth": 12,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-02-02",
+      "lunarYear": 2025,
+      "lunarMonth": 12,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-02-17",
+      "lunarYear": 2026,
+      "lunarMonth": 1,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-03-03",
+      "lunarYear": 2026,
+      "lunarMonth": 1,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-03-19",
+      "lunarYear": 2026,
+      "lunarMonth": 2,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-04-02",
+      "lunarYear": 2026,
+      "lunarMonth": 2,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-04-17",
+      "lunarYear": 2026,
+      "lunarMonth": 3,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-05-01",
+      "lunarYear": 2026,
+      "lunarMonth": 3,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-05-17",
+      "lunarYear": 2026,
+      "lunarMonth": 4,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-05-31",
+      "lunarYear": 2026,
+      "lunarMonth": 4,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-06-15",
+      "lunarYear": 2026,
+      "lunarMonth": 5,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-06-29",
+      "lunarYear": 2026,
+      "lunarMonth": 5,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-07-14",
+      "lunarYear": 2026,
+      "lunarMonth": 6,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-07-28",
+      "lunarYear": 2026,
+      "lunarMonth": 6,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-08-13",
+      "lunarYear": 2026,
+      "lunarMonth": 7,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-08-27",
+      "lunarYear": 2026,
+      "lunarMonth": 7,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-09-11",
+      "lunarYear": 2026,
+      "lunarMonth": 8,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-09-25",
+      "lunarYear": 2026,
+      "lunarMonth": 8,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-10-10",
+      "lunarYear": 2026,
+      "lunarMonth": 9,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-10-24",
+      "lunarYear": 2026,
+      "lunarMonth": 9,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-11-09",
+      "lunarYear": 2026,
+      "lunarMonth": 10,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-11-23",
+      "lunarYear": 2026,
+      "lunarMonth": 10,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2026-12-09",
+      "lunarYear": 2026,
+      "lunarMonth": 11,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2026-12-23",
+      "lunarYear": 2026,
+      "lunarMonth": 11,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-01-08",
+      "lunarYear": 2026,
+      "lunarMonth": 12,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-01-22",
+      "lunarYear": 2026,
+      "lunarMonth": 12,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-02-06",
+      "lunarYear": 2027,
+      "lunarMonth": 1,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-02-20",
+      "lunarYear": 2027,
+      "lunarMonth": 1,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-03-08",
+      "lunarYear": 2027,
+      "lunarMonth": 2,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-03-22",
+      "lunarYear": 2027,
+      "lunarMonth": 2,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-04-07",
+      "lunarYear": 2027,
+      "lunarMonth": 3,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-04-21",
+      "lunarYear": 2027,
+      "lunarMonth": 3,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-05-06",
+      "lunarYear": 2027,
+      "lunarMonth": 4,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-05-20",
+      "lunarYear": 2027,
+      "lunarMonth": 4,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-06-05",
+      "lunarYear": 2027,
+      "lunarMonth": 5,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-06-19",
+      "lunarYear": 2027,
+      "lunarMonth": 5,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-07-04",
+      "lunarYear": 2027,
+      "lunarMonth": 6,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-07-18",
+      "lunarYear": 2027,
+      "lunarMonth": 6,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-08-02",
+      "lunarYear": 2027,
+      "lunarMonth": 7,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-08-16",
+      "lunarYear": 2027,
+      "lunarMonth": 7,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-09-01",
+      "lunarYear": 2027,
+      "lunarMonth": 8,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-09-15",
+      "lunarYear": 2027,
+      "lunarMonth": 8,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-09-30",
+      "lunarYear": 2027,
+      "lunarMonth": 9,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-10-14",
+      "lunarYear": 2027,
+      "lunarMonth": 9,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-10-29",
+      "lunarYear": 2027,
+      "lunarMonth": 10,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-11-12",
+      "lunarYear": 2027,
+      "lunarMonth": 10,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-11-28",
+      "lunarYear": 2027,
+      "lunarMonth": 11,
+      "leapMonth": false,
+      "lunarDay": 1
+    },
+    {
+      "date": "2027-12-12",
+      "lunarYear": 2027,
+      "lunarMonth": 11,
+      "leapMonth": false,
+      "lunarDay": 15
+    },
+    {
+      "date": "2027-12-28",
+      "lunarYear": 2027,
+      "lunarMonth": 12,
+      "leapMonth": false,
+      "lunarDay": 1
+    }
+  ]
+}

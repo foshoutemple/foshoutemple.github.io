@@ -1,5 +1,5 @@
 ---
-import {copy,calendar,locales,todayInPhilly,link,dateText,monthText,dayText} from '../lib/temple.js';
+import {copy,calendar,calendarEntries,locales,todayInPhilly,link,dateText,monthText,dayText} from '../lib/temple.js';
 import Icon from './Icon.astro';
 const {lang} = Astro.props;
 const t=copy[lang];
@@ -14,13 +14,13 @@ const months=Array.from({length:12},(_,i)=>new Intl.DateTimeFormat(locales[lang]
  </div>
  <div class="calendar-heading"><h2 id="calendar-heading">{selectedYear}</h2><div class="calendar-paging" hidden><button class="icon-button" data-previous aria-label={t.calendar.previous}><Icon name="left"/></button><button class="text-button" data-today>{t.calendar.today}</button><button class="icon-button" data-next aria-label={t.calendar.next}><Icon name="right"/></button></div></div>
  <div id="calendar-results" aria-live="polite" aria-atomic="false" class="calendar-results">
-   {calendar.events.filter(e=>e.date.startsWith(`${selectedYear}-`)).map(e=><a class="calendar-list-row" href={link(lang,`calendar/${e.id}`)}><time datetime={e.date}><span>{monthText(e.date,lang)}</span><strong>{dayText(e.date)}</strong></time><div><h3>{e.title[lang]}</h3><p>{e.lunar[lang]} · {dateText(e.date,lang,{weekday:'long'})}</p></div><span class="event-category">{t.calendar.typeLabels[e.type]}</span><Icon/></a>)}
+   {calendarEntries.filter(e=>e.date.startsWith(`${selectedYear}-`)).map(e=><a class="calendar-list-row" href={link(lang,e.route)}><time datetime={e.date}><span>{monthText(e.date,lang)}</span><strong>{dayText(e.date)}</strong></time><div><h3>{e.title[lang]}</h3><p>{e.lunar[lang]} · {dateText(e.date,lang,{weekday:'long'})}</p></div><span class="event-category">{t.calendar.typeLabels[e.type]}</span><Icon/></a>)}
  </div>
  <div class="calendar-mobile-agenda" id="calendar-mobile-agenda" hidden></div>
  <div class="calendar-footnote"><Icon name="calendar"/><p>{t.calendar.serviceNote}</p></div>
 </section>
 <script>
-import {calendar,copy,locales,dateText,dayText,monthText,link,todayInPhilly} from '../lib/temple.js';
+import {calendar,calendarEntries,copy,locales,dateText,dayText,monthText,link,todayInPhilly} from '../lib/temple.js';
 const root=document.querySelector('[data-calendar]');
 if(root){
  const lang=root.dataset.lang,t=copy[lang],yearSelect=root.querySelector('#calendar-year'),monthSelect=root.querySelector('#calendar-month'),results=root.querySelector('#calendar-results'),heading=root.querySelector('#calendar-heading'),paging=root.querySelector('.calendar-paging');
@@ -33,14 +33,14 @@ if(root){
  function render(){
    let year=Number(yearSelect.value),month=Number(monthSelect.value);
    if(view==='month'&&!month){month=year===Number(today.slice(0,4))?Number(today.slice(5,7)):1;monthSelect.value=String(month);}
-   const entries=calendar.events.filter(e=>e.date.startsWith(`${year}-`)&&(!month||Number(e.date.slice(5,7))===month));
+   const entries=calendarEntries.filter(e=>e.date.startsWith(`${year}-`)&&(!month||Number(e.date.slice(5,7))===month));
    const agenda=root.querySelector('#calendar-mobile-agenda');
    agenda.replaceChildren();agenda.hidden=view!=='month';
    if(view==='month'){
-     agenda.append(el('h3','agenda-title',lang==='en'?'This month’s observances':lang==='zh-hans'?'本月纪念日':'本月紀念日'));
+     agenda.append(el('h3','agenda-title',t.calendar.monthEntries));
      if(!entries.length)agenda.append(el('p','calendar-empty',t.calendar.noEvents));
      entries.forEach(e=>{
-       const a=el('a','calendar-list-row');a.href=link(lang,`calendar/${e.id}`);
+       const a=el('a','calendar-list-row');a.href=link(lang,e.route);
        const date=el('time');date.dateTime=e.date;date.append(el('span','',monthText(e.date,lang)),el('strong','',dayText(e.date)));
        const detail=el('div');detail.append(el('h3','',e.title[lang]),el('p','',e.lunar[lang]));
        a.append(date,detail,el('span','calendar-row-arrow','→'));agenda.append(a);
@@ -52,7 +52,7 @@ if(root){
    if(view==='list'){
      if(!entries.length)results.append(el('p','calendar-empty',t.calendar.noEvents));
      entries.forEach(e=>{
-       const a=el('a',`calendar-list-row ${e.date<today?'past-event':''}`);a.href=link(lang,`calendar/${e.id}`);
+       const a=el('a',`calendar-list-row ${e.date<today?'past-event':''}`);a.href=link(lang,e.route);
        const date=el('time');date.dateTime=e.date;date.append(el('span','',monthText(e.date,lang)),el('strong','',dayText(e.date)));
        const detail=el('div');detail.append(el('h3','',e.title[lang]),el('p','',`${e.lunar[lang]} · ${dateText(e.date,lang,{weekday:'long'})}`));
        const category=el('span','event-category',t.calendar.typeLabels[e.type]);
@@ -67,7 +67,7 @@ if(root){
        const date=`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
        const time=el('time','cell-day',String(day));time.dateTime=date;cell.append(time);
        if(date===today){cell.classList.add('is-today');time.setAttribute('aria-label',`${t.calendar.today}, ${dateText(date,lang)}`);}
-       entries.filter(e=>e.date===date).forEach(e=>{const a=el('a','cell-event',e.title[lang]);a.href=link(lang,`calendar/${e.id}`);a.title=`${e.title[lang]} · ${e.lunar[lang]}`;a.append(el('span','cell-lunar',e.lunar[lang]));cell.append(a)});
+       entries.filter(e=>e.date===date).forEach(e=>{const a=el('a','cell-event',e.title[lang]);a.href=link(lang,e.route);a.title=`${e.title[lang]} · ${e.lunar[lang]}`;a.append(el('span','cell-lunar',e.lunar[lang]));cell.append(a)});
        results.append(cell);
      }
    }

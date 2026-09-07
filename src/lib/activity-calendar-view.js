@@ -26,7 +26,7 @@ export function activityCalendarView(month, events, regular, lang, selectedDate,
   const agenda = displayed.length ? `<ul class="activity-event-list">${displayed.map(entry => `
     <li><a class="activity-event-row" href="${escape(link(lang, `services/${entry.slug}`))}">
       <time class="activity-event-date" datetime="${entry.date}"><strong>${Number(dayText(entry.date))}</strong><span>${escape(dateText(entry.date, lang, {weekday:'short'}))}</span></time>
-      <div class="activity-event-copy"><h4>${escape(title(entry))}</h4><p>${escape(time(entry))}</p></div>
+      <div class="activity-event-copy"><h4>${escape(title(entry))}</h4><p>${escape([entry.lunar?.[lang], time(entry)].filter(Boolean).join(' · '))}</p></div>
       <span class="activity-event-type activity-${entry.type}"><span class="activity-mark" aria-hidden="true"></span>${escape(entry.type === 'weekly' ? t.regularLabel : t.serviceLabel)}</span>${arrow}
     </a></li>`).join('')}</ul>` : `<p class="activity-empty">${escape(t.empty)}</p>`;
   return {

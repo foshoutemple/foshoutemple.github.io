@@ -57,8 +57,8 @@ function publishedEntries(modules, reservedSlugs = []) {
     .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
 }
 
-export function publishedEvents(modules) {
-  return publishedEntries(modules, ['sunday']);
+export function publishedEvents(modules, reservedSlugs = []) {
+  return publishedEntries(modules, ['sunday', ...reservedSlugs]);
 }
 
 export function publishedNews(modules) {

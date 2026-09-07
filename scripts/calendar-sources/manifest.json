@@ -1,0 +1,46 @@
+{
+  "retrievedAt": "2026-09-07T13:44:25.403Z",
+  "files": [
+    {
+      "year": 2026,
+      "format": "csv",
+      "file": "hko-2026.csv",
+      "url": "https://data.weather.gov.hk/weatherAPI/hko_data/calendar/nongli_calendar_2026.csv",
+      "bytes": 14421,
+      "sha256": "8b2892b0e04faa632f09ea36ffee29e67b4427b85a18708d907d88d8be452b98"
+    },
+    {
+      "year": 2026,
+      "format": "text",
+      "file": "hko-2026.txt",
+      "url": "https://www.hko.gov.hk/tc/gts/time/calendar/text/files/T2026c.txt",
+      "bytes": 23536,
+      "sha256": "7b0831acb16a5a72a1ab553205e938b2f658c3837e06440f22c084e1a39832dd"
+    },
+    {
+      "year": 2027,
+      "format": "csv",
+      "file": "hko-2027.csv",
+      "url": "https://data.weather.gov.hk/weatherAPI/hko_data/calendar/nongli_calendar_2027.csv",
+      "bytes": 14055,
+      "sha256": "11de6b80c61769851aa579af009dc728ca4c544b75b9a0a466ef36446c6bb4fe"
+    },
+    {
+      "year": 2027,
+      "format": "text",
+      "file": "hko-2027.txt",
+      "url": "https://www.hko.gov.hk/tc/gts/time/calendar/text/files/T2027c.txt",
+      "bytes": 23537,
+      "sha256": "2c6a406cd2f8c6f1cf11f154737b7c5ae4afb53c87d76b101bd561b482e3b93f"
+    }
+  ],
+  "cwa": {
+    "file": "cwa-2025-almanac-month-starts.txt",
+    "url": "https://www.cwa.gov.tw/Data/service/notice/download/Publish_20241209150048.pdf",
+    "pdfPage": 175,
+    "printedPage": 170,
+    "pdfBytes": 12056670,
+    "pdfSha256": "5ae441dcf0ff44c1ef6655f5ad011994f938335f0d54361c2bf579654490b1da",
+    "sha256": "e64483eea9b2955746652c8dc5b17b4255fd175d2400e182907d140c53d86f3c"
+  }
+}

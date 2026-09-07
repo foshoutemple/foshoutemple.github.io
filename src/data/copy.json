@@ -14,8 +14,32 @@
       "viewAll": "查看全部", "backToNews": "返回最新消息",
       "assemblyDate": "法会日期", "publishedDate": "发布日期", "viewImage": "查看完整图片"
     },
+    "lunarPractice": {
+      "firstTitle": "初一法会",
+      "fifteenthTitle": "十五法会",
+      "description": "佛寿寺于每月农历初一、十五举行法会，欢迎大众来寺诵经礼佛。具体开始时间请留意寺院公告。",
+      "dateLabel": "农历{year}年{leap}{month}{day}",
+      "leap": "闰",
+      "monthNames": [
+        "正月",
+        "二月",
+        "三月",
+        "四月",
+        "五月",
+        "六月",
+        "七月",
+        "八月",
+        "九月",
+        "十月",
+        "十一月",
+        "十二月"
+      ],
+      "coverage": "已收录公历 {years} 年内农历初一、十五的法会日期；之后年份将陆续更新。",
+      "backCalendar": "返回活动日历",
+      "sourceTitle": "中央气象署《2025年国民历》：农历月首对照表（第170页）"
+    },
     "activityCalendar": {
-      "title": "活动日历", "intro": "查阅周日共修与已公布的法会。所有时间均为费城当地时间。",
+      "title": "活动日历", "intro": "查阅周日共修、农历初一与十五法会，以及已公布的特别法会。所有时间均为费城当地时间。",
       "weeklyTitle": "周日共修", "regularLabel": "常规共修", "serviceLabel": "法会",
       "navigation": "活动日历月份", "thisMonth": "本月", "allMonth": "查看整月",
       "selectDay": "点选有标记的日期，查看当天活动。", "monthEvents": "本月活动",
@@ -51,7 +75,7 @@
     },
     "services": {
       "title": "法会与共修",
-      "intro": "每周日相聚诵经礼佛，现场共修以普通话为主，欢迎大众参与，无需登记。",
+      "intro": "每周日共修，每月农历初一、十五举行法会。现场共修以普通话为主，欢迎大众参与，无需登记。",
       "morningTitle": "诵经礼佛 · 佛前大供",
       "morningText": "上午一同诵经、礼佛，举行佛前大供。",
       "mealTitle": "楼下免费素斋",
@@ -88,10 +112,10 @@
     },
     "calendar": {
       "title": "佛教纪念日",
-      "intro": "佛菩萨圣诞与主要佛教纪念日，依农历记载，并列出对应公历日期，方便查阅。",
-      "yearLabel": "年份", "monthLabel": "月份", "list": "列表", "month": "月历", "previous": "上个月", "next": "下个月", "allMonths": "全年", "upcoming": "即将到来", "past": "已过日期", "today": "今天", "noEvents": "本月暂无收录的纪念日。", "noYear": "这一年的纪念日资料尚未发布。",
+      "intro": "查阅佛菩萨圣诞、主要佛教纪念日，以及本寺农历初一、十五法会的农历与公历日期。",
+      "yearLabel": "年份", "monthLabel": "月份", "list": "列表", "month": "月历", "previous": "上个月", "next": "下个月", "allMonths": "全年", "upcoming": "即将到来", "past": "已过日期", "today": "今天", "monthEntries": "本月纪念日与法会", "noEvents": "本月暂无收录的纪念日或法会。", "noYear": "这一年的纪念日资料尚未发布。",
       "serviceNote": "圣诞法会通常在农历正日举行。纪念日供日期参考，具体法会与时间调整以寺院公告为准。",
-      "sourceLabel": "日期参考", "typeLabels": { "birth": "圣诞", "awakening": "成道", "renunciation": "出家", "nirvana": "涅槃", "observance": "纪念日" },
+      "sourceLabel": "日期参考", "typeLabels": {"birth":"圣诞","awakening":"成道","renunciation":"出家","nirvana":"涅槃","observance":"纪念日","assembly":"法会"},
       "weekdays": ["日", "一", "二", "三", "四", "五", "六"],
       "eventIntro": "佛教纪念日", "backCalendar": "返回纪念日日历"
     },
@@ -113,8 +137,32 @@
       "viewAll": "查看全部", "backToNews": "返回最新消息",
       "assemblyDate": "法會日期", "publishedDate": "發布日期", "viewImage": "查看完整圖片"
     },
+    "lunarPractice": {
+      "firstTitle": "初一法會",
+      "fifteenthTitle": "十五法會",
+      "description": "佛壽寺於每月農曆初一、十五舉行法會，歡迎大眾來寺誦經禮佛。具體開始時間請留意寺院公告。",
+      "dateLabel": "農曆{year}年{leap}{month}{day}",
+      "leap": "閏",
+      "monthNames": [
+        "正月",
+        "二月",
+        "三月",
+        "四月",
+        "五月",
+        "六月",
+        "七月",
+        "八月",
+        "九月",
+        "十月",
+        "十一月",
+        "十二月"
+      ],
+      "coverage": "已收錄公曆 {years} 年內農曆初一、十五的法會日期；之後年份將陸續更新。",
+      "backCalendar": "返回活動日曆",
+      "sourceTitle": "中央氣象署《2025年國民曆》：農曆月首對照表（第170頁）"
+    },
     "activityCalendar": {
-      "title": "活動日曆", "intro": "查閱週日共修與已公布的法會。所有時間均為費城當地時間。",
+      "title": "活動日曆", "intro": "查閱週日共修、農曆初一與十五法會，以及已公布的特別法會。所有時間均為費城當地時間。",
       "weeklyTitle": "週日共修", "regularLabel": "常規共修", "serviceLabel": "法會",
       "navigation": "活動日曆月份", "thisMonth": "本月", "allMonth": "查看整月",
       "selectDay": "點選有標記的日期，查看當天活動。", "monthEvents": "本月活動",
@@ -150,7 +198,7 @@
     },
     "services": {
       "title": "法會與共修",
-      "intro": "每週日相聚誦經禮佛，現場共修以普通話為主，歡迎大眾參與，無需登記。",
+      "intro": "每週日共修，每月農曆初一、十五舉行法會。現場共修以普通話為主，歡迎大眾參與，無需登記。",
       "morningTitle": "誦經禮佛 · 佛前大供",
       "morningText": "上午一同誦經、禮佛，舉行佛前大供。",
       "mealTitle": "樓下免費素齋",
@@ -187,10 +235,10 @@
     },
     "calendar": {
       "title": "佛教紀念日",
-      "intro": "佛菩薩聖誕與主要佛教紀念日，依農曆記載，並列出對應公曆日期，方便查閱。",
-      "yearLabel": "年份", "monthLabel": "月份", "list": "列表", "month": "月曆", "previous": "上個月", "next": "下個月", "allMonths": "全年", "upcoming": "即將到來", "past": "已過日期", "today": "今天", "noEvents": "本月暫無收錄的紀念日。", "noYear": "這一年的紀念日資料尚未發布。",
+      "intro": "查閱佛菩薩聖誕、主要佛教紀念日，以及本寺農曆初一、十五法會的農曆與公曆日期。",
+      "yearLabel": "年份", "monthLabel": "月份", "list": "列表", "month": "月曆", "previous": "上個月", "next": "下個月", "allMonths": "全年", "upcoming": "即將到來", "past": "已過日期", "today": "今天", "monthEntries": "本月紀念日與法會", "noEvents": "本月暫無收錄的紀念日或法會。", "noYear": "這一年的紀念日資料尚未發布。",
       "serviceNote": "聖誕法會通常在農曆正日舉行。紀念日供日期參考，具體法會與時間調整以寺院公告為準。",
-      "sourceLabel": "日期參考", "typeLabels": { "birth": "聖誕", "awakening": "成道", "renunciation": "出家", "nirvana": "涅槃", "observance": "紀念日" },
+      "sourceLabel": "日期參考", "typeLabels": {"birth":"聖誕","awakening":"成道","renunciation":"出家","nirvana":"涅槃","observance":"紀念日","assembly":"法會"},
       "weekdays": ["日", "一", "二", "三", "四", "五", "六"],
       "eventIntro": "佛教紀念日", "backCalendar": "返回紀念日日曆"
     },
@@ -212,8 +260,32 @@
       "viewAll": "View all", "backToNews": "Back to latest news",
       "assemblyDate": "Dharma Assembly date", "publishedDate": "Published", "viewImage": "View full image"
     },
+    "lunarPractice": {
+      "firstTitle": "Dharma Assembly · Lunar Day 1",
+      "fifteenthTitle": "Dharma Assembly · Lunar Day 15",
+      "description": "Fo Shou Temple holds Dharma assemblies on the first and fifteenth days of each lunar month. Everyone is welcome to join us for chanting and Buddhist worship. Please check temple announcements for the start time.",
+      "dateLabel": "Lunar year {year}, {leap}month {month}, day {day}",
+      "leap": "leap ",
+      "monthNames": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "coverage": "Lunar first- and fifteenth-day assemblies are listed for Gregorian years {years}. Dates for later years will be added.",
+      "backCalendar": "Back to the activity calendar",
+      "sourceTitle": "Central Weather Administration · 2025 Almanac, lunar month starts (p. 170)"
+    },
     "activityCalendar": {
-      "title": "Activity calendar", "intro": "Find Sunday practice and announced Dharma assemblies. All times are local to Philadelphia.",
+      "title": "Activity calendar", "intro": "Find Sunday practice, Dharma assemblies on lunar days 1 and 15, and announced special assemblies. All times are local to Philadelphia.",
       "weeklyTitle": "Sunday practice", "regularLabel": "Regular practice", "serviceLabel": "Dharma Assembly",
       "navigation": "Activity calendar month", "thisMonth": "This month", "allMonth": "View full month",
       "selectDay": "Select a marked date to see its activities.", "monthEvents": "This month’s activities",
@@ -249,7 +321,7 @@
     },
     "services": {
       "title": "Dharma Assemblies & Practice",
-      "intro": "Join us on Sundays for chanting and Buddhist worship. Practice is conducted primarily in Mandarin Chinese, and no registration is required.",
+      "intro": "Join us for Sunday practice and Dharma assemblies on the first and fifteenth days of each lunar month. Practice is conducted primarily in Mandarin Chinese, and no registration is required.",
       "morningTitle": "Chanting, worship & offerings",
       "morningText": "Gather for chanting, Buddhist worship, and offerings before the Buddha.",
       "mealTitle": "Free vegetarian meal downstairs",
@@ -286,10 +358,10 @@
     },
     "calendar": {
       "title": "Buddhist Calendar",
-      "intro": "Major Buddhist observances and the birthdays of Buddhas and Bodhisattvas, with lunar dates and their corresponding Gregorian dates.",
-      "yearLabel": "Year", "monthLabel": "Month", "list": "List", "month": "Month", "previous": "Previous month", "next": "Next month", "allMonths": "Full year", "upcoming": "Upcoming", "past": "Past dates", "today": "Today", "noEvents": "No observances are listed for this month.", "noYear": "Observances for this year have not yet been published.",
+      "intro": "Find Buddhist observances and the temple’s Dharma assemblies on lunar days 1 and 15, with corresponding lunar and Gregorian dates.",
+      "yearLabel": "Year", "monthLabel": "Month", "list": "List", "month": "Month", "previous": "Previous month", "next": "Next month", "allMonths": "Full year", "upcoming": "Upcoming", "past": "Past dates", "today": "Today", "monthEntries": "This month’s observances & assemblies", "noEvents": "No observances or assemblies are listed for this month.", "noYear": "Observances for this year have not yet been published.",
       "serviceNote": "Dharma assemblies marking Buddhist birthdays are usually held on the lunar anniversary. Calendar dates are for reference; temple announcements confirm each assembly and any schedule changes.",
-      "sourceLabel": "Date reference", "typeLabels": { "birth": "Birthday", "awakening": "Enlightenment", "renunciation": "Renunciation", "nirvana": "Nirvana", "observance": "Observance" },
+      "sourceLabel": "Date reference", "typeLabels": {"birth":"Birthday","awakening":"Enlightenment","renunciation":"Renunciation","nirvana":"Nirvana","observance":"Observance","assembly":"Dharma Assembly"},
       "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
       "eventIntro": "Buddhist observance", "backCalendar": "Back to the calendar"
     },

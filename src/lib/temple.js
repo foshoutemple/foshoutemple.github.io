@@ -1,8 +1,15 @@
 import copy from '../data/copy.json';
 import calendar from '../data/holy-days.json';
 import site from '../data/site.json';
+import lunarPractice from '../data/lunar-practice.json';
+import {buildLunarPracticeEvents} from './lunar-practice.js';
 
-export { copy, calendar, site };
+export { copy, calendar, site, lunarPractice };
+export const lunarEvents = buildLunarPracticeEvents(lunarPractice, copy);
+export const calendarEntries = [
+  ...calendar.events.map(event => ({...event, route:`calendar/${event.id}`})),
+  ...lunarEvents.map(event => ({...event, id:event.slug, type:'assembly', route:`services/${event.slug}`})),
+].sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id));
 export const languages = ['zh-hans', 'zh-hant', 'en'];
 export const languageNames = { 'zh-hans': '简体中文', 'zh-hant': '繁體中文', en: 'English' };
 export const locales = { 'zh-hans': 'zh-CN', 'zh-hant': 'zh-TW', en: 'en-US' };

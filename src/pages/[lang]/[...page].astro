@@ -7,21 +7,22 @@ import Calendar from '../../components/Calendar.astro';
 import TempleUpdates from '../../components/TempleUpdates.astro';
 import ActivityCalendar from '../../components/ActivityCalendar.astro';
 import AnnouncementDetail from '../../components/AnnouncementDetail.astro';
-import {copy,calendar,site,languages,link,asset,dateText,getUpcoming} from '../../lib/temple.js';
+import {copy,calendar,site,languages,link,asset,dateText,getUpcoming,lunarEvents} from '../../lib/temple.js';
 import {publishedEvents,publishedNews} from '../../lib/event-content.js';
 import {nextSundayDate} from '../../lib/live-dates.js';
 
-const customEvents=publishedEvents(import.meta.glob('../../../content/events/*.md',{eager:true}));
+const customEvents=publishedEvents(import.meta.glob('../../../content/events/*.md',{eager:true}),lunarEvents.map(e=>e.slug));
+const assemblyEvents=[...customEvents,...lunarEvents];
 const news=publishedNews(import.meta.glob('../../../content/news/*.md',{eager:true}));
 export function getStaticPaths(){
- const custom=publishedEvents(import.meta.glob('../../../content/events/*.md',{eager:true}));
+ const custom=publishedEvents(import.meta.glob('../../../content/events/*.md',{eager:true}),lunarEvents.map(e=>e.slug));
  const news=publishedNews(import.meta.glob('../../../content/news/*.md',{eager:true}));
- const pages=[undefined,'about','services','services/sunday','offerings','visit','calendar','news',...calendar.events.map(e=>`calendar/${e.id}`),...custom.map(e=>`services/${e.slug}`),...news.map(e=>`news/${e.slug}`)];
+ const pages=[undefined,'about','services','services/sunday','offerings','visit','calendar','news',...calendar.events.map(e=>`calendar/${e.id}`),...[...custom,...lunarEvents].map(e=>`services/${e.slug}`),...news.map(e=>`news/${e.slug}`)];
  return languages.flatMap(lang=>pages.map(page=>({params:{lang,page}})));
 }
 const {lang,page:route}=Astro.params;const page=route || '';const t=copy[lang];
 const event=page.startsWith('calendar/')?calendar.events.find(e=>`calendar/${e.id}`===page):null;
-const customEvent=page.startsWith('services/')?customEvents.find(e=>`services/${e.slug}`===page):null;
+const customEvent=page.startsWith('services/')?assemblyEvents.find(e=>`services/${e.slug}`===page):null;
 const newsItem=page.startsWith('news/')?news.find(e=>`news/${e.slug}`===page):null;
 const pageKey=page.split('/')[0];
 const title=event?event.title[lang]:customEvent?customEvent.title[lang]:newsItem?newsItem.title[lang]:page==='news'?t.updates.newsTitle:page?t[pageKey]?.title:undefined;
@@ -65,7 +66,7 @@ const servicePhoto=page==='services/sunday'
 {(page==='services'||page==='services/sunday') && <>
  <section class="container page-heading"><h1>{page==='services/sunday'?t.home.weeklyTitle:t.services.title}</h1><p>{t.services.intro}</p><div class="inline-facts"><span>{t.common.noRegistration}</span><span>{t.common.mandarin}</span><span>{t.common.freeMeal}</span></div></section>
  {page==='services' && <TempleUpdates lang={lang} events={customEvents} assembliesOnly/>}
- {page==='services' && <ActivityCalendar lang={lang} events={customEvents}/>}
+ {page==='services' && <ActivityCalendar lang={lang} events={assemblyEvents}/>}
  <section class="container service-main"><div class="service-photo"><img src={asset(`images/${servicePhoto.file}`)} width="1706" height="1279" alt={servicePhoto.alt}/><p>{servicePhoto.caption}</p></div><div><h2>{t.services.regularLabel}</h2><Schedule lang={lang}/><p class="small-note">{t.services.noticeText}</p></div></section>
  <section class="calendar-band"><div class="container section calendar-preview"><div class="section-intro"><h2>{t.services.specialTitle}</h2><p>{t.services.specialText}</p><a class="text-link" href={link(lang,'calendar')}>{fullCalendar}<Icon/></a></div><EventRows lang={lang} events={upcoming}/></div></section>
 </>}
@@ -84,7 +85,7 @@ const servicePhoto=page==='services/sunday'
 
 {page==='calendar' && <>
  <section class="container page-heading calendar-page-heading"><h1>{t.calendar.title}</h1><p>{t.calendar.intro}</p></section>
- <div class="container calendar-page"><Calendar lang={lang}/><details class="calendar-sources"><summary>{t.calendar.sourceLabel}</summary><ul>{calendar.sources.map((source,i)=><li><a href={source.url} target="_blank" rel="noopener noreferrer">{lang==='en'&&i===0?'Hong Kong Buddhist Association · Buddhist holy days':lang==='en'&&i===1?'Hong Kong Buddhist Association · Ullambana':source.title}<Icon name="external" size={14}/></a></li>)}</ul></details></div>
+ <div class="container calendar-page"><Calendar lang={lang}/><details class="calendar-sources"><summary>{t.calendar.sourceLabel}</summary><ul>{calendar.sources.map((source,i)=><li><a href={source.url} target="_blank" rel="noopener noreferrer">{lang==='en'&&i===0?'Hong Kong Buddhist Association · Buddhist holy days':lang==='en'&&i===1?'Hong Kong Buddhist Association · Ullambana':source.title}<Icon name="external" size={14}/></a></li>)}<li><a href="https://www.cwa.gov.tw/Data/service/notice/download/Publish_20241209150048.pdf#page=175" target="_blank" rel="noopener noreferrer">{t.lunarPractice.sourceTitle}<Icon name="external" size={14}/></a></li></ul></details></div>
 </>}
 
 {page==='news' && <TempleUpdates lang={lang} news={news} events={customEvents} pageHeading/>}
@@ -94,7 +95,7 @@ const servicePhoto=page==='services/sunday'
  <section class="container event-detail"><div class="event-detail-main"><div class="event-detail-label">{t.calendar.typeLabels[event.type]}</div><h2>{t.services.specialTitle}</h2><p>{t.calendar.serviceNote}</p><div class="event-time"><Icon name="clock"/><span>{event.serviceTime||pendingTime}</span></div><p>{t.common.mandarin} · {t.common.noRegistration}</p><a class="button primary" href={`mailto:${site.email}?subject=${encodeURIComponent(event.title[lang])}`}>{t.common.email}<Icon name="mail"/></a></div><aside class="event-aside"><h2>{t.home.visitTitle}</h2><p>{site.address}<br/>{site.cityLine}</p><p>{t.common.openDaily}</p><a class="text-link" href={site.mapUrl} target="_blank" rel="noopener noreferrer">{t.common.directions}<Icon name="external"/></a><p>{t.common.freeMeal}</p></aside></section>
 </>}
 {customEvent && <>
- <section class="container page-heading event-heading"><a class="back-link" href={`${link(lang,'services')}#latest-assemblies`}><Icon name="left"/>{t.updates.backToAssemblies}</a><h1>{customEvent.title[lang]}</h1><p><time datetime={customEvent.date}>{dateText(customEvent.date,lang)}</time></p></section>
+ <section class="container page-heading event-heading"><a class="back-link" href={customEvent.lunar ? `${link(lang,'services')}?activity-month=${customEvent.date.slice(0,7)}&activity-date=${customEvent.date}#activity-calendar` : `${link(lang,'services')}#latest-assemblies`}><Icon name="left"/>{customEvent.lunar ? t.lunarPractice.backCalendar : t.updates.backToAssemblies}</a><h1>{customEvent.title[lang]}</h1><p><time datetime={customEvent.date}>{dateText(customEvent.date,lang)}</time>{customEvent.lunar && <><span class="date-dot">·</span>{customEvent.lunar[lang]}</>}</p></section>
  <AnnouncementDetail lang={lang} entry={customEvent} isEvent/>
 </>}
 {newsItem && <>

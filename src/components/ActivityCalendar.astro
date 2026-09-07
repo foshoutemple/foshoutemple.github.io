@@ -1,5 +1,5 @@
 ---
-import {copy, todayInPhilly, link} from '../lib/temple.js';
+import {copy, todayInPhilly, link, lunarPractice} from '../lib/temple.js';
 import {activityCalendarView} from '../lib/activity-calendar-view.js';
 import regular from '../data/weekly-practice.json';
 import Icon from './Icon.astro';
@@ -32,6 +32,7 @@ const view = activityCalendarView(month, events, regular, lang, null, today);
     <div data-activity-agenda set:html={view.agenda}/>
   </div>
   <p class="activity-note">{copy[lang].services.noticeText}</p>
+  <p class="activity-note">{copy[lang].lunarPractice.coverage.replace('{years}', lunarPractice.years.join('–'))}</p>
   <noscript><p class="activity-note">{t.noScript}</p></noscript>
 </section>
 

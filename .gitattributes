@@ -1,0 +1,3 @@
+# Preserve downloaded evidence, including its original whitespace, for SHA-256 verification.
+scripts/calendar-sources/* -text -whitespace
+LUNAR_PRACTICE_DATES.md text eol=lf

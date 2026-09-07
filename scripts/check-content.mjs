@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import './check-activity-calendar.mjs';
 import './check-announcements.mjs';
+import './check-lunar-practice.mjs';
 const root=path.resolve(import.meta.dirname,'..');
 const read=async(p)=>JSON.parse(await fs.readFile(path.join(root,p),'utf8'));
 const copy=await read('src/data/copy.json'),days=await read('src/data/holy-days.json'),site=await read('src/data/site.json');
@@ -28,6 +29,28 @@ for (const lang of languages) for (const route of ['', 'news/', 'services/']) {
   const section = html.match(/<section\b[^>]*id="latest-assemblies"[\s\S]*?<\/section>/)?.[0];
   assert(section?.includes(copy[lang].updates.assembliesTitle), 'Assemblies page must show the translated latest Dharma Assemblies title.');
   assert(!section.includes(`href="/${lang}/news/`), 'General news must not appear in the assemblies feed.');
+ }
+ const announcementSection = html.match(new RegExp(`<section\\b[^>]*id="${sectionId}"[\\s\\S]*?<\\/section>`))?.[0];
+ assert(announcementSection && !announcementSection.includes(`/services/lunar-`), 'Recurring dates belong in the calendars, not the announcement feeds.');
+}
+const lunarData=await read('src/data/lunar-practice.json');
+for(const lang of languages){
+ const servicesHtml=await fs.readFile(path.join(out,lang,'services/index.html'),'utf8');
+ const calendarHtml=await fs.readFile(path.join(out,lang,'calendar/index.html'),'utf8');
+ const renderedYear=calendarHtml.match(/<h2\b[^>]*id="calendar-heading"[^>]*>(\d{4})<\/h2>/)?.[1];
+ assert(lunarData.years.includes(Number(renderedYear)));
+ const payload=servicesHtml.match(/data-events="([^"]+)"/)?.[1];
+ assert(payload,'Activity calendar must include its event data.');
+ const calendarEvents=JSON.parse(payload.replaceAll('&#34;','"').replaceAll('&quot;','"').replaceAll('&amp;','&'));
+ for(const record of lunarData.dates.filter(record=>!lunarData.excludedDates.includes(record.date))){
+  const slug=`lunar-${record.date}`;
+  const items=calendarEvents.filter(event=>event.slug===slug);
+  assert.equal(items.length,1,`${lang}: each lunar assembly must appear exactly once in activity data`);
+  assert.equal(items[0].date,record.date);
+  const html=await fs.readFile(path.join(out,lang,'services',slug,'index.html'),'utf8');
+  assert(html.includes(`datetime="${record.date}"`) && html.includes(items[0].lunar[lang]),'Details must show both civil and lunar dates.');
+  assert(html.includes(`activity-date=${record.date}`),'Details must return to their selected calendar date.');
+  if(record.date.startsWith(`${renderedYear}-`))assert(calendarHtml.includes(`/services/${slug}/`),'Full calendar must include lunar assemblies in its rendered list.');
  }
 }
 for(const file of pages){const html=await fs.readFile(file,'utf8');assert(!html.includes('undefined'),'undefined rendered');for(const m of html.matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)){const raw=m[1];if(/^(https?:|mailto:|data:|tel:)/.test(raw))continue;const relative=decodeURIComponent(raw.split('?')[0]);let target=relative.startsWith('/')?path.join(out,relative):path.resolve(path.dirname(file),relative);try{if((await fs.stat(target)).isDirectory())target=path.join(target,'index.html');await fs.access(target);checked++;}catch{throw new Error(`Broken internal URL ${raw} in ${path.relative(out,file)}`)}}}
