@@ -4,21 +4,25 @@ import Icon from '../../components/Icon.astro';
 import EventRows from '../../components/EventRows.astro';
 import Schedule from '../../components/Schedule.astro';
 import Calendar from '../../components/Calendar.astro';
+import TempleUpdates from '../../components/TempleUpdates.astro';
 import {copy,calendar,site,languages,link,asset,dateText,getUpcoming} from '../../lib/temple.js';
-import {publishedEvents} from '../../lib/event-content.js';
+import {publishedEvents,publishedNews} from '../../lib/event-content.js';
 import {nextSundayDate} from '../../lib/live-dates.js';
 
 const customEvents=publishedEvents(import.meta.glob('../../../content/events/*.md',{eager:true}));
+const news=publishedNews(import.meta.glob('../../../content/news/*.md',{eager:true}));
 export function getStaticPaths(){
  const custom=publishedEvents(import.meta.glob('../../../content/events/*.md',{eager:true}));
- const pages=[undefined,'about','services','services/sunday','offerings','visit','calendar',...calendar.events.map(e=>`calendar/${e.id}`),...custom.map(e=>`services/${e.slug}`)];
+ const news=publishedNews(import.meta.glob('../../../content/news/*.md',{eager:true}));
+ const pages=[undefined,'about','services','services/sunday','offerings','visit','calendar',...calendar.events.map(e=>`calendar/${e.id}`),...custom.map(e=>`services/${e.slug}`),...news.map(e=>`news/${e.slug}`)];
  return languages.flatMap(lang=>pages.map(page=>({params:{lang,page}})));
 }
 const {lang,page:route}=Astro.params;const page=route || '';const t=copy[lang];
 const event=page.startsWith('calendar/')?calendar.events.find(e=>`calendar/${e.id}`===page):null;
 const customEvent=page.startsWith('services/')?customEvents.find(e=>`services/${e.slug}`===page):null;
+const newsItem=page.startsWith('news/')?news.find(e=>`news/${e.slug}`===page):null;
 const pageKey=page.split('/')[0];
-const title=event?event.title[lang]:customEvent?customEvent.title[lang]:page?t[pageKey]?.title:undefined;
+const title=event?event.title[lang]:customEvent?customEvent.title[lang]:newsItem?newsItem.title[lang]:page?t[pageKey]?.title:undefined;
 const upcoming=getUpcoming(3);
 const pendingTime=lang==='en'?'Service time to be announced':lang==='zh-hans'?'法会时间待公布':'法會時間待公布';
 const fullCalendar=lang==='en'?'View the full calendar':lang==='zh-hans'?'查看全年日历':'查看全年日曆';
@@ -33,6 +37,7 @@ const sundayDate=nextSundayDate();
     <figure class="hero-image"><img src={asset('images/shared-practice.jpg')} width="1280" height="960" alt={t.common.heroAlt} fetchpriority="high"/><figcaption><span>{t.common.photoCaption}</span><span aria-hidden="true">Fo Shou Temple</span></figcaption></figure>
   </section>
   <div class="welcome-strip"><div class="container"><span><Icon name="clock"/>{t.common.openDaily}</span><span>{t.common.noRegistration}</span><span>{t.common.mandarin}</span><a href={link(lang,'calendar')}><Icon name="calendar"/>{t.nav.calendar}<Icon size={16}/></a></div></div>
+  <TempleUpdates lang={lang} news={news} events={customEvents} preview/>
   <section class="container section weekly-section">
     <div class="section-intro"><h2>{t.home.weeklyTitle}</h2><p>{t.home.weeklyIntro}</p><a class="text-link" href={link(lang,'services/sunday')}>{t.common.details}<Icon/></a></div>
     <div><div class="schedule-label"><span>{t.services.regularLabel}</span><time class="schedule-date" datetime={sundayDate} data-next-sunday data-lang={lang}>{dateText(sundayDate,lang,{month:'long',day:'numeric'})}</time></div><Schedule lang={lang}/></div>
@@ -54,8 +59,8 @@ const sundayDate=nextSundayDate();
 
 {(page==='services'||page==='services/sunday') && <>
  <section class="container page-heading"><h1>{page==='services/sunday'?t.home.weeklyTitle:t.services.title}</h1><p>{t.services.intro}</p><div class="inline-facts"><span>{t.common.noRegistration}</span><span>{t.common.mandarin}</span><span>{t.common.freeMeal}</span></div></section>
+ {page==='services' && <TempleUpdates lang={lang} news={news} events={customEvents}/>}
  <section class="container service-main"><div class="service-photo"><img src={asset('images/shared-practice.jpg')} width="1280" height="960" alt={t.common.heroAlt}/><p>{t.common.photoCaption}</p></div><div><h2>{t.services.regularLabel}</h2><Schedule lang={lang}/><p class="small-note">{t.services.noticeText}</p></div></section>
- {customEvents.length>0 && <section class="container section"><h2>{lang==='en'?'Temple announcements':lang==='zh-hans'?'寺院公告':'寺院公告'}</h2><div class="announcement-list">{customEvents.map(e=><a href={link(lang,`services/${e.slug}`)}><time datetime={e.date}>{dateText(e.date,lang)}</time><h3>{e.title[lang]}</h3><p>{e.description[lang]}</p><Icon/></a>)}</div></section>}
  <section class="calendar-band"><div class="container section calendar-preview"><div class="section-intro"><h2>{t.services.specialTitle}</h2><p>{t.services.specialText}</p><a class="text-link" href={link(lang,'calendar')}>{fullCalendar}<Icon/></a></div><EventRows lang={lang} events={upcoming}/></div></section>
 </>}
 
@@ -82,6 +87,10 @@ const sundayDate=nextSundayDate();
 </>}
 {customEvent && <>
  <section class="container page-heading event-heading"><a class="back-link" href={link(lang,'services')}><Icon name="left"/>{t.nav.services}</a><h1>{customEvent.title[lang]}</h1><p>{dateText(customEvent.date,lang)}</p></section><section class="container event-detail"><div class="prose"><p class="large-copy">{customEvent.description[lang]}</p><p>{customEvent.time || pendingTime}</p><p>{t.common.mandarin} · {t.common.noRegistration}</p><p>{t.common.freeMeal}</p><a class="button primary" href={link(lang,'visit')}>{t.nav.visit}<Icon/></a></div></section>
+</>}
+{newsItem && <>
+ <section class="container page-heading event-heading"><a class="back-link" href={`${link(lang,'services')}#latest-news`}><Icon name="left"/>{t.updates.backToNews}</a><h1>{newsItem.title[lang]}</h1><p><time datetime={newsItem.date}>{dateText(newsItem.date,lang)}</time></p></section>
+ <section class="container event-detail"><div class="prose"><p class="large-copy">{newsItem.description[lang]}</p></div></section>
 </>}
 </Layout>
 <script>

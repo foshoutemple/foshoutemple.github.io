@@ -15,11 +15,32 @@ export function normalizeEventDate(value, source) {
   return date;
 }
 
-export function publishedEvents(modules) {
+function publishedEntries(modules, reservedSlugs = []) {
+  const slugs = new Set(reservedSlugs);
   return Object.entries(modules)
-    .filter(([, module]) => module.frontmatter && !module.frontmatter.draft)
-    .map(([source, module]) => ({
-      ...module.frontmatter,
-      date: normalizeEventDate(module.frontmatter.date, source),
-    }));
+    .filter(([, module]) => module.frontmatter?.draft === false)
+    .map(([source, module]) => {
+      const entry = module.frontmatter;
+      if (typeof entry.slug !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug) || slugs.has(entry.slug)) {
+        throw new Error(`Invalid or duplicate slug in ${source}: use a unique lowercase name with hyphens.`);
+      }
+      slugs.add(entry.slug);
+      for (const field of ['title', 'description']) {
+        for (const lang of ['zh-hans', 'zh-hant', 'en']) {
+          if (typeof entry[field]?.[lang] !== 'string' || !entry[field][lang].trim()) {
+            throw new Error(`Missing ${field}.${lang} in ${source}: published entries need all three languages.`);
+          }
+        }
+      }
+      return {...entry, date: normalizeEventDate(entry.date, source)};
+    })
+    .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
+}
+
+export function publishedEvents(modules) {
+  return publishedEntries(modules, ['sunday']);
+}
+
+export function publishedNews(modules) {
+  return publishedEntries(modules);
 }

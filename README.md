@@ -33,12 +33,17 @@ node scripts/preview.mjs
 | 全站三语文案、开放时间文字及周日流程说明 | [src/data/copy.json](src/data/copy.json) |
 | 周日时间表中显示的具体时段 | [src/components/Schedule.astro](src/components/Schedule.astro) |
 | 佛菩萨圣诞与纪念日 | [src/data/holy-days.json](src/data/holy-days.json) |
-| 特别法会及公告 | 复制 [content/events/_template.md](content/events/_template.md) |
+| 最新消息 | 复制 [content/news/_template.md](content/news/_template.md) |
+| 最近法会 | 复制 [content/events/_template.md](content/events/_template.md) |
 | 网页照片 | `public/images/` |
 
 更改开放时间或常规日程时，同时核对配置、三种语言的说明与时间表，避免不同页面出现不同安排。
 
-新增公告：复制模板为新的 `.md` 文件，填入唯一的 `slug`、引号包住的 `YYYY-MM-DD` 日期、时间、三语标题和说明。未确认时保留 `draft: true`；文案确认后改成 `false`，重新构建，检查三语公告列表与详情页。页面内容使用模板顶部字段；正文不是当前的页面内容入口。
+首页和「法会与共修」页都固定显示「最新消息」与「最近法会」。暂无内容时显示待更新提示，不会隐藏栏目。两页共用内容，无需重复维护；首页各显示最近 3 条，超过 3 条时提供「查看全部」，法会页显示全部。条目按日期从新到旧排列，已过日期的法会保留，方便查阅。
+
+新增内容：按上表复制对应模板为同一文件夹下的新 `.md` 文件，例如 `content/news/temple-notice.md` 或 `content/events/special-service.md`。填入唯一的 `slug`（小写英文字母、数字和连字符）、引号包住的 `YYYY-MM-DD` 日期，以及三语标题和内容。消息的 `date` 是发布日期；法会的 `date` 是举行日期，`time` 可填 `"10:00–11:30"` 等具体时间，未确认则保留 `null`。
+
+未确认时保留 `draft: true`；文案确认后明确改成 `draft: false`，重新构建，检查三语列表与详情页。缺少任何一种语言、日期无效或 slug 重复会阻止发布；法会 slug 不可使用已保留给周日共修页的 `sunday`。页面内容使用模板顶部的 `title` 和 `description` 字段；模板下方的 Markdown 正文不会显示。两份 `_template.md` 请一直保留为草稿，避免将示例发布到官网。
 
 日历由用户每年核对更新。当前有 43 条日期，完整覆盖公历 2026、2027 年，并保留农历 2027 年末延续至 2028 年 1 月的两条记录；这不代表已提供完整 2028 年日历。日期依据见 [CALENDAR_SOURCES.md](CALENDAR_SOURCES.md)。`serviceTime: null` 表示具体法会时间待公布；不要把纪念日直接当成已确认的法会时刻。
 

@@ -1,0 +1,62 @@
+---
+import {copy, dateText, link} from '../lib/temple.js';
+import Icon from './Icon.astro';
+
+const {lang, news, events, preview = false} = Astro.props;
+const t = copy[lang].updates;
+const sections = [
+  {id: 'latest-news', title: t.newsTitle, empty: t.newsEmpty, entries: news, route: 'news'},
+  {id: 'recent-services', title: t.servicesTitle, empty: t.servicesEmpty, entries: events, route: 'services'},
+];
+---
+<div class:list={['container', 'temple-updates', {'home-updates': preview}]}>
+  {sections.map(section => <section id={section.id} aria-labelledby={`${section.id}-heading`}>
+    <div class="updates-heading">
+      <h2 id={`${section.id}-heading`}>{section.title}</h2>
+      {preview && section.entries.length > 3 && <a class="updates-more" href={`${link(lang, 'services')}#${section.id}`} aria-label={`${t.viewAll} · ${section.title}`}>{t.viewAll}<Icon size={16}/></a>}
+    </div>
+    {section.entries.length ? <ul class="updates-list">
+      {(preview ? section.entries.slice(0, 3) : section.entries).map(entry => <li>
+        <a class="update-entry" href={link(lang, `${section.route}/${entry.slug}`)}>
+          <div>
+            <time datetime={entry.date}>{dateText(entry.date, lang, {year: 'numeric', month: 'long', day: 'numeric'})}</time>
+            <h3>{entry.title[lang]}</h3>
+            <p>{entry.description[lang]}</p>
+          </div>
+          <Icon size={18}/>
+        </a>
+      </li>)}
+    </ul> : <p class="updates-empty">{section.empty}</p>}
+  </section>)}
+</div>
+
+<style>
+  .temple-updates {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;padding-bottom:72px;}
+  .home-updates {padding-top:64px;padding-bottom:0;}
+  .updates-heading {display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:1px solid var(--ink);padding-bottom:17px;}
+  .updates-heading h2 {font-size:30px;margin:0;}
+  :global(html[lang='en']) .updates-heading h2 {font-size:36px;}
+  .updates-more {display:inline-flex;align-items:center;gap:8px;font-size:15px;white-space:nowrap;color:var(--red);}
+  .updates-empty {color:var(--muted);margin:23px 0 0;font-size:17px;}
+  .updates-list {margin:0;padding:0;list-style:none;}
+  .updates-list li {border-bottom:1px solid var(--line);}
+  .update-entry {display:flex;justify-content:space-between;gap:24px;padding-block:23px;}
+  .update-entry>div {min-width:0;}
+  .update-entry :global(svg) {flex-shrink:0;margin-top:32px;}
+  .update-entry time {font-size:14px;color:var(--muted);}
+  .update-entry h3 {font-size:23px;margin-top:5px;overflow-wrap:anywhere;}
+  .update-entry p {font-size:16px;line-height:1.8;color:var(--muted);margin:9px 0 0;overflow-wrap:anywhere;}
+  .update-entry:hover h3 {text-decoration:underline;}
+  @media(max-width:1000px) {
+    .temple-updates {gap:40px;padding-bottom:56px;}
+    .home-updates {padding-top:56px;padding-bottom:0;}
+  }
+  @media(max-width:700px) {
+    .temple-updates {grid-template-columns:1fr;gap:34px;}
+    .home-updates {padding-top:44px;}
+    .updates-heading {padding-bottom:13px;gap:14px;}
+    .updates-heading h2 {font-size:27px;}
+    :global(html[lang='en']) .updates-heading h2 {font-size:32px;}
+    .updates-empty {margin-top:18px;font-size:16px;}
+  }
+</style>

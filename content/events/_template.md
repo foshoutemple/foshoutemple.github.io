@@ -13,4 +13,4 @@ description:
   en: "Enter the confirmed service details."
 ---
 
-这是维护模板，不会在网站上显示。复制到新文件，修改 slug、三语标题、说明与日期，并将 draft 改成 false 后才会显示。
+这是维护模板，不会在网站上显示。复制到新文件，修改 slug、法会日期、时间及三语标题与说明，确认后将 draft 改成 false。内容使用上方 description 字段；本段正文不会显示。
