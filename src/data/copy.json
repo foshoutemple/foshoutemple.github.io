@@ -2,6 +2,12 @@
   "zh-hans": {
     "langName": "简体中文",
     "siteName": "佛寿寺",
+    "photos": {
+      "community": { "alt": "大众在佛殿内合影，身后可见佛像与供花", "caption": "佛殿内的大众合影" },
+      "practice": { "alt": "大众在佛殿内合掌共修，前方可见经本与法器", "caption": "大众共修 · 合掌礼佛" },
+      "altarGathering": { "alt": "大众齐聚佛殿，佛坛前陈设香炉、鲜花与水果供品", "caption": "佛殿内的礼佛场景" },
+      "offerings": { "alt": "佛像前陈设供花，来访者身旁的供桌上摆放着点亮的供灯", "caption": "佛前供灯与供花" }
+    },
     "updates": {
       "newsTitle": "最新消息", "servicesTitle": "最近法会",
       "newsEmpty": "暂无新消息，敬请留意。", "servicesEmpty": "法会安排将于此公布。",
@@ -94,6 +100,12 @@
   "zh-hant": {
     "langName": "繁體中文",
     "siteName": "佛壽寺",
+    "photos": {
+      "community": { "alt": "大眾在佛殿內合影，身後可見佛像與供花", "caption": "佛殿內的大眾合影" },
+      "practice": { "alt": "大眾在佛殿內合掌共修，前方可見經本與法器", "caption": "大眾共修 · 合掌禮佛" },
+      "altarGathering": { "alt": "大眾齊聚佛殿，佛壇前陳設香爐、鮮花與水果供品", "caption": "佛殿內的禮佛場景" },
+      "offerings": { "alt": "佛像前陳設供花，來訪者身旁的供桌上擺放著點亮的供燈", "caption": "佛前供燈與供花" }
+    },
     "updates": {
       "newsTitle": "最新消息", "servicesTitle": "最近法會",
       "newsEmpty": "暫無新消息，敬請留意。", "servicesEmpty": "法會安排將於此公布。",
@@ -186,6 +198,12 @@
   "en": {
     "langName": "English",
     "siteName": "Fo Shou Temple",
+    "photos": {
+      "community": { "alt": "A group portrait inside the Buddha hall, with Buddha statues and flower offerings behind the gathering", "caption": "Our temple community in the Buddha hall" },
+      "practice": { "alt": "Participants stand with palms joined in the Buddha hall, with sutra books and ritual instruments in the foreground", "caption": "Shared practice in the Buddha hall" },
+      "altarGathering": { "alt": "People gather in the Buddha hall, with incense burners, flowers, and fruit offerings before the altar", "caption": "Gathering for worship in the Buddha hall" },
+      "offerings": { "alt": "Flower offerings stand before Buddha statues, with lit offering lamps on a table beside visitors", "caption": "Light and flower offerings before the Buddhas" }
+    },
     "updates": {
       "newsTitle": "Latest news", "servicesTitle": "Recent services",
       "newsEmpty": "No news has been posted yet.", "servicesEmpty": "Service announcements will be posted here.",
