@@ -6,7 +6,7 @@ date: "2026-09-25"
 time: "10:00"
 replacesLunarPractice: true
 image:
-  src: "/images/posters/moonlight-bodhisattva-birthday-2026.png"
+  src: "/images/posters/moonlight-bodhisattva-birthday-2026-v2.png"
   width: 1024
   height: 1536
   alt:
