@@ -30,6 +30,7 @@ node scripts/preview.mjs
 | 要修改的内容 | 文件 |
 |---|---|
 | 邮箱、地址、地图、社交链接、开放时间配置 | [src/data/site.json](src/data/site.json) |
+| 访客计数器站点代码 | [src/data/site.json](src/data/site.json) 的 `goatcounterCode` |
 | 全站三语文案、开放时间文字及周日流程说明 | [src/data/copy.json](src/data/copy.json) |
 | 周日共修时间、活动日历中的停办日期 | [src/data/weekly-practice.json](src/data/weekly-practice.json) |
 | 农历初一、十五法会日期、时间及停办日期 | [src/data/lunar-practice.json](src/data/lunar-practice.json) |
@@ -103,6 +104,14 @@ node scripts/preview.mjs
 发布成功后，检查首页语言选择，以及 `/zh-hans/`、`/zh-hant/`、`/en/` 的相关页面、图片与日期。若需要撤回一次内容修改，可在本地对对应提交执行 `git revert`，再推送到 `main`，网站会自动重新发布。
 
 配置依据：[Astro 的 GitHub Pages 指南](https://docs.astro.build/en/guides/deploy/github/)及 [GitHub Pages 自定义工作流说明](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
+
+## 访客计数器
+
+网站底部右下角预留了一个很小的访客计数器位置。统计采用 GoatCounter 的轻量 JavaScript 集成；未配置站点代码时，计数器和外部脚本都会保持关闭，不影响网站运行。
+
+首次启用时，在 [GoatCounter](https://www.goatcounter.com/signup) 建立站点，将站点域名填写为 `foshoutemple.github.io`。注册完成后，在 GoatCounter 的站点设置中开启 **Allow adding visitor counts on your website**，再把账号地址 `https://你的站点代码.goatcounter.com/` 中的站点代码填入 `src/data/site.json` 的 `goatcounterCode`，重新构建并推送即可。站点代码是公开的统计端点，不要把邮箱密码写进仓库。
+
+计数器显示的是 GoatCounter 的全站累计页面浏览量，数据可能因缓存延迟最多约四小时；详细页面、来源和时间范围在 GoatCounter 控制台查看。GoatCounter 的 [JavaScript 集成说明](https://www.goatcounter.com/help/js)及[访客计数器说明](https://www.goatcounter.com/help/visitor-counter)记录了上述接口和设置。
 
 ## Google 搜索收录
 

@@ -49,7 +49,7 @@
     "city": "美国 · 费城",
     "nav": { "home": "首页", "about": "认识佛寿寺", "services": "法会与共修", "offerings": "供养与素斋", "visit": "来寺与联络", "calendar": "佛教纪念日" },
     "common": {
-      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "来寺路线", "email": "邮件联络", "backHome": "返回首页", "skip": "跳至主要内容", "menu": "打开菜单", "close": "关闭", "all": "全部", "details": "查看详情", "openDaily": "每日 9:00–17:00 开放", "noRegistration": "无需登记", "mandarin": "共修以普通话为主", "freeMeal": "共修后提供免费素斋", "photoCaption": "大众共修 · 诵经礼佛", "entranceAlt": "费城佛寿寺的寺院入口", "heroAlt": "大众在户外合掌诵经，供桌前摆放着供品"
+      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "来寺路线", "email": "邮件联络", "backHome": "返回首页", "skip": "跳至主要内容", "menu": "打开菜单", "close": "关闭", "all": "全部", "details": "查看详情", "openDaily": "每日 9:00–17:00 开放", "noRegistration": "无需登记", "mandarin": "共修以普通话为主", "freeMeal": "共修后提供免费素斋", "visitorCount": "网站访客", "photoCaption": "大众共修 · 诵经礼佛", "entranceAlt": "费城佛寿寺的寺院入口", "heroAlt": "大众在户外合掌诵经，供桌前摆放着供品"
     },
     "home": {
       "title": "共修诵经，\n欢喜结缘。",
@@ -172,7 +172,7 @@
     "city": "美國 · 費城",
     "nav": { "home": "首頁", "about": "認識佛壽寺", "services": "法會與共修", "offerings": "供養與素齋", "visit": "來寺與聯絡", "calendar": "佛教紀念日" },
     "common": {
-      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "來寺路線", "email": "郵件聯絡", "backHome": "返回首頁", "skip": "跳至主要內容", "menu": "開啟選單", "close": "關閉", "all": "全部", "details": "查看詳情", "openDaily": "每日 9:00–17:00 開放", "noRegistration": "無需登記", "mandarin": "共修以普通話為主", "freeMeal": "共修後提供免費素齋", "photoCaption": "大眾共修 · 誦經禮佛", "entranceAlt": "費城佛壽寺的寺院入口", "heroAlt": "大眾在戶外合掌誦經，供桌前擺放著供品"
+      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "來寺路線", "email": "郵件聯絡", "backHome": "返回首頁", "skip": "跳至主要內容", "menu": "開啟選單", "close": "關閉", "all": "全部", "details": "查看詳情", "openDaily": "每日 9:00–17:00 開放", "noRegistration": "無需登記", "mandarin": "共修以普通話為主", "freeMeal": "共修後提供免費素齋", "visitorCount": "網站訪客", "photoCaption": "大眾共修 · 誦經禮佛", "entranceAlt": "費城佛壽寺的寺院入口", "heroAlt": "大眾在戶外合掌誦經，供桌前擺放著供品"
     },
     "home": {
       "title": "共修誦經，\n歡喜結緣。",
@@ -295,7 +295,7 @@
     "city": "Philadelphia, Pennsylvania",
     "nav": { "home": "Home", "about": "Our Temple", "services": "Dharma Assemblies & Practice", "offerings": "Offerings & Meals", "visit": "Visit & Contact", "calendar": "Buddhist Calendar" },
     "common": {
-      "learnMore": "Learn more", "viewSchedule": "Sunday schedule", "directions": "Get directions", "email": "Email the temple", "backHome": "Back to home", "skip": "Skip to main content", "menu": "Open menu", "close": "Close", "all": "All", "details": "View details", "openDaily": "Open daily, 9 a.m.–5 p.m.", "noRegistration": "No registration needed", "mandarin": "Practice primarily in Mandarin", "freeMeal": "Free vegetarian meal after communal practice", "photoCaption": "Gathering for chanting and Buddhist practice", "entranceAlt": "The entrance to Fo Shou Temple in Philadelphia", "heroAlt": "A group gathered outdoors for chanting, with palms joined and offerings arranged on a table"
+      "learnMore": "Learn more", "viewSchedule": "Sunday schedule", "directions": "Get directions", "email": "Email the temple", "backHome": "Back to home", "skip": "Skip to main content", "menu": "Open menu", "close": "Close", "all": "All", "details": "View details", "openDaily": "Open daily, 9 a.m.–5 p.m.", "noRegistration": "No registration needed", "mandarin": "Practice primarily in Mandarin", "freeMeal": "Free vegetarian meal after communal practice", "visitorCount": "Site visitors", "photoCaption": "Gathering for chanting and Buddhist practice", "entranceAlt": "The entrance to Fo Shou Temple in Philadelphia", "heroAlt": "A group gathered outdoors for chanting, with palms joined and offerings arranged on a table"
     },
     "home": {
       "title": "Chant together.\nPray together.",
