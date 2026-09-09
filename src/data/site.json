@@ -8,6 +8,6 @@
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fo+Shou+Temple+1015+Cherry+Street+Philadelphia+PA+19107",
   "youtube": "https://www.youtube.com/@foshoutemple5238",
   "facebook": "https://www.facebook.com/p/Fo-Shou-Temple-%E4%BD%9B%E5%AF%BF%E5%AF%BA-100080646123796/",
-  "goatcounterCode": "",
+  "visitorCounterBase": "https://hits.sh/foshoutemple.github.io.svg",
   "defaultLanguage": "zh-hant"
 }

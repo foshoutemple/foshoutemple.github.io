@@ -9,8 +9,7 @@ const navKey = (p) => p || 'home';
 const isCurrent = (p) => page===p || (p==='' && (page==='news'||page.startsWith('news/'))) || (p==='services' && (page.startsWith('services/')||page.startsWith('calendar')));
 const pageTitle=title ? `${title} · ${t.siteName}` : `${t.siteName} · ${t.city}`;
 const canonical=Astro.site ? new URL(link(lang,page),Astro.site).href : undefined;
-const goatcounterCode = String(import.meta.env.PUBLIC_GOATCOUNTER_CODE || site.goatcounterCode || '').trim();
-const goatcounterEndpoint = goatcounterCode ? `https://${goatcounterCode}.goatcounter.com/count` : '';
+const visitorCounterUrl = `${site.visitorCounterBase}?label=${encodeURIComponent(t.common.visitorCount)}&labelColor=263b35&color=9a784d&style=flat`;
 ---
 <!doctype html>
 <html lang={langTags[lang]}>
@@ -22,7 +21,6 @@ const goatcounterEndpoint = goatcounterCode ? `https://${goatcounterCode}.goatco
     {Astro.site && languages.map(l => <link rel="alternate" hreflang={langTags[l]} href={new URL(link(l,page),Astro.site).href}/>)}
     <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml"/>
     <link rel="stylesheet" href={asset('fonts/fonts.css')}/>
-    {goatcounterEndpoint && <script data-goatcounter={goatcounterEndpoint} async src="https://gc.zgo.at/count.js"></script>}
   </head>
   <body data-language={lang}>
     <a class="skip-link" href="#main">{t.common.skip}</a>
@@ -49,7 +47,7 @@ const goatcounterEndpoint = goatcounterCode ? `https://${goatcounterCode}.goatco
       </div>
       <div class="container footer-bottom"><span>© {new Date().getFullYear()} Fo Shou Temple. {t.footer.copyright}</span><div>{languages.map(l=><a href={link(l,page)} lang={langTags[l]} data-language-link={l}>{languageNames[l]}</a>)}</div></div>
     </footer>
-    {goatcounterEndpoint && <aside id="visitor-meter" class="visitor-meter" aria-label={t.common.visitorCount} hidden><span class="sr-only">{t.common.visitorCount}</span></aside>}
+    <aside class="visitor-meter" aria-label={t.common.visitorCount}><a href="https://hits.sh/" target="_blank" rel="noopener noreferrer"><img src={visitorCounterUrl} width="68" height="20" alt={t.common.visitorCount}/></a></aside>
     <script>
       const button=document.querySelector('.mobile-menu-button');
       const nav=document.querySelector('#mobile-nav');
@@ -57,21 +55,6 @@ const goatcounterEndpoint = goatcounterCode ? `https://${goatcounterCode}.goatco
       document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('details[open]').forEach(d=>d.removeAttribute('open'));if(button?.getAttribute('aria-expanded')==='true'){button.setAttribute('aria-expanded','false');nav.hidden=true;button.focus();}}});
       document.querySelectorAll('[data-language-link]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('foshou-language',a.dataset.languageLink)}catch{}; const keep=new URLSearchParams(location.search);if(keep.size)a.href+=`?${keep}`;if(location.hash)a.href+=location.hash;}));
       document.addEventListener('click',event=>{document.querySelectorAll('.language-picker[open]').forEach(picker=>{if(!picker.contains(event.target))picker.removeAttribute('open')})});
-      const visitorMeter=document.querySelector('#visitor-meter');
-      if(visitorMeter){
-        let attempts=0;
-        const renderVisitorCount=()=>{
-          if(!window.goatcounter?.visit_count)return false;
-          try{
-            window.goatcounter.visit_count({path:'TOTAL',append:'#visitor-meter',type:'html',no_branding:true,attr:{'aria-label':visitorMeter.getAttribute('aria-label') || 'Site visitors'}});
-            visitorMeter.hidden=false;
-            return true;
-          }catch{return false;}
-        };
-        if(!renderVisitorCount()){
-          const timer=setInterval(()=>{attempts+=1;if(renderVisitorCount() || attempts>=50)clearInterval(timer)},100);
-        }
-      }
     </script>
   </body>
 </html>

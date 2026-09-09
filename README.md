@@ -30,7 +30,7 @@ node scripts/preview.mjs
 | 要修改的内容 | 文件 |
 |---|---|
 | 邮箱、地址、地图、社交链接、开放时间配置 | [src/data/site.json](src/data/site.json) |
-| 访客计数器站点代码 | [src/data/site.json](src/data/site.json) 的 `goatcounterCode` |
+| 访客计数器图片地址 | [src/data/site.json](src/data/site.json) 的 `visitorCounterBase` |
 | 全站三语文案、开放时间文字及周日流程说明 | [src/data/copy.json](src/data/copy.json) |
 | 周日共修时间、活动日历中的停办日期 | [src/data/weekly-practice.json](src/data/weekly-practice.json) |
 | 农历初一、十五法会日期、时间及停办日期 | [src/data/lunar-practice.json](src/data/lunar-practice.json) |
@@ -107,11 +107,9 @@ node scripts/preview.mjs
 
 ## 访客计数器
 
-网站底部右下角预留了一个很小的访客计数器位置。统计采用 GoatCounter 的轻量 JavaScript 集成；未配置站点代码时，计数器和外部脚本都会保持关闭，不影响网站运行。
+网站底部右下角使用一个很小的 Hits 徽章。它直接请求 `hits.sh` 的 SVG 图片，不需要注册账号、邮箱、密码或验证码；`visitorCounterBase` 只需保持为本站的徽章地址即可。徽章以 `foshoutemple.github.io` 作为累计计数的唯一标识，三种语言共用同一个数字。
 
-首次启用时，在 [GoatCounter](https://www.goatcounter.com/signup) 建立站点，将站点域名填写为 `foshoutemple.github.io`。注册完成后，在 GoatCounter 的站点设置中开启 **Allow adding visitor counts on your website**，再把账号地址 `https://你的站点代码.goatcounter.com/` 中的站点代码填入 `src/data/site.json` 的 `goatcounterCode`，重新构建并推送即可。站点代码是公开的统计端点，不要把邮箱密码写进仓库。
-
-计数器显示的是 GoatCounter 的全站累计页面浏览量，数据可能因缓存延迟最多约四小时；详细页面、来源和时间范围在 GoatCounter 控制台查看。GoatCounter 的 [JavaScript 集成说明](https://www.goatcounter.com/help/js)及[访客计数器说明](https://www.goatcounter.com/help/visitor-counter)记录了上述接口和设置。
+这是一个轻量的公开累计访问次数徽章，适合当前静态 GitHub Pages 网站；它不提供 GoatCounter 那样的来源、页面路径和时间范围分析。Hits 官方文档说明其徽章无需注册即可使用，并介绍了 URL 与颜色、标签参数：[Hits 文档](https://hits.sh/docs/)。
 
 ## Google 搜索收录
 
