@@ -10,6 +10,7 @@ const isCurrent = (p) => page===p || (p==='' && (page==='news'||page.startsWith(
 const pageTitle=title ? `${title} · ${t.siteName}` : `${t.siteName} · ${t.city}`;
 const canonical=Astro.site ? new URL(link(lang,page),Astro.site).href : undefined;
 const visitorCounterUrl = `${site.visitorCounterBase}?label=${encodeURIComponent(t.common.visitorCount)}&labelColor=263b35&color=9a784d&style=flat`;
+const websiteSchema = { '@context':'https://schema.org', '@type':'WebSite', name:lang === 'en' ? 'Fo Shou Temple' : `${t.siteName} / Fo Shou Temple`, alternateName:['佛壽寺','Fo Shou Temple'], url:canonical || link(lang) };
 ---
 <!doctype html>
 <html lang={langTags[lang]}>
@@ -17,6 +18,8 @@ const visitorCounterUrl = `${site.visitorCounterBase}?label=${encodeURIComponent
     <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="theme-color" content="#f6f4ee"/>
     <title>{pageTitle}</title><meta name="description" content={description || t.home.intro}/>
+    {site.googleSiteVerification && <meta name="google-site-verification" content={site.googleSiteVerification}/>}
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
     {canonical && <link rel="canonical" href={canonical}/>}
     {Astro.site && languages.map(l => <link rel="alternate" hreflang={langTags[l]} href={new URL(link(l,page),Astro.site).href}/>)}
     <link rel="icon" href={asset('favicon.svg')} type="image/svg+xml"/>
