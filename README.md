@@ -117,9 +117,9 @@ node scripts/preview.mjs
 
 每次构建会自动生成 [站点地图](https://foshoutemple.github.io/sitemap-index.xml)，列出全部三语内容页面及对应语言版本；语言跳转入口和 404 页面不列入。根目录的 [robots.txt](https://foshoutemple.github.io/robots.txt) 允许抓取并标明站点地图位置。新增法会后无需手动维护站点地图。
 
-下一步使用寺院邮箱 `foshoutemple@gmail.com` 登录 [Google Search Console](https://search.google.com/search-console/about)，添加 **URL prefix / 网址前缀** 资源 `https://foshoutemple.github.io/`。完成 Google 提供的 HTML 文件或 meta 标签所有权验证后，在 **Sitemaps / 站点地图** 提交 `sitemap-index.xml`。这里不使用需要 DNS 管理权限的 Domain / 网域验证。
+目前已使用寺院邮箱 `foshoutemple@gmail.com` 在 [Google Search Console](https://search.google.com/search-console/about) 添加并验证 **URL prefix / 网址前缀** 资源 `https://foshoutemple.github.io/`。验证方式是首页 HTML meta 标签；请保留 `googleSiteVerification` 配置，以免失去所有权验证。这里不使用需要 DNS 管理权限的 Domain / 网域验证。
 
-在 **URL inspection / 网址检查** 分别检查 `/zh-hans/`、`/zh-hant/` 和 `/en/`，按需点击 **Request indexing / 请求编入索引**。不要重复提交同一网址；过几天查看抓取和收录状态即可。保留验证文件或标签，以免失去所有权验证。
+`sitemap-index.xml` 已提交到 **Sitemaps / 站点地图**，并已为网站根地址及 `/zh-hans/`、`/zh-hant/`、`/en/` 请求编入索引。首次提交后报告可能暂时显示 “Couldn't fetch” 或 0 个已发现页面；先用 URL Inspection 的 **Live Test** 检查可访问性，之后等待 Google 处理即可。不要重复提交同一网址；可在 Search Console 的 [网址检查报告](https://search.google.com/search-console/inspect?resource_id=https%3A%2F%2Ffoshoutemple.github.io%2F) 查看状态。
 
 也可在寺院管理的 Google Maps 商家资料、Facebook 与 YouTube 简介中填写官网地址，方便信众访问及搜索引擎发现。添加站点地图本身不会自动建立 Search Console 资源，也不代表已向 Google 提交收录请求。
 
