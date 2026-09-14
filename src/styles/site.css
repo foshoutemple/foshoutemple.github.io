@@ -167,3 +167,6 @@ html[lang='en'] h1{letter-spacing:-.02em;font-size:64px;line-height:1.06}html[la
  .cell-event:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--red)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+.temple-halls{border-top:1px solid var(--line)}.temple-halls .section-intro{margin-bottom:44px}.temple-halls .section-intro h2{max-width:none}.hall-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}.hall-gallery figure{min-width:0}.hall-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#e3e2d6}.hall-gallery figcaption{font-family:var(--serif);font-size:21px;line-height:1.4;color:var(--ink);margin-top:14px;letter-spacing:.03em}
+@media(max-width:1000px){.hall-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+@media(max-width:700px){.temple-halls{padding-top:56px}.temple-halls .section-intro{margin-bottom:30px}.hall-gallery{grid-template-columns:1fr;gap:30px}.hall-gallery figcaption{font-size:20px}}

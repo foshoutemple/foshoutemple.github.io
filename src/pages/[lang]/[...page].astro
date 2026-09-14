@@ -68,6 +68,14 @@ const servicePhoto=page==='services/sunday'
  <section class="container page-heading"><h1>{t.about.title}</h1><p>{t.about.intro}</p></section>
  <section class="container about-feature"><figure><img src={asset('images/temple-entrance.jpg')} width="1280" height="959" alt={t.common.entranceAlt}/><figcaption>1015 Cherry Street · Philadelphia</figcaption></figure><div class="prose"><p class="large-copy">{t.about.body}</p><h2>{t.about.practiceTitle}</h2><p>{t.about.practiceText}</p><a class="text-link" href={link(lang,'services')}>{t.common.viewSchedule}<Icon/></a></div></section>
  <section class="container section story-row"><div><h2>{t.about.welcomeTitle}</h2><p>{t.about.welcomeText}</p><a class="button primary" href={link(lang,'visit')}>{t.nav.visit}<Icon/></a></div><figure><img src={asset('images/temple-community.jpg')} width="1706" height="1279" alt={t.photos.community.alt} loading="lazy"/><figcaption>{t.photos.community.caption}</figcaption></figure></section>
+ <section class="container section temple-halls" aria-labelledby="temple-halls-title">
+   <div class="section-intro"><h2 id="temple-halls-title">{t.about.galleryTitle}</h2><p>{t.about.galleryIntro}</p></div>
+   <div class="hall-gallery">
+     <figure><img src={asset('images/main-buddha-hall.jpg')} width="800" height="600" alt={t.photos.mainHall.alt} loading="lazy" decoding="async"/><figcaption>{t.photos.mainHall.caption}</figcaption></figure>
+     <figure><img src={asset('images/ksitigarbha-hall.jpg')} width="1280" height="960" alt={t.photos.ksitigarbhaHall.alt} loading="lazy" decoding="async"/><figcaption>{t.photos.ksitigarbhaHall.caption}</figcaption></figure>
+     <figure><img src={asset('images/rebirth-hall.jpg')} width="1280" height="960" alt={t.photos.rebirthHall.alt} loading="lazy" decoding="async"/><figcaption>{t.photos.rebirthHall.caption}</figcaption></figure>
+   </div>
+ </section>
 </>}
 
 {(page==='services'||page==='services/sunday') && <>

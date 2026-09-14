@@ -6,7 +6,10 @@
       "community": { "alt": "大众在佛殿内合影，身后可见佛像与供花", "caption": "佛殿内的大众合影" },
       "practice": { "alt": "大众在佛殿内合掌共修，前方可见经本与法器", "caption": "大众共修 · 合掌礼佛" },
       "altarGathering": { "alt": "大众齐聚佛殿，佛坛前陈设香炉、鲜花与水果供品", "caption": "佛殿内的礼佛场景" },
-      "offerings": { "alt": "佛像前陈设供花，来访者身旁的供桌上摆放着点亮的供灯", "caption": "佛前供灯与供花" }
+      "offerings": { "alt": "佛像前陈设供花，来访者身旁的供桌上摆放着点亮的供灯", "caption": "佛前供灯与供花" },
+      "mainHall": { "alt": "佛寿寺大殿内，佛像与供桌前大众正在诵经礼佛", "caption": "大殿" },
+      "ksitigarbhaHall": { "alt": "佛寿寺地藏殿内供奉地藏菩萨，佛前摆放水果、牌位与莲花灯", "caption": "地藏殿" },
+      "rebirthHall": { "alt": "佛寿寺往生堂佛前供桌与莲花灯，鲜花与供品整齐陈设", "caption": "往生堂" }
     },
     "updates": {
       "newsTitle": "最新消息", "newsEmpty": "暂无新消息，敬请留意。",
@@ -71,7 +74,9 @@
       "practiceTitle": "以共修相聚",
       "practiceText": "每周日举行共修，现场以普通话诵经为主。佛菩萨圣诞法会通常在农历正日举行，具体日期与时间请参阅寺院公告。",
       "welcomeTitle": "欢迎随喜参与",
-      "welcomeText": "来寺无需预先登记。无论是平日礼佛，还是参加共修，都欢迎您到访。每次共修之后，楼下均提供免费素斋。"
+      "welcomeText": "来寺无需预先登记。无论是平日礼佛，还是参加共修，都欢迎您到访。每次共修之后，楼下均提供免费素斋。",
+      "galleryTitle": "寺院殿堂",
+      "galleryIntro": "大殿、地藏殿与往生堂，都是佛寿寺日常礼佛、诵经与供养的空间。"
     },
     "services": {
       "title": "法会与共修",
@@ -129,7 +134,10 @@
       "community": { "alt": "大眾在佛殿內合影，身後可見佛像與供花", "caption": "佛殿內的大眾合影" },
       "practice": { "alt": "大眾在佛殿內合掌共修，前方可見經本與法器", "caption": "大眾共修 · 合掌禮佛" },
       "altarGathering": { "alt": "大眾齊聚佛殿，佛壇前陳設香爐、鮮花與水果供品", "caption": "佛殿內的禮佛場景" },
-      "offerings": { "alt": "佛像前陳設供花，來訪者身旁的供桌上擺放著點亮的供燈", "caption": "佛前供燈與供花" }
+      "offerings": { "alt": "佛像前陳設供花，來訪者身旁的供桌上擺放著點亮的供燈", "caption": "佛前供燈與供花" },
+      "mainHall": { "alt": "佛壽寺大殿內，佛像與供桌前大眾正在誦經禮佛", "caption": "大殿" },
+      "ksitigarbhaHall": { "alt": "佛壽寺地藏殿內供奉地藏菩薩，佛前擺放水果、牌位與蓮花燈", "caption": "地藏殿" },
+      "rebirthHall": { "alt": "佛壽寺往生堂佛前供桌與蓮花燈，鮮花與供品整齊陳設", "caption": "往生堂" }
     },
     "updates": {
       "newsTitle": "最新消息", "newsEmpty": "暫無新消息，敬請留意。",
@@ -194,7 +202,9 @@
       "practiceTitle": "以共修相聚",
       "practiceText": "每週日舉行共修，現場以普通話誦經為主。佛菩薩聖誕法會通常在農曆正日舉行，具體日期與時間請參閱寺院公告。",
       "welcomeTitle": "歡迎隨喜參與",
-      "welcomeText": "來寺無需預先登記。無論是平日禮佛，還是參加共修，都歡迎您到訪。每次共修之後，樓下均提供免費素齋。"
+      "welcomeText": "來寺無需預先登記。無論是平日禮佛，還是參加共修，都歡迎您到訪。每次共修之後，樓下均提供免費素齋。",
+      "galleryTitle": "寺院殿堂",
+      "galleryIntro": "大殿、地藏殿與往生堂，都是佛壽寺日常禮佛、誦經與供養的空間。"
     },
     "services": {
       "title": "法會與共修",
@@ -252,7 +262,10 @@
       "community": { "alt": "A group portrait inside the Buddha hall, with Buddha statues and flower offerings behind the gathering", "caption": "Our temple community in the Buddha hall" },
       "practice": { "alt": "Participants stand with palms joined in the Buddha hall, with sutra books and ritual instruments in the foreground", "caption": "Shared practice in the Buddha hall" },
       "altarGathering": { "alt": "People gather in the Buddha hall, with incense burners, flowers, and fruit offerings before the altar", "caption": "Gathering for worship in the Buddha hall" },
-      "offerings": { "alt": "Flower offerings stand before Buddha statues, with lit offering lamps on a table beside visitors", "caption": "Light and flower offerings before the Buddhas" }
+      "offerings": { "alt": "Flower offerings stand before Buddha statues, with lit offering lamps on a table beside visitors", "caption": "Light and flower offerings before the Buddhas" },
+      "mainHall": { "alt": "Inside Fo Shou Temple's Buddha hall, people chant and pay respects before the Buddha statues and offering tables", "caption": "Buddha hall" },
+      "ksitigarbhaHall": { "alt": "The Ksitigarbha Hall at Fo Shou Temple, with Ksitigarbha Bodhisattva, memorial tablets, fruit, and lotus lamps", "caption": "Ksitigarbha Hall" },
+      "rebirthHall": { "alt": "The Rebirth Hall at Fo Shou Temple, with a table of flowers, offerings, and lotus lamps before the altar", "caption": "Rebirth Hall" }
     },
     "updates": {
       "newsTitle": "Latest news", "newsEmpty": "No news has been posted yet.",
@@ -317,7 +330,9 @@
       "practiceTitle": "Gathering to practice",
       "practiceText": "Communal practice takes place every Sunday, primarily in Mandarin Chinese. Dharma assemblies marking the birthdays of Buddhas and Bodhisattvas are usually held on the lunar anniversary. Please see temple announcements for dates and times.",
       "welcomeTitle": "Join us",
-      "welcomeText": "No registration is required. You are welcome to visit during daily opening hours or join a communal practice gathering. A free vegetarian meal is provided downstairs after each gathering."
+      "welcomeText": "No registration is required. You are welcome to visit during daily opening hours or join a communal practice gathering. A free vegetarian meal is provided downstairs after each gathering.",
+      "galleryTitle": "Our halls",
+      "galleryIntro": "The Buddha hall, Ksitigarbha Hall, and Rebirth Hall are spaces for daily worship, chanting, and offerings at Fo Shou Temple."
     },
     "services": {
       "title": "Dharma Assemblies & Practice",
