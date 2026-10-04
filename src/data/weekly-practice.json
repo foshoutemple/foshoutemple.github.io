@@ -2,5 +2,10 @@
   "morningStart": "10:00",
   "morningEnd": "11:30",
   "afternoonStart": "13:00",
-  "excludedDates": []
+  "excludedDates": ["2026-10-04", "2026-10-11", "2026-10-18"],
+  "pauseNotice": {
+    "from": "2026-10-04",
+    "through": "2026-10-23",
+    "slug": "2026-10-sunday-practice-pause"
+  }
 }

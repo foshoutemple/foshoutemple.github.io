@@ -1,12 +1,39 @@
 ---
-import { copy } from '../lib/temple.js';
+import { copy, link, todayInPhilly } from '../lib/temple.js';
+import { publishedNews } from '../lib/event-content.js';
 import regular from '../data/weekly-practice.json';
 const { lang } = Astro.props;
 const t = copy[lang];
+const pause = regular.pauseNotice;
+const notice = pause ? publishedNews(import.meta.glob('../../content/news/*.md', {eager:true})).find(entry => entry.slug === pause.slug) : null;
+if (pause && !notice) throw new Error(`Missing published weekly practice notice: ${pause.slug}`);
+const today = todayInPhilly();
+const paused = pause && today >= pause.from && today <= pause.through;
 const rows = [
  { time:`${regular.morningStart}–${regular.morningEnd}`,title:t.services.morningTitle, text:t.services.morningText },
  { time:t.services.mealTime,title:t.services.mealTitle, text:t.services.mealText },
  { time:regular.afternoonStart,title:t.services.afternoonTitle,text:t.services.afternoonText },
 ];
 ---
+{notice && <aside class="weekly-notice" data-weekly-notice data-from={pause.from} data-through={pause.through} hidden={!paused}>
+  <h3><a href={link(lang, `news/${notice.slug}`)}>{notice.title[lang]}</a></h3>
+  <p>{notice.description[lang]}</p>
+</aside>}
 <div class="schedule-list">{rows.map((r,i) => <div class="schedule-row"><div class="schedule-time"><span class="schedule-point" aria-hidden="true"></span>{r.time}</div><div><h3>{r.title}</h3><p>{r.text}</p></div></div>)}</div>
+
+<script>
+  import {onPhillyDateChange} from '../lib/live-dates.js';
+  document.querySelectorAll('[data-weekly-notice]').forEach(element => {
+    onPhillyDateChange(today => {
+      element.hidden = today < element.dataset.from || today > element.dataset.through;
+    });
+  });
+</script>
+
+<style>
+  .weekly-notice {padding:20px 22px;margin-block:20px;background:var(--soft);}
+  .weekly-notice h3 {font-size:20px;line-height:1.5;color:var(--red);}
+  .weekly-notice h3 a {text-decoration:underline;text-underline-offset:4px;}
+  .weekly-notice p {font-size:16px;line-height:1.85;margin:10px 0 0;max-width:65ch;overflow-wrap:anywhere;}
+  @media(max-width:700px) {.weekly-notice {padding:18px;}.weekly-notice h3 {font-size:19px;}}
+</style>
