@@ -52,11 +52,11 @@
     "city": "美国 · 费城",
     "nav": { "home": "首页", "about": "认识佛寿寺", "services": "法会与共修", "offerings": "供养与素斋", "visit": "来寺与联络", "calendar": "佛教纪念日" },
     "common": {
-      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "来寺路线", "email": "邮件联络", "backHome": "返回首页", "skip": "跳至主要内容", "menu": "打开菜单", "close": "关闭", "all": "全部", "details": "查看详情", "openDaily": "每日 9:00–17:00 开放", "noRegistration": "无需登记", "mandarin": "共修以普通话为主", "freeMeal": "共修后提供免费素斋", "visitorCount": "网站访客", "photoCaption": "大众共修 · 诵经礼佛", "entranceAlt": "费城佛寿寺的寺院入口", "heroAlt": "大众在户外合掌诵经，供桌前摆放着供品"
+      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "来寺路线", "email": "邮件联络", "backHome": "返回首页", "skip": "跳至主要内容", "menu": "打开菜单", "close": "关闭", "all": "全部", "details": "查看详情", "openDaily": "每日 8:30–17:30 开放", "noRegistration": "无需登记", "mandarin": "共修以普通话为主", "freeMeal": "共修后提供免费素斋", "visitorCount": "网站访客", "photoCaption": "大众共修 · 诵经礼佛", "entranceAlt": "费城佛寿寺的寺院入口", "heroAlt": "大众在户外合掌诵经，供桌前摆放着供品"
     },
     "home": {
       "title": "共修诵经，\n欢喜结缘。",
-      "intro": "费城樱桃街上的佛寿寺，欢迎大众来寺礼佛、点香与共修。每天上午九点至下午五点开放，无需登记。",
+      "intro": "费城樱桃街上的佛寿寺，欢迎大众来寺礼佛、点香与共修。每天上午八点半至下午五点半开放，无需登记。",
       "weeklyTitle": "每周日，一同共修",
       "weeklyIntro": "从上午的诵经礼佛，到共修后的素斋与下午晚课，欢迎随喜参与。现场共修以普通话为主。",
       "calendarTitle": "礼敬诸佛",
@@ -70,7 +70,7 @@
     "about": {
       "title": "认识佛寿寺",
       "intro": "一处位于费城樱桃街，供大众礼佛与共修的道场。",
-      "body": "佛寿寺住持为释贤参法师。寺院每天上午九点至下午五点开放，欢迎来寺礼佛、点香。寺院活动以法会与诵经共修为主，包括佛前大供、共修后的免费素斋，以及下午晚课。",
+      "body": "佛寿寺住持为释贤参法师。寺院每天上午八点半至下午五点半开放，欢迎来寺礼佛、点香。寺院活动以法会与诵经共修为主，包括佛前大供、共修后的免费素斋，以及下午晚课。",
       "practiceTitle": "以共修相聚",
       "practiceText": "每周日举行共修，现场以普通话诵经为主。佛菩萨圣诞法会通常在农历正日举行，具体日期与时间请参阅寺院公告。",
       "welcomeTitle": "欢迎随喜参与",
@@ -106,7 +106,7 @@
     "visit": {
       "title": "来寺与联络",
       "intro": "佛寿寺每天开放，欢迎来寺礼佛、点香或参与共修，无需预先登记。",
-      "addressLabel": "寺院地址", "hoursLabel": "开放时间", "hoursValue": "每天上午 9:00 至下午 5:00", "emailLabel": "电子邮箱", "languageLabel": "共修语言", "languageText": "现场共修以普通话为主。",
+      "addressLabel": "寺院地址", "hoursLabel": "开放时间", "hoursValue": "每天上午 8:30 至下午 5:30", "emailLabel": "电子邮箱", "languageLabel": "共修语言", "languageText": "现场共修以普通话为主。",
       "firstVisitTitle": "初次来寺",
       "firstVisitText": "平日可在开放时间内来寺礼佛、点香。若希望参与共修，请查看周日安排与特别法会公告。每次共修后，楼下均提供免费素斋。",
       "faq": [
@@ -180,11 +180,11 @@
     "city": "美國 · 費城",
     "nav": { "home": "首頁", "about": "認識佛壽寺", "services": "法會與共修", "offerings": "供養與素齋", "visit": "來寺與聯絡", "calendar": "佛教紀念日" },
     "common": {
-      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "來寺路線", "email": "郵件聯絡", "backHome": "返回首頁", "skip": "跳至主要內容", "menu": "開啟選單", "close": "關閉", "all": "全部", "details": "查看詳情", "openDaily": "每日 9:00–17:00 開放", "noRegistration": "無需登記", "mandarin": "共修以普通話為主", "freeMeal": "共修後提供免費素齋", "visitorCount": "網站訪客", "photoCaption": "大眾共修 · 誦經禮佛", "entranceAlt": "費城佛壽寺的寺院入口", "heroAlt": "大眾在戶外合掌誦經，供桌前擺放著供品"
+      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "來寺路線", "email": "郵件聯絡", "backHome": "返回首頁", "skip": "跳至主要內容", "menu": "開啟選單", "close": "關閉", "all": "全部", "details": "查看詳情", "openDaily": "每日 8:30–17:30 開放", "noRegistration": "無需登記", "mandarin": "共修以普通話為主", "freeMeal": "共修後提供免費素齋", "visitorCount": "網站訪客", "photoCaption": "大眾共修 · 誦經禮佛", "entranceAlt": "費城佛壽寺的寺院入口", "heroAlt": "大眾在戶外合掌誦經，供桌前擺放著供品"
     },
     "home": {
       "title": "共修誦經，\n歡喜結緣。",
-      "intro": "費城櫻桃街上的佛壽寺，歡迎大眾來寺禮佛、點香與共修。每天上午九點至下午五點開放，無需登記。",
+      "intro": "費城櫻桃街上的佛壽寺，歡迎大眾來寺禮佛、點香與共修。每天上午八點半至下午五點半開放，無需登記。",
       "weeklyTitle": "每週日，一同共修",
       "weeklyIntro": "從上午的誦經禮佛，到共修後的素齋與下午晚課，歡迎隨喜參與。現場共修以普通話為主。",
       "calendarTitle": "禮敬諸佛",
@@ -198,7 +198,7 @@
     "about": {
       "title": "認識佛壽寺",
       "intro": "一處位於費城櫻桃街，供大眾禮佛與共修的道場。",
-      "body": "佛壽寺住持為釋賢參法師。寺院每天上午九點至下午五點開放，歡迎來寺禮佛、點香。寺院活動以法會與誦經共修為主，包括佛前大供、共修後的免費素齋，以及下午晚課。",
+      "body": "佛壽寺住持為釋賢參法師。寺院每天上午八點半至下午五點半開放，歡迎來寺禮佛、點香。寺院活動以法會與誦經共修為主，包括佛前大供、共修後的免費素齋，以及下午晚課。",
       "practiceTitle": "以共修相聚",
       "practiceText": "每週日舉行共修，現場以普通話誦經為主。佛菩薩聖誕法會通常在農曆正日舉行，具體日期與時間請參閱寺院公告。",
       "welcomeTitle": "歡迎隨喜參與",
@@ -234,7 +234,7 @@
     "visit": {
       "title": "來寺與聯絡",
       "intro": "佛壽寺每天開放，歡迎來寺禮佛、點香或參與共修，無需預先登記。",
-      "addressLabel": "寺院地址", "hoursLabel": "開放時間", "hoursValue": "每天上午 9:00 至下午 5:00", "emailLabel": "電子郵箱", "languageLabel": "共修語言", "languageText": "現場共修以普通話為主。",
+      "addressLabel": "寺院地址", "hoursLabel": "開放時間", "hoursValue": "每天上午 8:30 至下午 5:30", "emailLabel": "電子郵箱", "languageLabel": "共修語言", "languageText": "現場共修以普通話為主。",
       "firstVisitTitle": "初次來寺",
       "firstVisitText": "平日可在開放時間內來寺禮佛、點香。若希望參與共修，請查看週日安排與特別法會公告。每次共修後，樓下均提供免費素齋。",
       "faq": [
@@ -308,11 +308,11 @@
     "city": "Philadelphia, Pennsylvania",
     "nav": { "home": "Home", "about": "Our Temple", "services": "Dharma Assemblies & Practice", "offerings": "Offerings & Meals", "visit": "Visit & Contact", "calendar": "Buddhist Calendar" },
     "common": {
-      "learnMore": "Learn more", "viewSchedule": "Sunday schedule", "directions": "Get directions", "email": "Email the temple", "backHome": "Back to home", "skip": "Skip to main content", "menu": "Open menu", "close": "Close", "all": "All", "details": "View details", "openDaily": "Open daily, 9 a.m.–5 p.m.", "noRegistration": "No registration needed", "mandarin": "Practice primarily in Mandarin", "freeMeal": "Free vegetarian meal after communal practice", "visitorCount": "Site visitors", "photoCaption": "Gathering for chanting and Buddhist practice", "entranceAlt": "The entrance to Fo Shou Temple in Philadelphia", "heroAlt": "A group gathered outdoors for chanting, with palms joined and offerings arranged on a table"
+      "learnMore": "Learn more", "viewSchedule": "Sunday schedule", "directions": "Get directions", "email": "Email the temple", "backHome": "Back to home", "skip": "Skip to main content", "menu": "Open menu", "close": "Close", "all": "All", "details": "View details", "openDaily": "Open daily, 8:30 a.m.–5:30 p.m.", "noRegistration": "No registration needed", "mandarin": "Practice primarily in Mandarin", "freeMeal": "Free vegetarian meal after communal practice", "visitorCount": "Site visitors", "photoCaption": "Gathering for chanting and Buddhist practice", "entranceAlt": "The entrance to Fo Shou Temple in Philadelphia", "heroAlt": "A group gathered outdoors for chanting, with palms joined and offerings arranged on a table"
     },
     "home": {
       "title": "Chant together.\nPray together.",
-      "intro": "Fo Shou Temple on Cherry Street welcomes you for Buddhist worship, incense offerings, and communal practice. Visit daily from 9 a.m. to 5 p.m.; no registration is needed.",
+      "intro": "Fo Shou Temple on Cherry Street welcomes you for Buddhist worship, incense offerings, and communal practice. Visit daily from 8:30 a.m. to 5:30 p.m.; no registration is needed.",
       "weeklyTitle": "Gather with us on Sundays",
       "weeklyIntro": "Join us for morning chanting and offerings, a shared vegetarian meal, and afternoon liturgy. Communal practice is conducted primarily in Mandarin Chinese.",
       "calendarTitle": "Honoring the Buddhas",
@@ -326,7 +326,7 @@
     "about": {
       "title": "Our Temple",
       "intro": "A place for Buddhist worship and communal practice on Cherry Street in Philadelphia.",
-      "body": "Fo Shou Temple is led by Venerable Shi Xian Can (釋賢參法師). The temple is open daily from 9 a.m. to 5 p.m. for visitors to pay respects to the Buddha and offer incense. Temple gatherings include chanting, offerings before the Buddha, a free vegetarian meal after communal practice, and afternoon liturgy.",
+      "body": "Fo Shou Temple is led by Venerable Shi Xian Can (釋賢參法師). The temple is open daily from 8:30 a.m. to 5:30 p.m. for visitors to pay respects to the Buddha and offer incense. Temple gatherings include chanting, offerings before the Buddha, a free vegetarian meal after communal practice, and afternoon liturgy.",
       "practiceTitle": "Gathering to practice",
       "practiceText": "Communal practice takes place every Sunday, primarily in Mandarin Chinese. Dharma assemblies marking the birthdays of Buddhas and Bodhisattvas are usually held on the lunar anniversary. Please see temple announcements for dates and times.",
       "welcomeTitle": "Join us",
@@ -362,7 +362,7 @@
     "visit": {
       "title": "Visit & Contact",
       "intro": "The temple is open every day. Come to pay respects to the Buddha, offer incense, or join communal practice. No registration is needed.",
-      "addressLabel": "Address", "hoursLabel": "Opening hours", "hoursValue": "Daily, 9 a.m. to 5 p.m.", "emailLabel": "Email", "languageLabel": "Language of practice", "languageText": "Communal practice is conducted primarily in Mandarin Chinese.",
+      "addressLabel": "Address", "hoursLabel": "Opening hours", "hoursValue": "Daily, 8:30 a.m. to 5:30 p.m.", "emailLabel": "Email", "languageLabel": "Language of practice", "languageText": "Communal practice is conducted primarily in Mandarin Chinese.",
       "firstVisitTitle": "Your first visit",
       "firstVisitText": "You may visit during opening hours for Buddhist worship and incense offerings. To join communal practice, see our Sunday schedule and announcements for special Dharma assemblies. A free vegetarian meal is provided downstairs after each gathering.",
       "faq": [
