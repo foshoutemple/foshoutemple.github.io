@@ -25,10 +25,22 @@ function localizedText(value, field, source) {
 
 function announcementImage(image, source) {
   if (image == null) return null;
-  if (typeof image !== 'object' || typeof image.src !== 'string' ||
-      !/^\/images\/[^?#\\%]+\.(?:png|jpe?g|webp|avif)$/i.test(image.src) ||
-      image.src.split('/').some(part => part === '.' || part === '..')) {
-    throw new Error(`Invalid image.src in ${source}: use a local image under /images/.`);
+  const validateSource = (value, field) => {
+    if (typeof value !== 'string' ||
+        !/^\/images\/[^?#\\%]+\.(?:png|jpe?g|webp|avif)$/i.test(value) ||
+        value.split('/').some(part => part === '.' || part === '..')) {
+      throw new Error(`Invalid ${field} in ${source}: use a local image under /images/.`);
+    }
+  };
+  if (typeof image !== 'object' || Array.isArray(image)) {
+    throw new Error(`Invalid image in ${source}: use image metadata or null.`);
+  }
+  if (typeof image.src === 'string') {
+    validateSource(image.src, 'image.src');
+  } else {
+    for (const lang of ['zh-hans', 'zh-hant', 'en']) {
+      validateSource(image.src?.[lang], `image.src.${lang}`);
+    }
   }
   for (const dimension of ['width', 'height']) {
     if (!Number.isInteger(image[dimension]) || image[dimension] <= 0) {
@@ -37,6 +49,11 @@ function announcementImage(image, source) {
   }
   localizedText(image.alt, 'image.alt', source);
   return image;
+}
+
+export function announcementImageSource(image, lang) {
+  if (image == null) return null;
+  return typeof image.src === 'string' ? image.src : image.src[lang];
 }
 
 function publishedEntries(modules, reservedSlugs = []) {

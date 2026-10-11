@@ -30,3 +30,12 @@ image:
     zh-hant: "填寫圖片說明"
     en: "Describe the image"
 ```
+
+如有同尺寸的三语海报，可将上面的 `src` 替换成以下对象；其他字段不变。每种语言均须提供有效路径，页面及预览会自动选择对应图片。仍只需一份公告。
+
+```yaml
+  src:
+    zh-hans: "/images/posters/your-poster-zh-hans.png"
+    zh-hant: "/images/posters/your-poster-zh-hant.png"
+    en: "/images/posters/your-poster-en.png"
+```

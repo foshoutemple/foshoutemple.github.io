@@ -1,13 +1,15 @@
 ---
 import {asset, copy, link} from '../lib/temple.js';
+import {announcementImageSource} from '../lib/event-content.js';
 import Icon from './Icon.astro';
 const {lang, entry, isEvent = false} = Astro.props;
 const t = copy[lang];
+const imageSrc = announcementImageSource(entry.image, lang);
 ---
 <section class:list={['container', 'announcement-detail', {'has-image': entry.image}]}>
   {entry.image && <figure class="announcement-image">
-    <a href={asset(entry.image.src)} target="_blank" rel="noopener noreferrer">
-      <img src={asset(entry.image.src)} width={entry.image.width} height={entry.image.height} alt={entry.image.alt[lang]} decoding="async"/>
+    <a href={asset(imageSrc)} target="_blank" rel="noopener noreferrer">
+      <img src={asset(imageSrc)} width={entry.image.width} height={entry.image.height} alt={entry.image.alt[lang]} decoding="async"/>
       <span class="image-action">{t.updates.viewImage}<Icon name="external" size={16}/></span>
     </a>
   </figure>}
