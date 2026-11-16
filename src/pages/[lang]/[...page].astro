@@ -45,7 +45,7 @@ const servicePhoto=page==='services/sunday'
  ? {file:'altar-gathering.jpg',...t.photos.altarGathering}
  : {file:'indoor-practice.jpg',...t.photos.practice};
 ---
-<Layout lang={lang} page={page} title={title}>
+<Layout lang={lang} page={page} title={title} description={customEvent?.description[lang]}>
 {page==='' && <>
   <section class="hero container">
     <div class="hero-title"><h1>{t.home.title.split('\n').map(line=><span>{line}</span>)}</h1></div>
@@ -114,7 +114,7 @@ const servicePhoto=page==='services/sunday'
 </>}
 {customEvent && <>
  <section class="container page-heading event-heading"><a class="back-link" href={backToActivityCalendar ? `${link(lang,'services')}?activity-month=${customEvent.date.slice(0,7)}&activity-date=${customEvent.date}#activity-calendar` : `${link(lang,'services')}#latest-assemblies`}><Icon name="left"/>{backToActivityCalendar ? t.lunarPractice.backCalendar : t.updates.backToAssemblies}</a><h1>{customEvent.title[lang]}</h1><p><EventDate lang={lang} date={customEvent.date} endDate={customEvent.endDate}/>{customEvent.lunar && <><span class="date-dot">·</span>{customEvent.lunar[lang]}</>}</p></section>
- <AnnouncementDetail lang={lang} entry={customEvent} isEvent>
+ <AnnouncementDetail lang={lang} entry={customEvent} isEvent dedication={customEvents.includes(customEvent) ? (customEvent.dedication?.[lang] ?? t.updates.defaultDedication) : null}>
    {customEvent.showAmitabhaVowTitles === true && <AmitabhaVows lang={lang}/>}
  </AnnouncementDetail>
 </>}

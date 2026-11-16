@@ -15,7 +15,10 @@
       "newsTitle": "最新消息", "newsEmpty": "暂无新消息，敬请留意。",
       "assembliesTitle": "最新法会", "assembliesEmpty": "法会安排将于此公布。", "backToAssemblies": "返回最新法会",
       "viewAll": "查看全部", "backToNews": "返回最新消息",
-      "assemblyDate": "法会日期", "publishedDate": "发布日期", "viewImage": "查看完整图片", "dailyStart": "每日 {time} 开始"
+      "assemblyDate": "法会日期", "publishedDate": "发布日期", "viewImage": "查看完整图片", "dailyStart": "每日 {time} 开始",
+      "dedicationTitle": "功德回向",
+      "defaultDedication": "愿以此法会功德，回向十方法界一切众生。祈愿国泰民安、合家平安，愿一切众生离苦得乐。",
+      "registrationTitle": "报名与供养"
     },
     "lunarPractice": {
       "firstTitle": "初一法会",
@@ -143,7 +146,10 @@
       "newsTitle": "最新消息", "newsEmpty": "暫無新消息，敬請留意。",
       "assembliesTitle": "最新法會", "assembliesEmpty": "法會安排將於此公布。", "backToAssemblies": "返回最新法會",
       "viewAll": "查看全部", "backToNews": "返回最新消息",
-      "assemblyDate": "法會日期", "publishedDate": "發布日期", "viewImage": "查看完整圖片", "dailyStart": "每日 {time} 開始"
+      "assemblyDate": "法會日期", "publishedDate": "發布日期", "viewImage": "查看完整圖片", "dailyStart": "每日 {time} 開始",
+      "dedicationTitle": "功德迴向",
+      "defaultDedication": "願以此法會功德，迴向十方法界一切眾生。祈願國泰民安、合家平安，願一切眾生離苦得樂。",
+      "registrationTitle": "報名與供養"
     },
     "lunarPractice": {
       "firstTitle": "初一法會",
@@ -271,7 +277,10 @@
       "newsTitle": "Latest news", "newsEmpty": "No news has been posted yet.",
       "assembliesTitle": "Latest Dharma Assemblies", "assembliesEmpty": "Dharma Assembly announcements will appear here.", "backToAssemblies": "Back to latest Dharma Assemblies",
       "viewAll": "View all", "backToNews": "Back to latest news",
-      "assemblyDate": "Dharma Assembly date", "publishedDate": "Published", "viewImage": "View full image", "dailyStart": "Daily at {time}"
+      "assemblyDate": "Dharma Assembly date", "publishedDate": "Published", "viewImage": "View full image", "dailyStart": "Daily at {time}",
+      "dedicationTitle": "Dedication of Merit",
+      "defaultDedication": "We dedicate the merit of this Dharma Assembly to all beings throughout the ten directions. May there be peace in the land, may families be safe, and may all beings be free from suffering and find happiness.",
+      "registrationTitle": "Registration and Offerings"
     },
     "lunarPractice": {
       "firstTitle": "Dharma Assembly · Lunar Day 1",

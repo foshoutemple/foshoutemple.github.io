@@ -67,6 +67,9 @@ function publishedEntries(modules, reservedSlugs = []) {
       }
       slugs.add(entry.slug);
       for (const field of ['title', 'description']) localizedText(entry[field], field, source);
+      for (const field of ['dedication', 'registration']) {
+        if (entry[field] != null) localizedText(entry[field], field, source);
+      }
       const date = normalizeEventDate(entry.date, source);
       const endDate = entry.endDate == null ? undefined : normalizeEventDate(entry.endDate, `${source} endDate`);
       if (endDate && endDate < date) throw new Error(`Invalid endDate in ${source}: it cannot precede date.`);

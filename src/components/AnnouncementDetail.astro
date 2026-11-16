@@ -1,10 +1,11 @@
 ---
-import {asset, assemblyTimeText, copy, link} from '../lib/temple.js';
+import {asset, assemblyTimeText, copy, link, site} from '../lib/temple.js';
 import {announcementImageSource} from '../lib/event-content.js';
 import Icon from './Icon.astro';
-const {lang, entry, isEvent = false} = Astro.props;
+const {lang, entry, isEvent = false, dedication} = Astro.props;
 const t = copy[lang];
 const imageSrc = announcementImageSource(entry.image, lang);
+const registration = isEvent ? entry.registration?.[lang] : null;
 ---
 <section class:list={['container', 'announcement-detail', {'has-image': entry.image}]}>
   {entry.image && <figure class="announcement-image">
@@ -17,10 +18,19 @@ const imageSrc = announcementImageSource(entry.image, lang);
     <p class="large-copy">{entry.description[lang]}</p>
     {isEvent && <>
       <p>{assemblyTimeText(entry, lang)}</p>
-      <p>{t.common.mandarin} · {t.common.noRegistration}</p>
+      <p>{t.common.mandarin}{!registration && ` · ${t.common.noRegistration}`}</p>
       <p>{t.common.freeMeal}</p>
-      <a class="button primary" href={link(lang,'visit')}>{t.nav.visit}<Icon/></a>
     </>}
+    {dedication && <section class="notice-section">
+      <h2>{t.updates.dedicationTitle}</h2>
+      <p>{dedication}</p>
+    </section>}
+    {registration && <section class="notice-section">
+      <h2>{t.updates.registrationTitle}</h2>
+      <p>{registration}</p>
+      <a class="text-link" href={`mailto:${site.email}?subject=${encodeURIComponent(entry.title[lang])}`}>{t.common.email}<Icon name="mail" size={16}/></a>
+    </section>}
+    {isEvent && <a class="button primary" href={link(lang,'visit')}>{t.nav.visit}<Icon/></a>}
     <slot/>
   </div>
 </section>
@@ -33,6 +43,10 @@ const imageSrc = announcementImageSource(entry.image, lang);
   .announcement-image a:hover .image-action {text-decoration:underline;}
   .prose {max-width:65ch;min-width:0;}
   .prose .large-copy {margin-top:0;}
+  .notice-section {margin-block:28px;border-top:1px solid var(--line);padding-top:20px;}
+  .notice-section h2 {font-size:24px;margin:0;}
+  .notice-section p {margin:8px 0 0;}
+  .notice-section .text-link {margin-top:12px;}
   @media(max-width:1000px) {.announcement-detail.has-image {gap:36px;}}
   @media(max-width:700px) {
     .announcement-detail {padding-bottom:50px;}

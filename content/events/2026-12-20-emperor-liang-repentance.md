@@ -21,7 +21,15 @@ title:
   zh-hant: "梁皇寶懺法會"
   en: "Emperor Liang Repentance Dharma Assembly"
 description:
-  zh-hans: "佛寿寺将于2026年12月20日至27日举行梁皇宝忏法会，连续八天，每天上午10点开始。欢迎大众随喜参加。"
-  zh-hant: "佛壽寺將於2026年12月20日至27日舉行梁皇寶懺法會，連續八天，每天上午10點開始。歡迎大眾隨喜參加。"
-  en: "Fo Shou Temple will hold the Emperor Liang Repentance Dharma Assembly from December 20 through 27, 2026. The assembly begins at 10:00 a.m. each day for eight consecutive days. Everyone is welcome to join."
+  zh-hans: "佛寿寺定于2026年12月20日至27日（农历十一月十二至十九）举行梁皇宝忏法会，为期八天，每日上午10点开始。期间另有弥陀大法会，圆满日（12月27日）施放大蒙山一堂。欢迎大众随喜参加。"
+  zh-hant: "佛壽寺定於2026年12月20日至27日（農曆十一月十二至十九）舉行梁皇寶懺法會，為期八天，每日上午10點開始。期間另有彌陀大法會，圓滿日（12月27日）施放大蒙山一堂。歡迎大眾隨喜參加。"
+  en: "Fo Shou Temple will hold the eight-day Emperor Liang Repentance Dharma Assembly from December 20 to 27, 2026 (days 12–19 of the 11th lunar month), beginning at 10:00 a.m. each day. The program also includes an Amitabha Dharma Assembly. On the closing day, December 27, the temple will hold a Great Mengshan Food Offering Ceremony. Everyone is welcome to join."
+dedication:
+  zh-hans: "愿以此法会功德，回向十方法界一切众生。祈愿国泰民安、人民安乐、疫情早退、合家平安、事业顺利；愿历代宗亲蒙佛接引，累世冤亲债主得度。"
+  zh-hant: "願以此法會功德，迴向十方法界一切眾生。祈願國泰民安、人民安樂、疫情早退、合家平安、事業順利；願歷代宗親蒙佛接引，累世冤親債主得度。"
+  en: "We dedicate the merit of this Dharma Assembly to all beings throughout the ten directions. May there be peace in the land and well-being for its people. May epidemics soon subside, may families be safe, and may their endeavors go smoothly. May ancestors of past generations be welcomed by the Buddha, and may those to whom we owe karmic debts across lifetimes find liberation."
+registration:
+  zh-hans: "法会期间设有消灾牌位及超荐牌位，并接受功德主、打斋（供斋）、供灯等登记。尚未报名者，敬请及早联系本寺登记，以便安排。感恩大众扶持道场！"
+  zh-hant: "法會期間設有消災牌位及超薦牌位，並接受功德主、打齋（供齋）、供燈等登記。尚未報名者，敬請及早聯絡本寺登記，以便安排。感恩大眾扶持道場！"
+  en: "During the assembly, you may request prayer tablets for well-being or memorial tablets for the departed. You may also sign up to sponsor the ceremony, offer a vegetarian meal, or offer lamps. If you have not yet signed up, please contact the temple early so we can make arrangements. Thank you for supporting the temple."
 ---
