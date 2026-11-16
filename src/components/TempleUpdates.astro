@@ -1,6 +1,7 @@
 ---
-import {asset, copy, dateText, link} from '../lib/temple.js';
+import {asset, assemblyTimeText, copy, link} from '../lib/temple.js';
 import {announcementImageSource, latestUpdates} from '../lib/event-content.js';
+import EventDate from './EventDate.astro';
 import Icon from './Icon.astro';
 
 const {lang, news = [], events = [], preview = false, assembliesOnly = false, pageHeading = false} = Astro.props;
@@ -20,7 +21,7 @@ const Heading = pageHeading ? 'h1' : 'h2';
         <a class:list={['update-entry', {'has-image': entry.image}]} href={link(lang, `${entry.route}/${entry.slug}`)}>
           {entry.image && <img class="update-thumbnail" src={asset(announcementImageSource(entry.image, lang))} width={entry.image.width} height={entry.image.height} alt={entry.image.alt[lang]} loading="lazy" decoding="async"/>}
           <div class="update-body">
-            <div class="update-meta"><span>{entry.route === 'services' ? t.assemblyDate : t.publishedDate}</span><time datetime={entry.date}>{dateText(entry.date, lang, {year: 'numeric', month: 'long', day: 'numeric'})}</time>{entry.route === 'services' && <span>{entry.time || copy[lang].activityCalendar.pendingTime}</span>}</div>
+            <div class="update-meta"><span>{entry.route === 'services' ? t.assemblyDate : t.publishedDate}</span><EventDate lang={lang} date={entry.date} endDate={entry.endDate} showWeekday={false}/>{entry.route === 'services' && <span>{assemblyTimeText(entry, lang)}</span>}</div>
             <h3>{entry.title[lang]}</h3>
             <p>{entry.description[lang]}</p>
           </div>

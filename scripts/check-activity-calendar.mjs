@@ -37,7 +37,23 @@ assert(!both.some(entry => entry.slug === 'private-draft' || entry.slug === 'nex
 const adjusted = monthActivities('2026-09', events, ['2026-09-13']);
 assert.deepEqual(adjusted.filter(entry => entry.date === '2026-09-13').map(entry => entry.type), ['service'], 'Excluding regular practice must preserve the announced service.');
 assert.equal(monthActivities('2026-09', [], ['2026-09-06','2026-09-13','2026-09-20','2026-09-27']).length, 0, 'A month can have no scheduled activities.');
-console.log('PASS: activity calendar month/year boundaries, leap day, Sunday recurrence, shared dates, draft privacy and schedule exceptions.');
+
+const multiDayEvents = publishedEvents({
+  series:{frontmatter:{...frontmatter, slug:'multi-day', date:'2026-12-30', endDate:'2027-01-02'}},
+  single:{frontmatter:{...frontmatter, slug:'single-day', date:'2027-01-01', time:'11:00'}},
+});
+const december = monthActivities('2026-12', multiDayEvents).filter(event => event.type === 'service');
+const january = monthActivities('2027-01', multiDayEvents).filter(event => event.type === 'service');
+assert.deepEqual(december.map(({date, slug, time}) => [date, slug, time]), [
+  ['2026-12-30', 'multi-day', '10:00'], ['2026-12-31', 'multi-day', '10:00'],
+]);
+assert.deepEqual(january.map(({date, slug, time}) => [date, slug, time]), [
+  ['2027-01-01', 'multi-day', '10:00'], ['2027-01-01', 'single-day', '11:00'], ['2027-01-02', 'multi-day', '10:00'],
+], 'A multi-day event includes both endpoints, shares one detail page, and leaves concurrent events intact.');
+for (const endDate of ['2026-09-12', '2026-09-31']) {
+  assert.throws(() => publishedEvents({bad:{frontmatter:{...frontmatter, endDate}}}), /endDate/);
+}
+console.log('PASS: activity calendar boundaries, inclusive multi-day assemblies, daily time, shared dates, draft privacy and schedule exceptions.');
 
 const lunarData = JSON.parse(await fs.readFile(new URL('../src/data/lunar-practice.json', import.meta.url), 'utf8'));
 const holyDays = JSON.parse(await fs.readFile(new URL('../src/data/holy-days.json', import.meta.url), 'utf8'));

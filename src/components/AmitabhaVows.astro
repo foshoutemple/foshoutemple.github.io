@@ -1,0 +1,22 @@
+---
+import vows from '../data/amitabha-vow-titles.json';
+const {lang} = Astro.props;
+const labels = {
+  'zh-hans': '阅读阿弥陀佛四十八大愿的愿名',
+  'zh-hant': '閱讀阿彌陀佛四十八大願的願名',
+  en: 'Read the titles of Amitabha’s 48 Great Vows',
+};
+---
+<details class="vow-titles">
+  <summary>{labels[lang]}</summary>
+  <ol>
+    {vows[lang].map(title => <li>{title}</li>)}
+  </ol>
+</details>
+
+<style>
+  .vow-titles {margin-block-start:32px;padding-block:16px;border-block:1px solid var(--line);}
+  .vow-titles summary {color:var(--red);cursor:pointer;font-weight:600;}
+  .vow-titles ol {margin:16px 0 0;padding-inline-start:1.8em;}
+  .vow-titles li {padding-block:2px;}
+</style>

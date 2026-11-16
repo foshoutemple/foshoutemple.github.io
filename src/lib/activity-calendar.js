@@ -31,9 +31,12 @@ export function monthDays(month) {
 
 export function monthActivities(month, events = [], excludedDates = []) {
   const excluded = new Set(excludedDates);
-  const regular = monthDays(month)
-    .filter(date => date && new Date(`${date}T12:00:00Z`).getUTCDay() === 0 && !excluded.has(date))
+  const days = monthDays(month).filter(Boolean);
+  const regular = days
+    .filter(date => new Date(`${date}T12:00:00Z`).getUTCDay() === 0 && !excluded.has(date))
     .map(date => ({date, type: 'weekly', slug: 'sunday'}));
-  const services = events.filter(event => event.date.startsWith(`${month}-`)).map(event => ({...event, type: 'service'}));
+  const services = events.flatMap(event => days
+    .filter(date => date >= event.date && date <= (event.endDate ?? event.date))
+    .map(date => ({...event, date, type: 'service'})));
   return [...regular, ...services].sort((a, b) => a.date.localeCompare(b.date) || a.type.localeCompare(b.type) || a.slug.localeCompare(b.slug));
 }

@@ -68,6 +68,8 @@ function publishedEntries(modules, reservedSlugs = []) {
       slugs.add(entry.slug);
       for (const field of ['title', 'description']) localizedText(entry[field], field, source);
       const date = normalizeEventDate(entry.date, source);
+      const endDate = entry.endDate == null ? undefined : normalizeEventDate(entry.endDate, `${source} endDate`);
+      if (endDate && endDate < date) throw new Error(`Invalid endDate in ${source}: it cannot precede date.`);
       const publishedDate = entry.publishedDate == null ? date : normalizeEventDate(entry.publishedDate, source);
       if (entry.replacesLunarPractice != null && typeof entry.replacesLunarPractice !== 'boolean') {
         throw new Error(`Invalid replacesLunarPractice in ${source}: use true or false.`);
@@ -75,7 +77,7 @@ function publishedEntries(modules, reservedSlugs = []) {
       // Fo Shou Temple's default Dharma Assembly start is 10:00 Philadelphia time.
       // An explicitly supplied time (including a future exception) remains unchanged.
       const time = entry.time == null ? '10:00' : entry.time;
-      return {...entry, date, publishedDate, time, image: announcementImage(entry.image, source)};
+      return {...entry, date, endDate, publishedDate, time, image: announcementImage(entry.image, source)};
     })
     .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
 }

@@ -21,6 +21,23 @@ export const asset = (path) => `${base}/${path.replace(/^\//, '')}`;
 export const link = (lang, page = '') => `${base}/${lang}/${page ? `${page.replace(/^\/|\/$/g, '')}/` : ''}`;
 export const dateObject = (date) => new Date(`${date}T12:00:00Z`);
 export const dateText = (date, lang, options = {year:'numeric',month:'long',day:'numeric',weekday:'long'}) => new Intl.DateTimeFormat(locales[lang], {...options,timeZone:'UTC'}).format(dateObject(date));
+export function dateRangeText(start, end, lang) {
+  const options = {year:'numeric', month:'long', day:'numeric'};
+  if (lang === 'en') {
+    return new Intl.DateTimeFormat(locales[lang], {...options, timeZone:'UTC'}).formatRange(dateObject(start), dateObject(end));
+  }
+  const endOptions = start.slice(0, 7) === end.slice(0, 7) ? {day:'numeric'}
+    : start.slice(0, 4) === end.slice(0, 4) ? {month:'long', day:'numeric'}
+    : options;
+  return `${dateText(start, lang, options)}至${dateText(end, lang, endOptions)}`;
+}
+export function assemblyTimeText(entry, lang) {
+  const t = copy[lang];
+  if (!entry.time) return t.activityCalendar.pendingTime;
+  return entry.endDate && entry.endDate > entry.date
+    ? t.updates.dailyStart.replace('{time}', entry.time)
+    : entry.time;
+}
 export const monthText = (date, lang) => dateText(date, lang, {month:lang === 'en' ? 'short':'numeric'});
 export const dayText = (date) => date.slice(8, 10);
 export const todayInPhilly = () => new Intl.DateTimeFormat('en-CA', {timeZone:site.timezone,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());

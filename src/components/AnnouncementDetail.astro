@@ -1,5 +1,5 @@
 ---
-import {asset, copy, link} from '../lib/temple.js';
+import {asset, assemblyTimeText, copy, link} from '../lib/temple.js';
 import {announcementImageSource} from '../lib/event-content.js';
 import Icon from './Icon.astro';
 const {lang, entry, isEvent = false} = Astro.props;
@@ -16,11 +16,12 @@ const imageSrc = announcementImageSource(entry.image, lang);
   <div class="prose">
     <p class="large-copy">{entry.description[lang]}</p>
     {isEvent && <>
-      <p>{entry.time || t.activityCalendar.pendingTime}</p>
+      <p>{assemblyTimeText(entry, lang)}</p>
       <p>{t.common.mandarin} · {t.common.noRegistration}</p>
       <p>{t.common.freeMeal}</p>
       <a class="button primary" href={link(lang,'visit')}>{t.nav.visit}<Icon/></a>
     </>}
+    <slot/>
   </div>
 </section>
 <style>

@@ -1,0 +1,7 @@
+---
+import {dateRangeText, dateText} from '../lib/temple.js';
+const {lang, date, endDate, showWeekday = true} = Astro.props;
+---
+{endDate && endDate > date
+  ? <span>{dateRangeText(date, endDate, lang)}</span>
+  : <time datetime={date}>{dateText(date, lang, showWeekday ? undefined : {year:'numeric', month:'long', day:'numeric'})}</time>}
