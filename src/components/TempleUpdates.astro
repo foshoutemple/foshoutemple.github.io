@@ -21,8 +21,12 @@ const Heading = pageHeading ? 'h1' : 'h2';
         <a class:list={['update-entry', {'has-image': entry.image}]} href={link(lang, `${entry.route}/${entry.slug}`)}>
           {entry.image && <img class="update-thumbnail" src={asset(announcementImageSource(entry.image, lang))} width={entry.image.width} height={entry.image.height} alt={entry.image.alt[lang]} loading="lazy" decoding="async"/>}
           <div class="update-body">
-            <div class="update-meta"><span>{entry.route === 'services' ? t.assemblyDate : t.publishedDate}</span><EventDate lang={lang} date={entry.date} endDate={entry.endDate} showWeekday={false}/>{entry.route === 'services' && <span>{assemblyTimeText(entry, lang)}</span>}</div>
             <h3>{entry.title[lang]}</h3>
+            <div class="update-meta">
+              {entry.route === 'news' && <span>{t.publishedDate}</span>}
+              <EventDate lang={lang} date={entry.date} endDate={entry.endDate} showWeekday={false}/>
+              {entry.route === 'services' && <span>{assemblyTimeText(entry, lang)}</span>}
+            </div>
             <p>{entry.description[lang]}</p>
           </div>
           <Icon size={18}/>
@@ -33,7 +37,7 @@ const Heading = pageHeading ? 'h1' : 'h2';
 
 <style>
   .temple-updates {padding-bottom:72px;}
-  .home-updates {padding-top:64px;padding-bottom:0;}
+  .home-updates {padding-top:32px;padding-bottom:0;}
   .updates-heading {display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:1px solid var(--ink);padding-bottom:17px;}
   .updates-heading h1 {margin:0;}
   .updates-heading h2 {font-size:30px;margin:0;}
@@ -48,19 +52,19 @@ const Heading = pageHeading ? 'h1' : 'h2';
   .update-body {min-width:0;max-width:65ch;}
   .update-entry :global(svg) {flex-shrink:0;}
   .update-meta {display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--muted);}
-  .update-entry h3 {font-size:23px;margin-top:5px;overflow-wrap:anywhere;}
+  .update-entry h3 {font-size:25px;margin-bottom:6px;overflow-wrap:anywhere;}
   .update-entry p {font-size:16px;line-height:1.8;color:var(--muted);margin:9px 0 0;overflow-wrap:anywhere;}
   .update-entry:hover h3 {text-decoration:underline;}
   @media(max-width:1000px) {
     .temple-updates {padding-bottom:56px;}
-    .home-updates {padding-top:56px;padding-bottom:0;}
+    .home-updates {padding-bottom:0;}
   }
   @media(max-width:700px) {
     .update-entry,.update-entry.has-image {grid-template-columns:minmax(0,1fr) 20px;gap:22px 16px;padding-block:24px;}
     .update-thumbnail {grid-column:1/-1;max-width:340px;justify-self:center;}
     .update-body {grid-column:1;}
     .update-entry h3 {font-size:23px;}
-    .home-updates {padding-top:44px;}
+    .home-updates {padding-top:25px;}
     .updates-heading {padding-bottom:13px;gap:14px;}
     .updates-heading h2 {font-size:27px;}
     :global(html[lang='en']) .updates-heading h2 {font-size:32px;}

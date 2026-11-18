@@ -44,13 +44,16 @@ const websiteSchema = { '@context':'https://schema.org', '@type':'WebSite', name
     <main id="main"><slot/></main>
     <footer class="site-footer">
       <div class="container footer-main">
-        <div><a class="footer-brand" href={link(lang)}>佛壽寺<span>Fo Shou Temple</span></a><p>{t.footer.invitation}</p></div>
+        <div><a class="footer-brand" href={link(lang)}>佛壽寺<span>Fo Shou Temple</span></a></div>
         <div class="footer-contact"><p>{site.address}<br/>{site.cityLine}</p><a href={`mailto:${site.email}`}>{site.email}</a><p>{t.common.openDaily}</p></div>
         <div class="footer-links"><a href={link(lang,'calendar')}>{t.nav.calendar}<Icon size={16}/></a><a href={link(lang,'visit')}>{t.nav.visit}<Icon size={16}/></a><div class="social-links"><a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook<Icon name="external" size={14}/></a><a href={site.youtube} target="_blank" rel="noopener noreferrer">YouTube<Icon name="external" size={14}/></a></div></div>
       </div>
-      <div class="container footer-bottom"><span>© {new Date().getFullYear()} Fo Shou Temple. {t.footer.copyright}</span><div>{languages.map(l=><a href={link(l,page)} lang={langTags[l]} data-language-link={l}>{languageNames[l]}</a>)}</div></div>
+      <div class="container footer-bottom">
+        <span>© {new Date().getFullYear()} {t.footer.copyright}</span>
+        <div>{languages.map(l=><a href={link(l,page)} lang={langTags[l]} data-language-link={l}>{languageNames[l]}</a>)}</div>
+        <a class="visitor-meter" href="https://hits.sh/" target="_blank" rel="noopener noreferrer"><img src={visitorCounterUrl} width="68" height="20" alt={t.common.visitorCount}/></a>
+      </div>
     </footer>
-    <aside class="visitor-meter" aria-label={t.common.visitorCount}><a href="https://hits.sh/" target="_blank" rel="noopener noreferrer"><img src={visitorCounterUrl} width="68" height="20" alt={t.common.visitorCount}/></a></aside>
     <script>
       const button=document.querySelector('.mobile-menu-button');
       const nav=document.querySelector('#mobile-nav');

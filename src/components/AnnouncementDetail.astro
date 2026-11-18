@@ -1,5 +1,5 @@
 ---
-import {asset, assemblyTimeText, copy, link, site} from '../lib/temple.js';
+import {asset, copy, link, site} from '../lib/temple.js';
 import {announcementImageSource} from '../lib/event-content.js';
 import Icon from './Icon.astro';
 const {lang, entry, isEvent = false, dedication} = Astro.props;
@@ -16,11 +16,7 @@ const registration = isEvent ? entry.registration?.[lang] : null;
   </figure>}
   <div class="prose">
     <p class="large-copy">{entry.description[lang]}</p>
-    {isEvent && <>
-      <p>{assemblyTimeText(entry, lang)}</p>
-      <p>{t.common.mandarin}{!registration && ` · ${t.common.noRegistration}`}</p>
-      <p>{t.common.freeMeal}</p>
-    </>}
+    {isEvent && <p>{registration ? t.services.eventLanguage : t.services.eventAttendance}{' '}{t.services.afterPracticeMeal}</p>}
     {dedication && <section class="notice-section">
       <h2>{t.updates.dedicationTitle}</h2>
       <p>{dedication}</p>
