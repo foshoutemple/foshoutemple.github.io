@@ -4,10 +4,10 @@
     "siteName": "佛寿寺",
     "photos": {
       "community": { "alt": "大众在佛殿内合影，身后可见佛像与供花", "caption": "佛殿内的大众合影" },
-      "practice": { "alt": "大众在佛殿内合掌共修，前方可见经本与法器", "caption": "大众共修 · 合掌礼佛" },
+      "practice": { "alt": "大众在佛殿内合掌共修，前方可见经本与法器", "caption": "大众在佛殿内共修" },
       "altarGathering": { "alt": "大众齐聚佛殿，佛坛前陈设香炉、鲜花与水果供品", "caption": "佛殿内的礼佛场景" },
       "offerings": { "alt": "佛像前陈设供花，来访者身旁的供桌上摆放着点亮的供灯", "caption": "佛前供灯与供花" },
-      "mainHall": { "alt": "佛寿寺大殿内，佛像与供桌前大众正在诵经礼佛", "caption": "大殿" },
+      "mainHall": { "alt": "大众在佛寿寺大殿的佛像前诵经礼佛", "caption": "大殿" },
       "ksitigarbhaHall": { "alt": "佛寿寺地藏殿内供奉地藏菩萨，佛前摆放水果、牌位与莲花灯", "caption": "地藏殿" },
       "rebirthHall": { "alt": "佛寿寺往生堂佛前供桌与莲花灯，鲜花与供品整齐陈设", "caption": "往生堂" }
     },
@@ -23,7 +23,7 @@
     "lunarPractice": {
       "firstTitle": "初一法会",
       "fifteenthTitle": "十五法会",
-      "description": "佛寿寺于每月农历初一、十五举行法会，默认上午 10:00 开始；如有特别安排，以寺院公告为准。欢迎大众来寺诵经礼佛。",
+      "description": "佛寿寺在农历每月初一和十五举行法会。法会通常在上午十点开始。如有调整，请以寺院公告为准。欢迎大众来寺诵经礼佛。",
       "dateLabel": "农历{year}年{leap}{month}{day}",
       "leap": "闰",
       "monthNames": [
@@ -40,51 +40,51 @@
         "十一月",
         "十二月"
       ],
-      "coverage": "已收录公历 {years} 年内农历初一、十五的法会日期；之后年份将陆续更新。",
+      "coverage": "目前收录公历 {years} 年的初一和十五法会日期。之后的日期将陆续补上。",
       "backCalendar": "返回活动日历",
       "sourceTitle": "中央气象署《2025年国民历》：农历月首对照表（第170页）"
     },
     "activityCalendar": {
-      "title": "活动日历", "intro": "查阅周日共修、农历初一与十五法会，以及已公布的特别法会。所有时间均为费城当地时间。",
+      "title": "活动日历", "intro": "这里可以查到周日共修、农历初一和十五的法会，以及已公布的特别法会。所列时间为费城当地时间。",
       "weeklyTitle": "周日共修", "regularLabel": "常规共修", "serviceLabel": "法会",
       "navigation": "活动日历月份", "thisMonth": "本月", "allMonth": "查看整月",
-      "selectDay": "点选有标记的日期，查看当天活动。", "monthEvents": "本月活动",
+      "selectDay": "点击带标记的日期即可查看当天活动。", "monthEvents": "本月活动",
       "empty": "本月暂无已公布的活动。", "pendingTime": "法会时间待公布",
-      "noScript": "启用 JavaScript 可切换月份和点选日期；常规共修安排见下方。"
+      "noScript": "启用 JavaScript 后即可切换月份或查看指定日期。周日共修时间表见下方。"
     },
     "city": "美国 · 费城",
     "nav": { "home": "首页", "about": "认识佛寿寺", "services": "法会与共修", "offerings": "供养与素斋", "visit": "来寺与联络", "calendar": "佛教纪念日" },
     "common": {
-      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "来寺路线", "email": "邮件联络", "backHome": "返回首页", "skip": "跳至主要内容", "menu": "打开菜单", "close": "关闭", "all": "全部", "details": "查看详情", "openDaily": "每日 8:15–17:30 开放", "visitorCount": "网站访客", "photoCaption": "大众一同诵经礼佛", "entranceAlt": "费城佛寿寺的寺院入口", "heroAlt": "大众在户外合掌诵经，供桌前摆放着供品"
+      "learnMore": "了解更多", "viewSchedule": "查看共修时间表", "directions": "来寺路线", "email": "邮件联络", "backHome": "返回首页", "skip": "跳至主要内容", "menu": "打开菜单", "close": "关闭", "all": "全部", "details": "查看详情", "openDaily": "每日 8:15–17:30 开放", "visitorCount": "网站访客", "photoCaption": "大众一同诵经礼佛", "entranceAlt": "费城佛寿寺入口", "heroAlt": "大众在户外合掌诵经，桌上摆放着供品"
     },
     "home": {
-      "title": "共修诵经，\n欢喜结缘。",
-      "intro": "费城佛寿寺每天 8:15–17:30 开放。欢迎来寺礼佛、点香，无需登记。",
-      "weeklyTitle": "每周日，一同共修",
-      "weeklyIntro": "诵经以普通话为主，欢迎随喜参加，无需登记。",
+      "title": "诵经共修\n欢喜结缘",
+      "intro": "费城佛寿寺每天 8:15–17:30 开放。欢迎来寺礼佛、上香，无需登记。",
+      "weeklyTitle": "周日共修",
+      "weeklyIntro": "来寺共修无需登记。诵经以普通话为主。",
       "calendarTitle": "礼敬诸佛",
-      "calendarIntro": "查阅佛菩萨圣诞及主要佛教纪念日。相关法会通常在农历正日举行，具体安排以寺院公告为准。",
+      "calendarIntro": "可以查阅佛菩萨圣诞等主要佛教纪念日。圣诞法会通常在农历正日举行，具体安排以寺院公告为准。",
       "aboutTitle": "樱桃街上的共修道场",
-      "aboutText": "佛寿寺位于费城，住持为释贤参法师。日常活动以礼佛、诵经、佛前大供与共修为主。欢迎初次来访的朋友，也欢迎熟悉的面孔，再来一同共修。",
-      "offeringsTitle": "共修之后，一同用斋",
-      "offeringsText": "每次共修后，楼下均提供免费素斋，欢迎大众用斋。也欢迎大众现场供斋，广种福田。",
+      "aboutText": "佛寿寺由释贤参法师住持。寺院平常开放礼佛，也举办诵经共修和佛前大供。",
+      "offeringsTitle": "共修后一起用斋",
+      "offeringsText": "每次共修结束后，楼下都备有免费素斋。欢迎大众现场供斋，广种福田。",
       "visitTitle": "欢迎来寺"
     },
     "about": {
       "title": "认识佛寿寺",
-      "intro": "一处位于费城樱桃街，供大众礼佛与共修的道场。",
-      "body": "佛寿寺住持为释贤参法师。寺院每天上午八点十五分至下午五点半开放，欢迎来寺礼佛、点香。寺院活动以法会与诵经共修为主，包括佛前大供、共修后的免费素斋，以及下午晚课。",
-      "practiceTitle": "以共修相聚",
-      "practiceText": "每周日举行共修，现场以普通话诵经为主。佛菩萨圣诞法会通常在农历正日举行，具体日期与时间请参阅寺院公告。",
-      "welcomeTitle": "欢迎随喜参与",
-      "welcomeText": "来寺无需预先登记。无论是平日礼佛，还是参加共修，都欢迎您到访。每次共修之后，楼下均提供免费素斋。",
+      "intro": "佛寿寺位于费城樱桃街，是一处礼佛共修的道场。",
+      "body": "佛寿寺由释贤参法师住持。寺院每天上午八点十五分至下午五点半开放，欢迎来寺礼佛、上香。寺院主要举办法会和诵经共修，也有佛前大供和下午晚课。",
+      "practiceTitle": "日常共修",
+      "practiceText": "寺院每周日举行共修，诵经以普通话为主。佛菩萨圣诞法会通常在农历正日举行，实际日期和时间以寺院公告为准。",
+      "welcomeTitle": "欢迎来寺",
+      "welcomeText": "来寺礼佛或参加共修都无需登记。每次共修后，楼下都有免费素斋。",
       "galleryTitle": "寺院殿堂",
-      "galleryIntro": "大殿、地藏殿与往生堂，都是佛寿寺日常礼佛、诵经与供养的空间。"
+      "galleryIntro": "大殿、地藏殿和往生堂都是寺院日常礼佛、诵经和供养的场所。"
     },
     "services": {
       "title": "法会与共修",
-      "intro": "佛寿寺每周日有诵经共修，并于每月农历初一、十五举行法会。",
-      "morningTitle": "诵经礼佛与佛前大供",
+      "intro": "佛寿寺每周日举行诵经共修。农历每月初一和十五另有法会。",
+      "morningTitle": "诵经、礼佛和佛前大供",
       "mealTitle": "免费素斋",
       "mealTime": "上午共修后",
       "mealText": "欢迎到楼下一同用斋。",
@@ -92,55 +92,55 @@
       "afternoonText": "通常于下午两点至三点之间结束。",
       "regularLabel": "共修时间表",
       "specialTitle": "佛菩萨圣诞与特别法会",
-      "specialText": "主要纪念日收录于佛教纪念日日历。相关法会通常在农历正日举行，具体时间与安排请查看寺院公告。",
+      "specialText": "日历收录了佛菩萨圣诞等主要佛教纪念日。圣诞法会通常在农历正日举行，实际安排以寺院公告为准。",
       "noticeTitle": "来寺前请留意",
       "noticeText": "如遇特别法会或时间调整，请以寺院公告为准。",
-      "eventLanguage": "现场共修以普通话为主。",
-      "eventAttendance": "现场共修以普通话为主，参加法会无需登记。",
-      "afterPracticeMeal": "共修后，欢迎到楼下免费用斋。"
+      "eventLanguage": "诵经以普通话为主。",
+      "eventAttendance": "参加法会无需登记。诵经以普通话为主。",
+      "afterPracticeMeal": "共修后可在楼下免费用斋。"
     },
     "offerings": {
       "title": "供养与素斋",
-      "intro": "欢迎随喜参与佛前大供，共修后与大众一同用斋。",
+      "intro": "欢迎来寺参加佛前大供。共修后可到楼下一起用斋。",
       "offeringTitle": "佛前大供",
-      "offeringText": "佛前大供是寺院共修活动的一部分，与诵经、礼佛一同进行。周日常规安排为上午十点至十一点半。",
+      "offeringText": "周日上午十点至十一点半举行共修，包括诵经、礼佛和佛前大供。",
       "mealTitle": "共修后的免费素斋",
-      "mealText": "每次共修后，楼下均提供免费素斋，欢迎大众用斋。周日素斋安排在上午共修之后。",
+      "mealText": "每次共修后都可到楼下免费用斋。周日的素斋在上午共修结束后供应。",
       "invitation": "欢迎大众现场供斋，广种福田。"
     },
     "visit": {
       "title": "来寺与联络",
-      "intro": "欢迎来寺礼佛、点香，也可随喜参加共修。",
+      "intro": "欢迎来寺礼佛、上香或参加共修。",
       "addressLabel": "寺院地址", "hoursLabel": "开放时间", "hoursValue": "每天上午 8:15 至下午 5:30", "emailLabel": "电子邮箱", "languageLabel": "共修语言", "languageText": "现场共修以普通话为主。",
-      "hoursNote": "开放时间内可直接来寺，无需登记。",
+      "hoursNote": "来寺无需登记。",
       "firstVisitTitle": "初次来寺",
-      "firstVisitText": "想参加共修，可以先看周日的时间安排。特别法会的日期与时间以寺院公告为准。",
+      "firstVisitText": "参加共修前可先查看周日时间表。特别法会的日期和时间以寺院公告为准。",
       "faq": [
-        { "q": "共修使用什么语言？", "a": "现场共修以普通话为主。" },
-        { "q": "可以在寺院用斋吗？", "a": "每次共修后，楼下均提供免费素斋，欢迎大众用斋。周日安排在上午共修后。" }
+        { "q": "共修使用什么语言？", "a": "共修以普通话为主。" },
+        { "q": "可以在寺院用斋吗？", "a": "可以。每次共修后都可到楼下免费用斋。周日用斋安排在上午共修后。" }
       ]
     },
     "calendar": {
       "title": "佛教纪念日",
-      "intro": "查阅佛菩萨圣诞、主要佛教纪念日，以及本寺农历初一、十五法会的农历与公历日期。",
+      "intro": "日历列有佛菩萨圣诞等主要佛教纪念日，以及本寺农历初一和十五的法会。查询时可以对照公历和农历。",
       "yearLabel": "年份", "monthLabel": "月份", "list": "列表", "month": "月历", "previous": "上个月", "next": "下个月", "allMonths": "全年", "upcoming": "即将到来", "past": "已过日期", "today": "今天", "monthEntries": "本月纪念日与法会", "noEvents": "本月暂无收录的纪念日或法会。", "noYear": "这一年的纪念日资料尚未发布。",
-      "serviceNote": "圣诞法会通常在农历正日举行，默认上午 10:00 开始；如有特别安排，以寺院公告为准。纪念日仍供日期参考。",
+      "serviceNote": "寺院举行圣诞法会时，通常在农历正日上午十点开始。法会日期和时间以寺院公告为准。",
       "sourceLabel": "日期参考", "typeLabels": {"birth":"圣诞","awakening":"成道","renunciation":"出家","nirvana":"涅槃","observance":"纪念日","assembly":"法会"},
       "weekdays": ["日", "一", "二", "三", "四", "五", "六"],
-      "eventIntro": "佛教纪念日", "backCalendar": "返回纪念日日历"
+      "eventIntro": "佛教纪念日", "backCalendar": "返回佛教纪念日"
     },
     "footer": { "copyright": "佛寿寺 · 费城" },
-    "notFound": { "title": "没有找到这个页面", "text": "您可以返回首页，查看共修安排或来寺信息。" }
+    "notFound": { "title": "找不到这个页面", "text": "请返回首页，再查看共修时间表或来寺信息。" }
   },
   "zh-hant": {
     "langName": "繁體中文",
     "siteName": "佛壽寺",
     "photos": {
       "community": { "alt": "大眾在佛殿內合影，身後可見佛像與供花", "caption": "佛殿內的大眾合影" },
-      "practice": { "alt": "大眾在佛殿內合掌共修，前方可見經本與法器", "caption": "大眾共修 · 合掌禮佛" },
+      "practice": { "alt": "大眾在佛殿內合掌共修，前方可見經本與法器", "caption": "大眾在佛殿內共修" },
       "altarGathering": { "alt": "大眾齊聚佛殿，佛壇前陳設香爐、鮮花與水果供品", "caption": "佛殿內的禮佛場景" },
       "offerings": { "alt": "佛像前陳設供花，來訪者身旁的供桌上擺放著點亮的供燈", "caption": "佛前供燈與供花" },
-      "mainHall": { "alt": "佛壽寺大殿內，佛像與供桌前大眾正在誦經禮佛", "caption": "大殿" },
+      "mainHall": { "alt": "大眾在佛壽寺大殿的佛像前誦經禮佛", "caption": "大殿" },
       "ksitigarbhaHall": { "alt": "佛壽寺地藏殿內供奉地藏菩薩，佛前擺放水果、牌位與蓮花燈", "caption": "地藏殿" },
       "rebirthHall": { "alt": "佛壽寺往生堂佛前供桌與蓮花燈，鮮花與供品整齊陳設", "caption": "往生堂" }
     },
@@ -156,7 +156,7 @@
     "lunarPractice": {
       "firstTitle": "初一法會",
       "fifteenthTitle": "十五法會",
-      "description": "佛壽寺於每月農曆初一、十五舉行法會，預設上午 10:00 開始；如有特別安排，以寺院公告為準。歡迎大眾來寺誦經禮佛。",
+      "description": "佛壽寺在農曆每月初一及十五舉行法會。法會通常在上午十點開始。如有調整，請以寺院公告為準。歡迎大眾來寺誦經禮佛。",
       "dateLabel": "農曆{year}年{leap}{month}{day}",
       "leap": "閏",
       "monthNames": [
@@ -173,51 +173,51 @@
         "十一月",
         "十二月"
       ],
-      "coverage": "已收錄公曆 {years} 年內農曆初一、十五的法會日期；之後年份將陸續更新。",
+      "coverage": "目前收錄公曆 {years} 年的初一及十五法會日期。之後的日期將陸續補上。",
       "backCalendar": "返回活動日曆",
       "sourceTitle": "中央氣象署《2025年國民曆》：農曆月首對照表（第170頁）"
     },
     "activityCalendar": {
-      "title": "活動日曆", "intro": "查閱週日共修、農曆初一與十五法會，以及已公布的特別法會。所有時間均為費城當地時間。",
+      "title": "活動日曆", "intro": "這裡可以查到週日共修、農曆初一及十五的法會，以及已公布的特別法會。所列時間為費城當地時間。",
       "weeklyTitle": "週日共修", "regularLabel": "常規共修", "serviceLabel": "法會",
       "navigation": "活動日曆月份", "thisMonth": "本月", "allMonth": "查看整月",
-      "selectDay": "點選有標記的日期，查看當天活動。", "monthEvents": "本月活動",
+      "selectDay": "點選有標記的日期即可查看當天活動。", "monthEvents": "本月活動",
       "empty": "本月暫無已公布的活動。", "pendingTime": "法會時間待公布",
-      "noScript": "啟用 JavaScript 可切換月份和點選日期；常規共修安排見下方。"
+      "noScript": "啟用 JavaScript 後即可切換月份或查看指定日期。週日共修時間表見下方。"
     },
     "city": "美國 · 費城",
     "nav": { "home": "首頁", "about": "認識佛壽寺", "services": "法會與共修", "offerings": "供養與素齋", "visit": "來寺與聯絡", "calendar": "佛教紀念日" },
     "common": {
-      "learnMore": "了解更多", "viewSchedule": "查看共修安排", "directions": "來寺路線", "email": "郵件聯絡", "backHome": "返回首頁", "skip": "跳至主要內容", "menu": "開啟選單", "close": "關閉", "all": "全部", "details": "查看詳情", "openDaily": "每日 8:15–17:30 開放", "visitorCount": "網站訪客", "photoCaption": "大眾一同誦經禮佛", "entranceAlt": "費城佛壽寺的寺院入口", "heroAlt": "大眾在戶外合掌誦經，供桌前擺放著供品"
+      "learnMore": "了解更多", "viewSchedule": "查看共修時間表", "directions": "來寺路線", "email": "郵件聯絡", "backHome": "返回首頁", "skip": "跳至主要內容", "menu": "開啟選單", "close": "關閉", "all": "全部", "details": "查看詳情", "openDaily": "每日 8:15–17:30 開放", "visitorCount": "網站訪客", "photoCaption": "大眾一同誦經禮佛", "entranceAlt": "費城佛壽寺入口", "heroAlt": "大眾在戶外合掌誦經，桌上擺放著供品"
     },
     "home": {
-      "title": "共修誦經，\n歡喜結緣。",
-      "intro": "費城佛壽寺每天 8:15–17:30 開放。歡迎來寺禮佛、點香，無需登記。",
-      "weeklyTitle": "每週日，一同共修",
-      "weeklyIntro": "誦經以普通話為主，歡迎隨喜參加，無需登記。",
+      "title": "誦經共修\n歡喜結緣",
+      "intro": "費城佛壽寺每天 8:15–17:30 開放。歡迎來寺禮佛、上香，無需登記。",
+      "weeklyTitle": "週日共修",
+      "weeklyIntro": "來寺共修無需登記。誦經以普通話為主。",
       "calendarTitle": "禮敬諸佛",
-      "calendarIntro": "查閱佛菩薩聖誕及主要佛教紀念日。相關法會通常在農曆正日舉行，具體安排以寺院公告為準。",
+      "calendarIntro": "可以查閱佛菩薩聖誕等主要佛教紀念日。聖誕法會通常在農曆正日舉行，具體安排以寺院公告為準。",
       "aboutTitle": "櫻桃街上的共修道場",
-      "aboutText": "佛壽寺位於費城，住持為釋賢參法師。日常活動以禮佛、誦經、佛前大供與共修為主。歡迎初次來訪的朋友，也歡迎熟悉的面孔，再來一同共修。",
-      "offeringsTitle": "共修之後，一同用齋",
-      "offeringsText": "每次共修後，樓下均提供免費素齋，歡迎大眾用齋。也歡迎大眾現場供齋，廣種福田。",
+      "aboutText": "佛壽寺由釋賢參法師住持。寺院平常開放禮佛，也舉辦誦經共修及佛前大供。",
+      "offeringsTitle": "共修後一起用齋",
+      "offeringsText": "每次共修結束後，樓下都備有免費素齋。歡迎大眾現場供齋，廣種福田。",
       "visitTitle": "歡迎來寺"
     },
     "about": {
       "title": "認識佛壽寺",
-      "intro": "一處位於費城櫻桃街，供大眾禮佛與共修的道場。",
-      "body": "佛壽寺住持為釋賢參法師。寺院每天上午八點十五分至下午五點半開放，歡迎來寺禮佛、點香。寺院活動以法會與誦經共修為主，包括佛前大供、共修後的免費素齋，以及下午晚課。",
-      "practiceTitle": "以共修相聚",
-      "practiceText": "每週日舉行共修，現場以普通話誦經為主。佛菩薩聖誕法會通常在農曆正日舉行，具體日期與時間請參閱寺院公告。",
-      "welcomeTitle": "歡迎隨喜參與",
-      "welcomeText": "來寺無需預先登記。無論是平日禮佛，還是參加共修，都歡迎您到訪。每次共修之後，樓下均提供免費素齋。",
+      "intro": "佛壽寺位於費城櫻桃街，是一處禮佛共修的道場。",
+      "body": "佛壽寺由釋賢參法師住持。寺院每天上午八點十五分至下午五點半開放，歡迎來寺禮佛、上香。寺院主要舉辦法會及誦經共修，也有佛前大供和下午晚課。",
+      "practiceTitle": "日常共修",
+      "practiceText": "寺院每週日舉行共修，誦經以普通話為主。佛菩薩聖誕法會通常在農曆正日舉行，實際日期和時間以寺院公告為準。",
+      "welcomeTitle": "歡迎來寺",
+      "welcomeText": "來寺禮佛或參加共修都無需登記。每次共修後，樓下都有免費素齋。",
       "galleryTitle": "寺院殿堂",
-      "galleryIntro": "大殿、地藏殿與往生堂，都是佛壽寺日常禮佛、誦經與供養的空間。"
+      "galleryIntro": "大殿、地藏殿和往生堂都是寺院日常禮佛、誦經和供養的場所。"
     },
     "services": {
       "title": "法會與共修",
-      "intro": "佛壽寺每週日有誦經共修，並於每月農曆初一、十五舉行法會。",
-      "morningTitle": "誦經禮佛與佛前大供",
+      "intro": "佛壽寺每週日舉行誦經共修。農曆每月初一及十五另有法會。",
+      "morningTitle": "誦經、禮佛及佛前大供",
       "mealTitle": "免費素齋",
       "mealTime": "上午共修後",
       "mealText": "歡迎到樓下一同用齋。",
@@ -225,45 +225,45 @@
       "afternoonText": "通常於下午兩點至三點之間結束。",
       "regularLabel": "共修時間表",
       "specialTitle": "佛菩薩聖誕與特別法會",
-      "specialText": "主要紀念日收錄於佛教紀念日日曆。相關法會通常在農曆正日舉行，具體時間與安排請查看寺院公告。",
+      "specialText": "日曆收錄了佛菩薩聖誕等主要佛教紀念日。聖誕法會通常在農曆正日舉行，實際安排以寺院公告為準。",
       "noticeTitle": "來寺前請留意",
       "noticeText": "如遇特別法會或時間調整，請以寺院公告為準。",
-      "eventLanguage": "現場共修以普通話為主。",
-      "eventAttendance": "現場共修以普通話為主，參加法會無需登記。",
-      "afterPracticeMeal": "共修後，歡迎到樓下免費用齋。"
+      "eventLanguage": "誦經以普通話為主。",
+      "eventAttendance": "參加法會無需登記。誦經以普通話為主。",
+      "afterPracticeMeal": "共修後可在樓下免費用齋。"
     },
     "offerings": {
       "title": "供養與素齋",
-      "intro": "歡迎隨喜參與佛前大供，共修後與大眾一同用齋。",
+      "intro": "歡迎來寺參加佛前大供。共修後可到樓下一起用齋。",
       "offeringTitle": "佛前大供",
-      "offeringText": "佛前大供是寺院共修活動的一部分，與誦經、禮佛一同進行。週日常規安排為上午十點至十一點半。",
+      "offeringText": "週日上午十點至十一點半舉行共修，包括誦經、禮佛及佛前大供。",
       "mealTitle": "共修後的免費素齋",
-      "mealText": "每次共修後，樓下均提供免費素齋，歡迎大眾用齋。週日素齋安排在上午共修之後。",
+      "mealText": "每次共修後都可到樓下免費用齋。週日的素齋在上午共修結束後供應。",
       "invitation": "歡迎大眾現場供齋，廣種福田。"
     },
     "visit": {
       "title": "來寺與聯絡",
-      "intro": "歡迎來寺禮佛、點香，也可隨喜參加共修。",
+      "intro": "歡迎來寺禮佛、上香或參加共修。",
       "addressLabel": "寺院地址", "hoursLabel": "開放時間", "hoursValue": "每天上午 8:15 至下午 5:30", "emailLabel": "電子郵箱", "languageLabel": "共修語言", "languageText": "現場共修以普通話為主。",
-      "hoursNote": "開放時間內可直接來寺，無需登記。",
+      "hoursNote": "來寺無需登記。",
       "firstVisitTitle": "初次來寺",
-      "firstVisitText": "想參加共修，可以先看週日的時間安排。特別法會的日期與時間以寺院公告為準。",
+      "firstVisitText": "參加共修前可先查看週日時間表。特別法會的日期和時間以寺院公告為準。",
       "faq": [
-        { "q": "共修使用什麼語言？", "a": "現場共修以普通話為主。" },
-        { "q": "可以在寺院用齋嗎？", "a": "每次共修後，樓下均提供免費素齋，歡迎大眾用齋。週日安排在上午共修後。" }
+        { "q": "共修時用甚麼語言？", "a": "共修以普通話為主。" },
+        { "q": "可以在寺院用齋嗎？", "a": "可以。每次共修後都可到樓下免費用齋。週日用齋安排在上午共修後。" }
       ]
     },
     "calendar": {
       "title": "佛教紀念日",
-      "intro": "查閱佛菩薩聖誕、主要佛教紀念日，以及本寺農曆初一、十五法會的農曆與公曆日期。",
+      "intro": "日曆列有佛菩薩聖誕等主要佛教紀念日，以及本寺農曆初一及十五的法會。查閱時可以對照公曆和農曆。",
       "yearLabel": "年份", "monthLabel": "月份", "list": "列表", "month": "月曆", "previous": "上個月", "next": "下個月", "allMonths": "全年", "upcoming": "即將到來", "past": "已過日期", "today": "今天", "monthEntries": "本月紀念日與法會", "noEvents": "本月暫無收錄的紀念日或法會。", "noYear": "這一年的紀念日資料尚未發布。",
-      "serviceNote": "聖誕法會通常在農曆正日舉行，預設上午 10:00 開始；如有特別安排，以寺院公告為準。紀念日仍供日期參考。",
+      "serviceNote": "寺院舉行聖誕法會時，通常在農曆正日上午十點開始。法會日期和時間以寺院公告為準。",
       "sourceLabel": "日期參考", "typeLabels": {"birth":"聖誕","awakening":"成道","renunciation":"出家","nirvana":"涅槃","observance":"紀念日","assembly":"法會"},
       "weekdays": ["日", "一", "二", "三", "四", "五", "六"],
-      "eventIntro": "佛教紀念日", "backCalendar": "返回紀念日日曆"
+      "eventIntro": "佛教紀念日", "backCalendar": "返回佛教紀念日"
     },
     "footer": { "copyright": "佛壽寺 · 費城" },
-    "notFound": { "title": "沒有找到這個頁面", "text": "您可以返回首頁，查看共修安排或來寺資訊。" }
+    "notFound": { "title": "找不到這個頁面", "text": "請返回首頁，再查看共修時間表或來寺資訊。" }
   },
   "en": {
     "langName": "English",

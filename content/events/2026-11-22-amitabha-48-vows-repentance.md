@@ -22,7 +22,7 @@ title:
   zh-hant: "四十八大願禮懺法會"
   en: "Amitabha’s 48 Great Vows Repentance Dharma Assembly"
 description:
-  zh-hans: "感恩节前夕，佛寿寺将于2026年11月22日及23日举行四十八大愿礼忏法会，礼拜阿弥陀佛四十八大愿，两天均于上午10点开始。欢迎大众随喜参加。"
-  zh-hant: "感恩節前夕，佛壽寺將於2026年11月22日及23日舉行四十八大願禮懺法會，禮拜阿彌陀佛四十八大願，兩天均於上午10點開始。歡迎大眾隨喜參加。"
+  zh-hans: "感恩节前夕，佛寿寺将于2026年11月22日和23日举行四十八大愿礼忏法会，礼拜阿弥陀佛四十八大愿。两天都在上午十点开始。欢迎大众随喜参加。"
+  zh-hant: "感恩節前夕，佛壽寺將於2026年11月22日及23日舉行四十八大願禮懺法會，禮拜阿彌陀佛四十八大願。兩天都在上午十點開始。歡迎大眾隨喜參加。"
   en: "In the days leading up to Thanksgiving, Fo Shou Temple will hold a Repentance Dharma Assembly honoring Amitabha Buddha’s 48 Great Vows. Join us on November 22 and 23, 2026, starting at 10:00 a.m. each day. Everyone is welcome."
 ---
