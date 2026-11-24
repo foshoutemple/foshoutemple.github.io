@@ -53,7 +53,8 @@
       "noScript": "启用 JavaScript 后即可切换月份或查看指定日期。周日共修时间表见下方。"
     },
     "city": "美国 · 费城",
-    "nav": { "home": "首页", "about": "认识佛寿寺", "services": "法会与共修", "offerings": "供养与素斋", "visit": "来寺与联络", "calendar": "佛教纪念日" },
+    "nav": { "home": "首页", "about": "认识佛寿寺", "services": "法会与共修", "offerings": "供养与素斋", "resources": "佛教资源", "visit": "来寺与联络", "calendar": "佛教纪念日" },
+    "resources": { "intro": "这里可以查阅课诵本和其他佛教学习资料。", "empty": "暂无可查阅的资料。" },
     "common": {
       "learnMore": "了解更多", "viewSchedule": "查看共修时间表", "directions": "来寺路线", "email": "邮件联络", "backHome": "返回首页", "skip": "跳至主要内容", "menu": "打开菜单", "close": "关闭", "all": "全部", "details": "查看详情", "openDaily": "每日 8:15–17:30 开放", "visitorCount": "网站访客", "photoCaption": "大众一同诵经礼佛", "entranceAlt": "费城佛寿寺入口", "heroAlt": "大众在户外合掌诵经，桌上摆放着供品"
     },
@@ -186,7 +187,8 @@
       "noScript": "啟用 JavaScript 後即可切換月份或查看指定日期。週日共修時間表見下方。"
     },
     "city": "美國 · 費城",
-    "nav": { "home": "首頁", "about": "認識佛壽寺", "services": "法會與共修", "offerings": "供養與素齋", "visit": "來寺與聯絡", "calendar": "佛教紀念日" },
+    "nav": { "home": "首頁", "about": "認識佛壽寺", "services": "法會與共修", "offerings": "供養與素齋", "resources": "佛教資源", "visit": "來寺與聯絡", "calendar": "佛教紀念日" },
+    "resources": { "intro": "這裡可以查閱課誦本及其他佛教學習資料。", "empty": "暫無可查閱的資料。" },
     "common": {
       "learnMore": "了解更多", "viewSchedule": "查看共修時間表", "directions": "來寺路線", "email": "郵件聯絡", "backHome": "返回首頁", "skip": "跳至主要內容", "menu": "開啟選單", "close": "關閉", "all": "全部", "details": "查看詳情", "openDaily": "每日 8:15–17:30 開放", "visitorCount": "網站訪客", "photoCaption": "大眾一同誦經禮佛", "entranceAlt": "費城佛壽寺入口", "heroAlt": "大眾在戶外合掌誦經，桌上擺放著供品"
     },
@@ -319,7 +321,8 @@
       "noScript": "Enable JavaScript to change months and select dates. The regular practice schedule is below."
     },
     "city": "Philadelphia, Pennsylvania",
-    "nav": { "home": "Home", "about": "Our Temple", "services": "Dharma Assemblies & Practice", "offerings": "Offerings & Meals", "visit": "Visit & Contact", "calendar": "Buddhist Calendar" },
+    "nav": { "home": "Home", "about": "Our Temple", "services": "Dharma Assemblies & Practice", "offerings": "Offerings & Meals", "resources": "Resources", "visit": "Visit & Contact", "calendar": "Buddhist Calendar" },
+    "resources": { "intro": "Chanting texts and other materials for Buddhist study and practice.", "empty": "No resources are available yet." },
     "common": {
       "learnMore": "Learn more", "viewSchedule": "Sunday schedule", "directions": "Get directions", "email": "Email the temple", "backHome": "Back to home", "skip": "Skip to main content", "menu": "Open menu", "close": "Close", "all": "All", "details": "View details", "openDaily": "Open daily, 8:15 a.m.–5:30 p.m.", "visitorCount": "Site visitors", "photoCaption": "Gathering for sutra chanting", "entranceAlt": "The entrance to Fo Shou Temple in Philadelphia", "heroAlt": "A group gathered outdoors for chanting, with palms joined and offerings arranged on a table"
     },

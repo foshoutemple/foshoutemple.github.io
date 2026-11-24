@@ -35,11 +35,14 @@ node scripts/preview.mjs
 | 周日共修时间、活动日历中的停办日期 | [src/data/weekly-practice.json](src/data/weekly-practice.json) |
 | 农历初一、十五法会日期、时间及停办日期 | [src/data/lunar-practice.json](src/data/lunar-practice.json) |
 | 佛菩萨圣诞与纪念日 | [src/data/holy-days.json](src/data/holy-days.json) |
+| 佛教资源页面的链接 | [src/data/resources.json](src/data/resources.json) |
 | 一般寺院消息 | 复制 [content/news/_template.md](content/news/_template.md) |
 | 法会公告（进入最新消息、最新法会及活动日历） | 复制 [content/events/_template.md](content/events/_template.md) |
 | 网页照片 | `public/images/` |
 
 更改开放时间或常规日程时，同时核对配置、三种语言的说明与时间表，避免不同页面出现不同安排。
+
+添加佛教资源时，在 `src/data/resources.json` 中新增一项，填入原始链接及三语标题和版本说明。各版本都按文件中的顺序显示。
 
 英文术语：「法会」统一使用 **Dharma Assembly**，复数为 **Dharma Assemblies**；「法会与共修」栏目为 **Dharma Assemblies & Practice**。正文按句子使用 Dharma assembly／Dharma assemblies，新增法会公告亦沿用此术语。
 

@@ -1,0 +1,85 @@
+---
+import Icon from '../../components/Icon.astro';
+import resources from '../../data/resources.json';
+import Layout from '../../layouts/Layout.astro';
+import { copy, languages } from '../../lib/temple.js';
+
+export function getStaticPaths() {
+  return languages.map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const { nav, resources: text } = copy[lang];
+---
+
+<Layout lang={lang} page="resources" title={nav.resources} description={text.intro}>
+  <section class="container page-heading">
+    <h1>{nav.resources}</h1>
+    <p>{text.intro}</p>
+  </section>
+
+  <div class="container resource-directory">
+    {resources.length ? (
+      <ul class="resource-list" role="list">
+        {resources.map(resource => (
+          <li>
+            <a class="resource-link" href={resource.url} target="_blank" rel="noopener noreferrer">
+              <div>
+                <h2 class="resource-title">{resource.title[lang]}</h2>
+                <p>{resource.details[lang]}</p>
+              </div>
+              <Icon name="external" size={20}/>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : <p>{text.empty}</p>}
+  </div>
+</Layout>
+
+<style>
+  .resource-directory {
+    padding-block-end: clamp(56px, 8vw, 96px);
+  }
+
+  .resource-list {
+    list-style: none;
+    max-inline-size: 52rem;
+    margin: 0;
+    padding: 0;
+    border-block-start: 1px solid var(--ink);
+  }
+
+  .resource-list li {
+    border-block-end: 1px solid var(--line);
+  }
+
+  .resource-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-block: 22px;
+    overflow-wrap: anywhere;
+  }
+
+  .resource-link .resource-title {
+    margin: 0;
+    font-size: clamp(22px, 2.1vw, 28px);
+    text-decoration: underline;
+    text-decoration-color: var(--gold);
+    text-decoration-thickness: 1px;
+    line-height: 1.4;
+    text-wrap: wrap;
+  }
+
+  .resource-link p {
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .resource-link :global(svg) {
+    color: var(--red);
+  }
+</style>
