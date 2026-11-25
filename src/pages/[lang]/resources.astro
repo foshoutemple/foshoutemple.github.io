@@ -10,41 +10,84 @@ export function getStaticPaths() {
 
 const { lang } = Astro.params;
 const { nav, resources: text } = copy[lang];
+const sections = Object.entries(resources).filter(([, entries]) => entries.length > 0);
 ---
 
 <Layout lang={lang} page="resources" title={nav.resources} description={text.intro}>
-  <section class="container page-heading">
+  <section class="container page-heading resource-header">
     <h1>{nav.resources}</h1>
     <p>{text.intro}</p>
+    {sections.length > 1 && (
+      <nav class="resource-jump" aria-label={text.jumpLabel}>
+        {sections.map(([id]) => <a href={`#${id}`}>{text.sections[id]}</a>)}
+      </nav>
+    )}
   </section>
 
   <div class="container resource-directory">
-    {resources.length ? (
-      <ul class="resource-list" role="list">
-        {resources.map(resource => (
-          <li>
-            <a class="resource-link" href={resource.url} target="_blank" rel="noopener noreferrer">
-              <div>
-                <h2 class="resource-title">{resource.title[lang]}</h2>
-                <p>{resource.details[lang]}</p>
-              </div>
-              <Icon name="external" size={20}/>
-            </a>
-          </li>
-        ))}
-      </ul>
-    ) : <p>{text.empty}</p>}
+    {sections.length ? sections.map(([id, entries]) => (
+      <section class="resource-group" aria-labelledby={id}>
+        <h2 class="resource-group-title" id={id} tabindex="-1">{text.sections[id]}</h2>
+        <ul class="resource-list" role="list">
+          {entries.map(resource => (
+            <li>
+              <a class="resource-link" href={resource.url} target="_blank" rel="noopener noreferrer">
+                <div>
+                  <h3 class="resource-title">{resource.title[lang]}</h3>
+                  <p>{resource.details[lang]}</p>
+                </div>
+                <Icon name="external" size={20}/>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )) : <p>{text.empty}</p>}
   </div>
 </Layout>
 
 <style>
+  .resource-header {
+    padding-block-end: clamp(32px, 4vw, 48px);
+  }
+
+  .resource-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
+    margin-block-start: 16px;
+  }
+
+  .resource-jump a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 44px;
+    color: var(--red);
+    font-size: 15px;
+    text-decoration: underline;
+    text-underline-offset: .28em;
+  }
+
   .resource-directory {
     padding-block-end: clamp(56px, 8vw, 96px);
   }
 
+  .resource-group {
+    max-inline-size: 52rem;
+  }
+
+  .resource-group + .resource-group {
+    margin-block-start: clamp(48px, 6vw, 72px);
+  }
+
+  .resource-group .resource-group-title {
+    margin: 0 0 12px;
+    font-size: clamp(25px, 2.4vw, 34px);
+    line-height: 1.35;
+  }
+
   .resource-list {
     list-style: none;
-    max-inline-size: 52rem;
     margin: 0;
     padding: 0;
     border-block-start: 1px solid var(--ink);
@@ -61,6 +104,10 @@ const { nav, resources: text } = copy[lang];
     gap: 20px;
     padding-block: 22px;
     overflow-wrap: anywhere;
+  }
+
+  .resource-link > div {
+    min-inline-size: 0;
   }
 
   .resource-link .resource-title {

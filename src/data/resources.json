@@ -1,106 +1,138 @@
-[
-  {
-    "title": {
-      "zh-hans": "《佛教念诵集》早课",
-      "zh-hant": "《佛教念誦集》早課",
-      "en": "Morning Liturgy from the Buddhist Chanting Collection"
+{
+  "chanting-texts": [
+    {
+      "title": {
+        "zh-hans": "《佛教念诵集》早课",
+        "zh-hant": "《佛教念誦集》早課",
+        "en": "Morning Liturgy from the Buddhist Chanting Collection"
+      },
+      "details": {
+        "zh-hans": "简体中文（附拼音） · PDF",
+        "zh-hant": "簡體中文（附拼音） · PDF",
+        "en": "PDF · Simplified Chinese with pinyin"
+      },
+      "url": "https://www.fojingzaixian.com/img/076%E3%80%8A%E4%BD%9B%E6%95%99%E5%BF%B5%E8%AF%B5%E9%9B%86%E3%80%8B%E6%97%A9%E8%AF%BE%EF%BC%88%E7%AE%80%E4%BD%93%E6%B3%A8%E9%9F%B3%E7%89%88%EF%BC%89.pdf"
+    }
+  ],
+  "sutras": [
+    {
+      "title": {
+        "zh-hans": "《金刚般若波罗蜜经》",
+        "zh-hant": "《金剛般若波羅蜜經》",
+        "en": "The Diamond Sutra"
+      },
+      "details": {
+        "zh-hans": "中英对照（繁体中文） · PDF",
+        "zh-hant": "中英對照（繁體中文） · PDF",
+        "en": "PDF · Traditional Chinese and English"
+      },
+      "url": "https://sunnyvale.ctzen.org/wp-content/uploads/2019/07/diamond-sutra-v1.9.17-201312011.pdf"
     },
-    "details": {
-      "zh-hans": "简体中文（附拼音） · PDF",
-      "zh-hant": "簡體中文（附拼音） · PDF",
-      "en": "PDF · Simplified Chinese with pinyin"
+    {
+      "title": {
+        "zh-hans": "《般若波罗蜜多心经》",
+        "zh-hant": "《般若波羅蜜多心經》",
+        "en": "The Heart Sutra"
+      },
+      "details": {
+        "zh-hans": "英文版 · 佛光山",
+        "zh-hant": "英文版 · 佛光山",
+        "en": "English edition · Fo Guang Shan"
+      },
+      "url": "https://www.fgsitc.org/heart-sutra/"
     },
-    "url": "https://www.fojingzaixian.com/img/076%E3%80%8A%E4%BD%9B%E6%95%99%E5%BF%B5%E8%AF%B5%E9%9B%86%E3%80%8B%E6%97%A9%E8%AF%BE%EF%BC%88%E7%AE%80%E4%BD%93%E6%B3%A8%E9%9F%B3%E7%89%88%EF%BC%89.pdf"
-  },
-  {
-    "title": {
-      "zh-hans": "《金刚般若波罗蜜经》",
-      "zh-hant": "《金剛般若波羅蜜經》",
-      "en": "The Diamond Sutra"
+    {
+      "title": {
+        "zh-hans": "《佛说阿弥陀经》",
+        "zh-hant": "《佛說阿彌陀經》",
+        "en": "The Amitabha Sutra"
+      },
+      "details": {
+        "zh-hans": "中英对照（附拼音） · 佛光山",
+        "zh-hant": "中英對照（附拼音） · 佛光山",
+        "en": "English and Chinese with pinyin · Fo Guang Shan"
+      },
+      "url": "https://www.fgsitc.org/the-amitabha-sutra/"
     },
-    "details": {
-      "zh-hans": "中英对照（繁体中文） · PDF",
-      "zh-hant": "中英對照（繁體中文） · PDF",
-      "en": "PDF · Traditional Chinese and English"
+    {
+      "title": {
+        "zh-hans": "〈观世音菩萨普门品〉",
+        "zh-hant": "〈觀世音菩薩普門品〉",
+        "en": "Guanyin’s Universal Gate Chapter"
+      },
+      "details": {
+        "zh-hans": "中英对照（附拼音） · PDF",
+        "zh-hant": "中英對照（附拼音） · PDF",
+        "en": "PDF · English and Chinese with pinyin"
+      },
+      "url": "https://www.fgsitc.org/wp-content/uploads/2024/04/Lotus-Sutras-Universal-Gate-Chapter-2016.pdf"
     },
-    "url": "https://sunnyvale.ctzen.org/wp-content/uploads/2019/07/diamond-sutra-v1.9.17-201312011.pdf"
-  },
-  {
-    "title": {
-      "zh-hans": "《般若波罗蜜多心经》",
-      "zh-hant": "《般若波羅蜜多心經》",
-      "en": "The Heart Sutra"
+    {
+      "title": {
+        "zh-hans": "《药师经》",
+        "zh-hant": "《藥師經》",
+        "en": "The Medicine Buddha Sutra"
+      },
+      "details": {
+        "zh-hans": "中英对照（附拼音） · 佛光山",
+        "zh-hant": "中英對照（附拼音） · 佛光山",
+        "en": "English and Chinese with pinyin · Fo Guang Shan"
+      },
+      "url": "https://www.fgsitc.org/medicine-buddha-sutra/"
     },
-    "details": {
-      "zh-hans": "英文版 · 佛光山",
-      "zh-hant": "英文版 · 佛光山",
-      "en": "English edition · Fo Guang Shan"
+    {
+      "title": {
+        "zh-hans": "《地藏菩萨本愿经》",
+        "zh-hant": "《地藏菩薩本願經》",
+        "en": "The Ksitigarbha Sutra"
+      },
+      "details": {
+        "zh-hans": "英文译本 · PDF",
+        "zh-hant": "英文譯本 · PDF",
+        "en": "PDF · English translation"
+      },
+      "url": "https://www.fgsitc.org/wp-content/uploads/2024/04/Original-Vows-of-Ksitigarbha-Bodhisattva-Sutra-2023.pdf"
     },
-    "url": "https://www.fgsitc.org/heart-sutra/"
-  },
-  {
-    "title": {
-      "zh-hans": "《佛说阿弥陀经》",
-      "zh-hant": "《佛說阿彌陀經》",
-      "en": "The Amitabha Sutra"
+    {
+      "title": {
+        "zh-hans": "《无量寿经》",
+        "zh-hant": "《無量壽經》",
+        "en": "The Infinite Life Sutra"
+      },
+      "details": {
+        "zh-hans": "英文版 · 收录于《净土三经》",
+        "zh-hant": "英文版 · 收錄於《淨土三經》",
+        "en": "English · The Larger Sutra on Amitāyus in The Three Pure Land Sutras"
+      },
+      "url": "https://www.bdkamerica.org/product/the-three-pure-land-sutras/"
+    }
+  ],
+  "videos": [
+    {
+      "title": {
+        "zh-hans": "《大悲咒》108 遍",
+        "zh-hant": "《大悲咒》108 遍",
+        "en": "Great Compassion Mantra (108 Recitations)"
+      },
+      "details": {
+        "zh-hans": "YouTube · 万佛城唱诵",
+        "zh-hant": "YouTube · 萬佛城唱誦",
+        "en": "YouTube · Chanting by the City of Ten Thousand Buddhas"
+      },
+      "url": "https://www.youtube.com/watch?v=irDizQ431kM"
     },
-    "details": {
-      "zh-hans": "中英对照（附拼音） · 佛光山",
-      "zh-hant": "中英對照（附拼音） · 佛光山",
-      "en": "English and Chinese with pinyin · Fo Guang Shan"
-    },
-    "url": "https://www.fgsitc.org/the-amitabha-sutra/"
-  },
-  {
-    "title": {
-      "zh-hans": "〈观世音菩萨普门品〉",
-      "zh-hant": "〈觀世音菩薩普門品〉",
-      "en": "Guanyin’s Universal Gate Chapter"
-    },
-    "details": {
-      "zh-hans": "中英对照（附拼音） · PDF",
-      "zh-hant": "中英對照（附拼音） · PDF",
-      "en": "PDF · English and Chinese with pinyin"
-    },
-    "url": "https://www.fgsitc.org/wp-content/uploads/2024/04/Lotus-Sutras-Universal-Gate-Chapter-2016.pdf"
-  },
-  {
-    "title": {
-      "zh-hans": "《药师经》",
-      "zh-hant": "《藥師經》",
-      "en": "The Medicine Buddha Sutra"
-    },
-    "details": {
-      "zh-hans": "中英对照（附拼音） · 佛光山",
-      "zh-hant": "中英對照（附拼音） · 佛光山",
-      "en": "English and Chinese with pinyin · Fo Guang Shan"
-    },
-    "url": "https://www.fgsitc.org/medicine-buddha-sutra/"
-  },
-  {
-    "title": {
-      "zh-hans": "《地藏菩萨本愿经》",
-      "zh-hant": "《地藏菩薩本願經》",
-      "en": "The Ksitigarbha Sutra"
-    },
-    "details": {
-      "zh-hans": "英文译本 · PDF",
-      "zh-hant": "英文譯本 · PDF",
-      "en": "PDF · English translation"
-    },
-    "url": "https://www.fgsitc.org/wp-content/uploads/2024/04/Original-Vows-of-Ksitigarbha-Bodhisattva-Sutra-2023.pdf"
-  },
-  {
-    "title": {
-      "zh-hans": "《无量寿经》",
-      "zh-hant": "《無量壽經》",
-      "en": "The Infinite Life Sutra"
-    },
-    "details": {
-      "zh-hans": "英文版 · 收录于《净土三经》",
-      "zh-hant": "英文版 · 收錄於《淨土三經》",
-      "en": "English · The Larger Sutra on Amitāyus in The Three Pure Land Sutras"
-    },
-    "url": "https://www.bdkamerica.org/product/the-three-pure-land-sutras/"
-  }
-]
+    {
+      "title": {
+        "zh-hans": "《楞严咒》早课版",
+        "zh-hant": "《楞嚴咒》早課版",
+        "en": "Shurangama Mantra for Morning Liturgy"
+      },
+      "details": {
+        "zh-hans": "YouTube · 共七遍，附拼音",
+        "zh-hant": "YouTube · 共七遍，附拼音",
+        "en": "YouTube · Seven recitations with pinyin"
+      },
+      "url": "https://www.youtube.com/watch?v=ctuJp0T69Jc"
+    }
+  ]
+}

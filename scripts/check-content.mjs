@@ -12,13 +12,17 @@ const birthdayDates=new Set(days.events.filter(event=>event.type==='birth').map(
 const leaves=(v,p='')=>typeof v==='string'?[p]:Object.entries(v).flatMap(([k,x])=>leaves(x,`${p}.${k}`));
 const languages=['zh-hans','zh-hant','en'];
 for(const lang of languages){assert.deepEqual(leaves(copy[lang]),leaves(copy.en));for(const field of leaves(copy[lang])){let v=copy[lang];for(const part of field.slice(1).split('.'))v=v[part];assert.ok(v.trim(),`${lang}${field} empty`);}}
-const resources = await read('src/data/resources.json');
-assert(Array.isArray(resources), 'Resources must be an ordered list.');
-for (const resource of resources) {
-  assert.match(new URL(resource.url).protocol, /^https?:$/, 'Resource links must use HTTP or HTTPS.');
-  for (const lang of languages) {
-    assert(resource.title?.[lang]?.trim(), `Missing ${lang} resource title for ${resource.url}`);
-    assert(resource.details?.[lang]?.trim(), `Missing ${lang} resource details for ${resource.url}`);
+const resourceSections = await read('src/data/resources.json');
+assert(resourceSections && typeof resourceSections === 'object' && !Array.isArray(resourceSections), 'Resources must be grouped by section.');
+for (const [section, entries] of Object.entries(resourceSections)) {
+  assert(Object.hasOwn(copy.en.resources.sections, section), `Missing localized label for Resources section ${section}.`);
+  assert(Array.isArray(entries), `Resources in ${section} must be an ordered list.`);
+  for (const resource of entries) {
+    assert.match(new URL(resource.url).protocol, /^https?:$/, 'Resource links must use HTTP or HTTPS.');
+    for (const lang of languages) {
+      assert(resource.title?.[lang]?.trim(), `Missing ${lang} resource title for ${resource.url}`);
+      assert(resource.details?.[lang]?.trim(), `Missing ${lang} resource details for ${resource.url}`);
+    }
   }
 }
 assert.equal(site.email,'foshoutemple@gmail.com');

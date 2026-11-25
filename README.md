@@ -42,7 +42,7 @@ node scripts/preview.mjs
 
 更改开放时间或常规日程时，同时核对配置、三种语言的说明与时间表，避免不同页面出现不同安排。
 
-添加佛教资源时，在 `src/data/resources.json` 中新增一项，填入原始链接及三语标题和版本说明。各版本都按文件中的顺序显示。
+添加佛教资源时，在 `src/data/resources.json` 中找到相应栏目（`chanting-texts` 为课诵本，`sutras` 为佛经，`videos` 为视频）。填入原始链接及三语标题和说明。各栏目按文件中的顺序显示。
 
 英文术语：「法会」统一使用 **Dharma Assembly**，复数为 **Dharma Assemblies**；「法会与共修」栏目为 **Dharma Assemblies & Practice**。正文按句子使用 Dharma assembly／Dharma assemblies，新增法会公告亦沿用此术语。
 
