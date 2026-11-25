@@ -24,5 +24,83 @@
       "en": "PDF · Traditional Chinese and English"
     },
     "url": "https://sunnyvale.ctzen.org/wp-content/uploads/2019/07/diamond-sutra-v1.9.17-201312011.pdf"
+  },
+  {
+    "title": {
+      "zh-hans": "《般若波罗蜜多心经》",
+      "zh-hant": "《般若波羅蜜多心經》",
+      "en": "The Heart Sutra"
+    },
+    "details": {
+      "zh-hans": "英文版 · 佛光山",
+      "zh-hant": "英文版 · 佛光山",
+      "en": "English edition · Fo Guang Shan"
+    },
+    "url": "https://www.fgsitc.org/heart-sutra/"
+  },
+  {
+    "title": {
+      "zh-hans": "《佛说阿弥陀经》",
+      "zh-hant": "《佛說阿彌陀經》",
+      "en": "The Amitabha Sutra"
+    },
+    "details": {
+      "zh-hans": "中英对照（附拼音） · 佛光山",
+      "zh-hant": "中英對照（附拼音） · 佛光山",
+      "en": "English and Chinese with pinyin · Fo Guang Shan"
+    },
+    "url": "https://www.fgsitc.org/the-amitabha-sutra/"
+  },
+  {
+    "title": {
+      "zh-hans": "〈观世音菩萨普门品〉",
+      "zh-hant": "〈觀世音菩薩普門品〉",
+      "en": "Guanyin’s Universal Gate Chapter"
+    },
+    "details": {
+      "zh-hans": "中英对照（附拼音） · PDF",
+      "zh-hant": "中英對照（附拼音） · PDF",
+      "en": "PDF · English and Chinese with pinyin"
+    },
+    "url": "https://www.fgsitc.org/wp-content/uploads/2024/04/Lotus-Sutras-Universal-Gate-Chapter-2016.pdf"
+  },
+  {
+    "title": {
+      "zh-hans": "《药师经》",
+      "zh-hant": "《藥師經》",
+      "en": "The Medicine Buddha Sutra"
+    },
+    "details": {
+      "zh-hans": "中英对照（附拼音） · 佛光山",
+      "zh-hant": "中英對照（附拼音） · 佛光山",
+      "en": "English and Chinese with pinyin · Fo Guang Shan"
+    },
+    "url": "https://www.fgsitc.org/medicine-buddha-sutra/"
+  },
+  {
+    "title": {
+      "zh-hans": "《地藏菩萨本愿经》",
+      "zh-hant": "《地藏菩薩本願經》",
+      "en": "The Ksitigarbha Sutra"
+    },
+    "details": {
+      "zh-hans": "英文译本 · PDF",
+      "zh-hant": "英文譯本 · PDF",
+      "en": "PDF · English translation"
+    },
+    "url": "https://www.fgsitc.org/wp-content/uploads/2024/04/Original-Vows-of-Ksitigarbha-Bodhisattva-Sutra-2023.pdf"
+  },
+  {
+    "title": {
+      "zh-hans": "《无量寿经》",
+      "zh-hant": "《無量壽經》",
+      "en": "The Infinite Life Sutra"
+    },
+    "details": {
+      "zh-hans": "英文版 · 收录于《净土三经》",
+      "zh-hant": "英文版 · 收錄於《淨土三經》",
+      "en": "English · The Larger Sutra on Amitāyus in The Three Pure Land Sutras"
+    },
+    "url": "https://www.bdkamerica.org/product/the-three-pure-land-sutras/"
   }
 ]
