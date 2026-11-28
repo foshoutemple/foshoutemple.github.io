@@ -9,6 +9,7 @@ const navKey = (p) => p || 'home';
 const isCurrent = (p) => page===p || (p==='' && (page==='news'||page.startsWith('news/'))) || (p==='services' && (page.startsWith('services/')||page.startsWith('calendar')));
 const pageTitle=title ? `${title} · ${t.siteName}` : `${t.siteName} · ${t.city}`;
 const canonical=Astro.site ? new URL(link(lang,page),Astro.site).href : undefined;
+const templeLogo = asset('images/fo-shou-temple-logo-zh-hant.webp');
 const visitorCounterUrl = `${site.visitorCounterBase}?label=${encodeURIComponent(t.common.visitorCount)}&labelColor=263b35&color=9a784d&style=flat`;
 const websiteSchema = { '@context':'https://schema.org', '@type':'WebSite', name:lang === 'en' ? 'Fo Shou Temple' : `${t.siteName} / Fo Shou Temple`, alternateName:['佛壽寺','Fo Shou Temple'], url:canonical || link(lang) };
 ---
@@ -30,7 +31,7 @@ const websiteSchema = { '@context':'https://schema.org', '@type':'WebSite', name
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href={link(lang)} aria-label={t.siteName}>
-          <span class="brand-seal" aria-hidden="true">佛</span>
+          <span class="brand-emblem" aria-hidden="true"><img src={templeLogo} width="400" height="400" alt=""/></span>
           <span class="brand-name"><strong>佛壽寺</strong><span>FO SHOU TEMPLE</span></span>
         </a>
         <nav class="desktop-nav" aria-label={t.common.menu}>{navPages.map(p=><a href={link(lang,p)} aria-current={isCurrent(p)?'page':undefined}>{t.nav[navKey(p)]}</a>)}</nav>
@@ -44,7 +45,7 @@ const websiteSchema = { '@context':'https://schema.org', '@type':'WebSite', name
     <main id="main"><slot/></main>
     <footer class="site-footer">
       <div class="container footer-main">
-        <div><a class="footer-brand" href={link(lang)}>佛壽寺<span>Fo Shou Temple</span></a></div>
+        <div><a class="footer-brand" href={link(lang)} aria-label={t.siteName}><img src={templeLogo} width="400" height="400" alt="" loading="lazy"/><span>Fo Shou Temple</span></a></div>
         <div class="footer-contact"><p>{site.address}<br/>{site.cityLine}</p><a href={`mailto:${site.email}`}>{site.email}</a><p>{t.common.openDaily}</p></div>
         <div class="footer-links"><a href={link(lang,'calendar')}>{t.nav.calendar}<Icon size={16}/></a><a href={link(lang,'visit')}>{t.nav.visit}<Icon size={16}/></a><div class="social-links"><a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook<Icon name="external" size={14}/></a><a href={site.youtube} target="_blank" rel="noopener noreferrer">YouTube<Icon name="external" size={14}/></a></div></div>
       </div>
